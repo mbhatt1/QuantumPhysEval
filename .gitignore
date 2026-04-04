@@ -11,4 +11,11 @@ paper/*.fls
 paper/*.log
 paper/*.out
 paper/*.pdf
-
+overleaf_neurips/*.aux
+overleaf_neurips/*.fdb_latexmk
+overleaf_neurips/*.fls
+overleaf_neurips/*.log
+overleaf_neurips/*.out
+overleaf_neurips/*.pdf
+*_overleaf_neurips.zip
+overleaf_neurips_upload.zip

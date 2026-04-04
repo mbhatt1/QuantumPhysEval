@@ -132,7 +132,7 @@ class BenchmarkPrompt:
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="QuantumPhysEval benchmark with exact 2-qubit ground truth."
+        description="QuantumPhysEval benchmark with exact small-system quantum ground truth."
     )
     parser.add_argument(
         "--provider",
@@ -147,6 +147,12 @@ def parse_args() -> argparse.Namespace:
         help="Run the standard scaling sweep or a time-budgeted repair benchmark.",
     )
     parser.add_argument("--n-per-category", type=int, default=16)
+    parser.add_argument(
+        "--num-qubits",
+        type=int,
+        default=2,
+        help="Number of qubits used for circuit, measurement, and entanglement tasks.",
+    )
     parser.add_argument(
         "--reasoning-depths",
         type=int,
@@ -257,14 +263,38 @@ def require_api_key(provider: str) -> None:
         raise RuntimeError(f"{env_var} is not set.")
 
 
-def apply_one_qubit_gate(state: np.ndarray, gate: np.ndarray, qubit: int) -> np.ndarray:
-    full = np.kron(gate, I2) if qubit == 0 else np.kron(I2, gate)
-    return full @ state
+def apply_one_qubit_gate(state: np.ndarray, gate: np.ndarray, qubit: int, num_qubits: int) -> np.ndarray:
+    tensor = np.asarray(state, dtype=complex).reshape((2,) * num_qubits)
+    moved = np.moveaxis(tensor, qubit, 0)
+    updated = np.tensordot(gate, moved, axes=([1], [0]))
+    restored = np.moveaxis(updated, 0, qubit)
+    return restored.reshape(-1)
 
 
-def initial_basis_state(bits: Tuple[int, int]) -> np.ndarray:
-    state = np.zeros(4, dtype=complex)
-    index = bits[0] * 2 + bits[1]
+def apply_two_qubit_gate(
+    state: np.ndarray,
+    gate: np.ndarray,
+    qubit_a: int,
+    qubit_b: int,
+    num_qubits: int,
+) -> np.ndarray:
+    if qubit_a == qubit_b:
+        raise ValueError("Two-qubit gate requires distinct qubits.")
+    tensor = np.asarray(state, dtype=complex).reshape((2,) * num_qubits)
+    moved = np.moveaxis(tensor, (qubit_a, qubit_b), (0, 1))
+    leading_shape = moved.shape[2:]
+    updated = gate @ moved.reshape(4, -1)
+    restored = updated.reshape((2, 2) + leading_shape)
+    final = np.moveaxis(restored, (0, 1), (qubit_a, qubit_b))
+    return final.reshape(-1)
+
+
+def initial_basis_state(bits: Sequence[int]) -> np.ndarray:
+    num_qubits = len(bits)
+    state = np.zeros(2**num_qubits, dtype=complex)
+    index = 0
+    for bit in bits:
+        index = (index << 1) | int(bit)
     state[index] = 1.0 + 0.0j
     return state
 
@@ -329,18 +359,55 @@ def random_two_qubit_sequence(rng: np.random.Generator, min_len: int = 2, max_le
     return [str(rng.choice(names)) for _ in range(length)]
 
 
-def apply_operation_to_state(state: np.ndarray, op_name: str) -> np.ndarray:
-    if op_name in TWO_QUBIT_GATES:
+def random_n_qubit_sequence(
+    rng: np.random.Generator,
+    num_qubits: int,
+    min_len: int = 3,
+    max_len: int = 6,
+) -> List[str]:
+    length = int(rng.integers(min_len, max_len + 1))
+    names: List[str] = []
+    one_qubit_names = ["H", "X", "Y", "Z", "S", "T"]
+    entangling_pairs = [(idx, idx + 1) for idx in range(num_qubits - 1)]
+    for _ in range(length):
+        if entangling_pairs and float(rng.random()) < 0.38:
+            control, target = entangling_pairs[int(rng.integers(0, len(entangling_pairs)))]
+            if float(rng.random()) < 0.5:
+                names.append(f"CNOT({control},{target})")
+            else:
+                names.append(f"CZ({control},{target})")
+        else:
+            gate = str(rng.choice(one_qubit_names))
+            qubit = int(rng.integers(0, num_qubits))
+            names.append(f"{gate}({qubit})")
+    return names
+
+
+def apply_operation_to_state(state: np.ndarray, op_name: str, num_qubits: int) -> np.ndarray:
+    if op_name in TWO_QUBIT_GATES and num_qubits == 2:
         return TWO_QUBIT_GATES[op_name] @ state
-    gate_name, qubit_text = op_name.split("(")
-    qubit = int(qubit_text.rstrip(")"))
-    return apply_one_qubit_gate(state, ONE_QUBIT_GATES[gate_name], qubit)
+    match = re.fullmatch(r"([A-Z]+)\((\d+)(?:,(\d+))?\)", op_name)
+    if not match:
+        raise ValueError(f"Unsupported operation name: {op_name}")
+    gate_name = match.group(1)
+    qubit_a = int(match.group(2))
+    qubit_b_text = match.group(3)
+    if qubit_b_text is None:
+        return apply_one_qubit_gate(state, ONE_QUBIT_GATES[gate_name], qubit_a, num_qubits)
+    qubit_b = int(qubit_b_text)
+    if gate_name == "CNOT":
+        gate = CNOT_01
+    elif gate_name == "CZ":
+        gate = CZ
+    else:
+        raise ValueError(f"Unsupported two-qubit gate: {gate_name}")
+    return apply_two_qubit_gate(state, gate, qubit_a, qubit_b, num_qubits)
 
 
-def build_circuit_state(bits: Tuple[int, int], ops: Sequence[str]) -> np.ndarray:
+def build_circuit_state(bits: Sequence[int], ops: Sequence[str], num_qubits: int) -> np.ndarray:
     state = initial_basis_state(bits)
     for op_name in ops:
-        state = apply_operation_to_state(state, op_name)
+        state = apply_operation_to_state(state, op_name, num_qubits)
     return state
 
 
@@ -351,31 +418,75 @@ def build_single_qubit_operator(ops: Sequence[str]) -> np.ndarray:
     return unitary
 
 
-def entangled_state_from_template(template: str) -> Tuple[np.ndarray, bool]:
+def kron_all(states: Sequence[np.ndarray]) -> np.ndarray:
+    result = np.asarray([1.0 + 0.0j], dtype=complex)
+    for state in states:
+        result = np.kron(result, np.asarray(state, dtype=complex))
+    return result
+
+
+def product_state_for_bits(bits: Sequence[int]) -> np.ndarray:
+    return initial_basis_state(bits)
+
+
+def entangled_state_from_template(template: str, num_qubits: int) -> Tuple[np.ndarray, bool]:
     inv_sqrt2 = 1.0 / np.sqrt(2.0)
-    states = {
-        "bell_phi_plus": (np.array([inv_sqrt2, 0, 0, inv_sqrt2], dtype=complex), True),
-        "bell_phi_minus": (np.array([inv_sqrt2, 0, 0, -inv_sqrt2], dtype=complex), True),
-        "bell_psi_plus": (np.array([0, inv_sqrt2, inv_sqrt2, 0], dtype=complex), True),
-        "product_00": (np.array([1, 0, 0, 0], dtype=complex), False),
-        "product_plus0": (np.array([inv_sqrt2, 0, inv_sqrt2, 0], dtype=complex), False),
-        "product_plus1": (np.array([0, inv_sqrt2, 0, inv_sqrt2], dtype=complex), False),
-    }
-    return states[template]
+    plus = np.array([inv_sqrt2, inv_sqrt2], dtype=complex)
+    zero = np.array([1.0, 0.0], dtype=complex)
+    one = np.array([0.0, 1.0], dtype=complex)
+    bell_phi_plus = np.array([inv_sqrt2, 0, 0, inv_sqrt2], dtype=complex)
+    bell_psi_plus = np.array([0, inv_sqrt2, inv_sqrt2, 0], dtype=complex)
+    if num_qubits == 2:
+        states = {
+            "bell_phi_plus": (bell_phi_plus, True),
+            "bell_phi_minus": (np.array([inv_sqrt2, 0, 0, -inv_sqrt2], dtype=complex), True),
+            "bell_psi_plus": (bell_psi_plus, True),
+            "product_00": (np.array([1, 0, 0, 0], dtype=complex), False),
+            "product_plus0": (np.array([inv_sqrt2, 0, inv_sqrt2, 0], dtype=complex), False),
+            "product_plus1": (np.array([0, inv_sqrt2, 0, inv_sqrt2], dtype=complex), False),
+        }
+        return states[template]
+    if num_qubits == 4:
+        ghz4 = np.zeros(16, dtype=complex)
+        ghz4[0] = inv_sqrt2
+        ghz4[-1] = inv_sqrt2
+        cluster_4 = np.array(
+            [0.5, 0, 0, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0, 0, -0.5],
+            dtype=complex,
+        )
+        states = {
+            "ghz4": (ghz4, True),
+            "bell_pair_00": (np.kron(bell_phi_plus, product_state_for_bits((0, 0))), True),
+            "00_bell_pair": (np.kron(product_state_for_bits((0, 0)), bell_phi_plus), True),
+            "double_bell_pair": (np.kron(bell_phi_plus, bell_psi_plus), True),
+            "cluster4": (cluster_4, True),
+            "product_0000": (product_state_for_bits((0, 0, 0, 0)), False),
+            "product_plus000": (kron_all([plus, zero, zero, zero]), False),
+            "product_plusplus00": (kron_all([plus, plus, zero, zero]), False),
+            "product_plus0plus1": (kron_all([plus, zero, plus, one]), False),
+        }
+        return states[template]
+    raise ValueError(f"Unsupported entanglement template size: {num_qubits}")
 
 
-def generate_prompts(n_per_category: int, seed: int) -> List[BenchmarkPrompt]:
+def generate_prompts(n_per_category: int, seed: int, num_qubits: int = 2) -> List[BenchmarkPrompt]:
     rng = np.random.default_rng(seed)
     prompts: List[BenchmarkPrompt] = []
+    if num_qubits < 2:
+        raise ValueError("--num-qubits must be at least 2.")
+
+    circuit_sequence_fn = random_two_qubit_sequence if num_qubits == 2 else lambda generator: random_n_qubit_sequence(generator, num_qubits)
+    basis_labels = [f"{idx:0{num_qubits}b}" for idx in range(2**num_qubits)]
 
     for _ in range(n_per_category):
-        bits = (int(rng.integers(0, 2)), int(rng.integers(0, 2)))
-        ops = random_two_qubit_sequence(rng)
-        target_state = build_circuit_state(bits, ops)
+        bits = tuple(int(x) for x in rng.integers(0, 2, size=num_qubits))
+        ops = circuit_sequence_fn(rng)
+        target_state = build_circuit_state(bits, ops, num_qubits)
+        bit_string = "".join(str(bit) for bit in bits)
         prompt = (
-            f"Start from |{bits[0]}{bits[1]}>. Apply the 2-qubit gate sequence "
+            f"Start from |{bit_string}>. Apply the {num_qubits}-qubit gate sequence "
             f"{', '.join(ops)} in that order. Return the final state vector as a Python "
-            "list of 4 complex numbers using decimal literals only and no explanation."
+            f"list of {2**num_qubits} complex numbers using decimal literals only and no explanation."
         )
         prompts.append(
             BenchmarkPrompt(
@@ -383,7 +494,7 @@ def generate_prompts(n_per_category: int, seed: int) -> List[BenchmarkPrompt]:
                 prompt=prompt,
                 target_kind="state_vector",
                 target=complex_to_list(target_state),
-                metadata={"bits": list(bits), "ops": list(ops)},
+                metadata={"bits": list(bits), "ops": list(ops), "num_qubits": num_qubits},
             )
         )
 
@@ -401,19 +512,21 @@ def generate_prompts(n_per_category: int, seed: int) -> List[BenchmarkPrompt]:
                 prompt=prompt,
                 target_kind="operator",
                 target=matrix_to_nested_list(target_unitary),
-                metadata={"ops": list(ops)},
+                metadata={"ops": list(ops), "num_qubits": 1},
             )
         )
 
     for _ in range(n_per_category):
-        bits = (int(rng.integers(0, 2)), int(rng.integers(0, 2)))
-        ops = random_two_qubit_sequence(rng)
-        final_state = build_circuit_state(bits, ops)
+        bits = tuple(int(x) for x in rng.integers(0, 2, size=num_qubits))
+        ops = circuit_sequence_fn(rng)
+        final_state = build_circuit_state(bits, ops, num_qubits)
         probabilities = np.abs(final_state) ** 2
+        bit_string = "".join(str(bit) for bit in bits)
+        label_string = ", ".join(f"p{label}" for label in basis_labels)
         prompt = (
-            f"Start from |{bits[0]}{bits[1]}>. Apply the 2-qubit gate sequence "
+            f"Start from |{bit_string}>. Apply the {num_qubits}-qubit gate sequence "
             f"{', '.join(ops)} in that order. Return the measurement probabilities "
-            "[p00, p01, p10, p11] as a Python list of 4 decimal numbers only."
+            f"[{label_string}] as a Python list of {2**num_qubits} decimal numbers only."
         )
         prompts.append(
             BenchmarkPrompt(
@@ -421,23 +534,38 @@ def generate_prompts(n_per_category: int, seed: int) -> List[BenchmarkPrompt]:
                 prompt=prompt,
                 target_kind="probabilities",
                 target=[float(x) for x in probabilities],
-                metadata={"bits": list(bits), "ops": list(ops)},
+                metadata={"bits": list(bits), "ops": list(ops), "num_qubits": num_qubits},
             )
         )
 
-    entanglement_templates = [
-        "bell_phi_plus",
-        "bell_phi_minus",
-        "bell_psi_plus",
-        "product_00",
-        "product_plus0",
-        "product_plus1",
-    ]
+    if num_qubits == 2:
+        entanglement_templates = [
+            "bell_phi_plus",
+            "bell_phi_minus",
+            "bell_psi_plus",
+            "product_00",
+            "product_plus0",
+            "product_plus1",
+        ]
+    elif num_qubits == 4:
+        entanglement_templates = [
+            "ghz4",
+            "bell_pair_00",
+            "00_bell_pair",
+            "double_bell_pair",
+            "cluster4",
+            "product_0000",
+            "product_plus000",
+            "product_plusplus00",
+            "product_plus0plus1",
+        ]
+    else:
+        raise ValueError("Entanglement templates are currently implemented for 2-qubit and 4-qubit runs only.")
     for _ in range(n_per_category):
         template = str(rng.choice(entanglement_templates))
-        state, is_entangled = entangled_state_from_template(template)
+        state, is_entangled = entangled_state_from_template(template, num_qubits)
         prompt = (
-            f"Consider the 2-qubit state {format_complex_vector(state)}. "
+            f"Consider the {num_qubits}-qubit state {format_complex_vector(state)}. "
             "Is it entangled? Return only True or False."
         )
         prompts.append(
@@ -446,7 +574,7 @@ def generate_prompts(n_per_category: int, seed: int) -> List[BenchmarkPrompt]:
                 prompt=prompt,
                 target_kind="boolean",
                 target=bool(is_entangled),
-                metadata={"template": template},
+                metadata={"template": template, "num_qubits": num_qubits},
             )
         )
 
@@ -836,6 +964,7 @@ def evaluate_task(
         "model": model_name,
         "size": model_size,
         "depth": int(depth),
+        "num_qubits": int(prompt_spec.metadata.get("num_qubits", 2)),
         "category": prompt_spec.category,
         "prompt": prompt_spec.prompt,
         "metadata": prompt_spec.metadata,
@@ -983,6 +1112,7 @@ def evaluate_time_budget_task(
         "model": model_name,
         "size": model_size,
         "depth": int(depth),
+        "num_qubits": int(prompt_spec.metadata.get("num_qubits", 2)),
         "category": prompt_spec.category,
         "prompt": prompt_spec.prompt,
         "metadata": prompt_spec.metadata,
@@ -2261,7 +2391,7 @@ def main() -> None:
     if args.reuse_results_json:
         results = load_results(args.reuse_results_json)
     else:
-        prompts = generate_prompts(args.n_per_category, args.seed)
+        prompts = generate_prompts(args.n_per_category, args.seed, num_qubits=args.num_qubits)
         models = parse_models(args.model)
         if args.validate_models:
             models = validate_models(
