@@ -1,0 +1,103 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{setspace}
+\usepackage{caption}
+
+\title{Quantifying Quantum Hallucinations in Language Models}
+\author{Draft generated from the current experiment snapshot}
+\date{\today}
+
+\begin{document}
+\maketitle
+\onehalfspacing
+
+\begin{abstract}
+We evaluate whether language models produce physically inconsistent but superficially plausible answers on elementary quantum-mechanical tasks. We construct a controlled two-qubit benchmark with exact analytic ground truth for circuit evolution, operator composition, measurement prediction, and entanglement classification. Each model response is scored with a bounded normalized error metric $d_{phys} \in [0,1]$, where lower values are better. The current experiment covers 2{,}304 evaluations across three models, three prompted reasoning-depth settings, and four balanced task families. The resulting data show a clear size effect: larger models reduce mean physics error. In contrast, greater prompted reasoning depth yields only weak improvements, with uncertainty intervals that include zero. The largest errors occur on tasks requiring propagation of quantum states and probabilities through gate sequences. These results support a conservative conclusion: current language models can often generate structured quantum answers, but they remain unreliable when exact physical consistency is required.
+\end{abstract}
+
+\section{Introduction}
+Large language models are increasingly used for scientific reasoning, coding, and mathematical problem solving. Quantum information tasks are a useful stress test for such systems because correctness is tightly constrained by linear algebra, normalization, unitarity, and the Born rule. A model may therefore produce an answer that appears well formed while still violating exact quantum-mechanical ground truth.
+
+This paper studies that failure mode, which we refer to operationally as a \emph{quantum hallucination}: a syntactically plausible output that conflicts with exact quantum mechanics or with the target answer derived from exact simulation. Our goal is not to claim that language models fail universally on quantum tasks, but to measure how frequently they fail on a controlled family of simple tasks and to test whether those failures diminish with model scale or with prompted reasoning depth.
+
+\section{Benchmark and Metric}
+\subsection{Task families}
+The benchmark uses four categories of exact two-qubit tasks:
+\begin{itemize}
+\item \textbf{Circuit evolution}: given an initial basis state and a sampled gate sequence, return the final state vector.
+\item \textbf{Operator composition}: compose a one-qubit gate sequence and return the resulting unitary matrix.
+\item \textbf{Measurement prediction}: compute the exact measurement probabilities after a gate sequence.
+\item \textbf{Entanglement classification}: determine whether a given two-qubit state is entangled.
+\end{itemize}
+
+Ground truth is produced analytically inside the evaluation harness by explicit matrix multiplication over fixed gate sets. No external labels are used. This means the benchmark is self-labeled, reproducible, and exact within floating-point precision.
+
+\subsection{Physics-grounded error}
+For each response we compute a bounded error score $d_{phys}$:
+\begin{itemize}
+\item state-vector tasks compare the returned state to the exact target up to global phase and normalization penalties,
+\item operator tasks combine deviation from the target operator with a unitarity penalty,
+\item probability tasks compare the returned distribution to the exact Born-rule probabilities,
+\item entanglement tasks use binary error.
+\end{itemize}
+
+By construction, $d_{phys}=0$ is correct and larger values indicate more severe physical inconsistency.
+
+\subsection{Scaling law}
+We model the expected error using
+\[
+\mathbb{E}[d_{phys}] = k S^{-\alpha} D^{\beta},
+\]
+where $S$ is a proxy for model size and $D$ is the prompted reasoning-depth condition. Parameters are estimated in log-linear form and accompanied by bootstrap confidence intervals.
+
+\section{Experimental Setup}
+The current snapshot evaluates three models: \texttt{gpt-4o-mini}, \texttt{gpt-4.1-mini}, and \texttt{gpt-4.1}. Each model is tested at prompted depth settings $D \in \{1,2,4\}$. The benchmark contains 64 prompts per category, yielding 256 unique prompts total and 2{,}304 scored evaluations after crossing prompts with models and depths.
+
+The live results fragment used below is generated directly from the current JSON artifacts in the workspace. Updating the statistics file therefore updates this manuscript without manual copying.
+
+\section{Results}
+The main result is that physics-grounded error remains high across all tested models, but decreases with model size. The overall mean error is 0.497, and the best model in the current run still has mean error 0.442. This is not a rare-edge-case phenomenon: the 90th and 95th percentiles are both 1.0, and roughly one third of all samples are effectively full-error failures.
+
+Among task families, circuit evolution and measurement prediction are the dominant sources of error. These are exactly the tasks that require maintaining correct quantum dynamics and probability propagation through gates. By contrast, entanglement classification and operator composition are easier on average, although even there the models remain imperfect.
+
+The size trend is the strongest robust effect in the current experiment. The fitted exponent on model size is $\alpha \approx 1.993$ with a bootstrap 95\% confidence interval of $[1.509, 2.462]$. The direction is therefore stable across resamples. The depth effect is much weaker: $\beta \approx -0.290$ with a 95\% confidence interval of $[-0.876, 0.327]$, which includes zero. The safest interpretation is that larger models help, while additional prompted reasoning depth does not yet show a reliably strong benefit.
+
+\input{paper_quantum_results_live.tex}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.82\textwidth]{paper_quantum_scaling.png}
+\caption{Scaling-law figure generated from the current completed run. Error bars reflect within-cell variability, and the fitted trend is reported in the text.}
+\label{fig:scaling}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{paper_quantum_breakdown.png}
+\caption{Breakdown of mean normalized error by task family and model. The pattern highlights that circuit evolution and measurement prediction dominate the observed failure modes.}
+\label{fig:breakdown}
+\end{figure}
+
+\section{Discussion}
+The current snapshot supports three conservative claims.
+
+First, language models can produce structured quantum answers while still being physically wrong. This is the operational sense in which the term \emph{hallucination} is used in this work: the output has the right surface form, but not the right physics.
+
+Second, scale matters. The progression from \texttt{gpt-4o-mini} to \texttt{gpt-4.1-mini} to \texttt{gpt-4.1} lowers mean error, lowers full-error rate, and increases exact-correct rate. This indicates that the benchmark is sensitive to capability differences rather than merely to prompt formatting.
+
+Third, prompting for more reasoning is not a substitute for stronger models. Depth 4 is marginally better on average than depths 1 and 2, but the effect is small relative to model-to-model differences and is not statistically stable in the current bootstrap interval.
+
+\section{Limitations}
+This draft is based on a controlled two-qubit benchmark. That makes exact scoring possible, but it also limits ecological scope. The size variable is a proxy rather than a verified parameter count, and the study uses a narrow family of model releases. In addition, the current manuscript reports a single benchmark configuration and does not yet include ablations over prompt phrasing, temperature, or alternative quantum task distributions.
+
+\section{Conclusion}
+The present experiment shows that current language models frequently fail elementary quantum tasks in ways that are physically meaningful, not merely stylistic. Larger models reduce these failures, but the remaining error is still substantial, especially for circuit evolution and measurement prediction. The current evidence therefore supports a measurement-oriented conclusion: language models can often produce plausible quantum answers, yet exact physical reliability remains limited.
+
+\end{document}

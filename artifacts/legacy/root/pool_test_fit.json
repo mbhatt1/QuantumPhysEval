@@ -1,0 +1,11 @@
+{
+  "k": 0.10000000000000006,
+  "alpha": 0.0,
+  "beta": 0.0,
+  "equation": "d_phys = k * S^(-alpha) * D^(beta)",
+  "fit_method": "log_linear_least_squares",
+  "bootstrap": null,
+  "is_partial": true,
+  "num_rows": 4,
+  "num_usable_rows": 4
+}

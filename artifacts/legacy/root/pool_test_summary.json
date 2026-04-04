@@ -1,0 +1,43 @@
+{
+  "num_rows": 4,
+  "num_usable_rows": 4,
+  "num_api_errors": 0,
+  "rows": [
+    {
+      "model": "m1",
+      "depth": 1,
+      "category": "circuit_evolution",
+      "count": 1,
+      "mean_d_phys": 0.1,
+      "median_d_phys": 0.1,
+      "stderr_d_phys": 0.0
+    },
+    {
+      "model": "m1",
+      "depth": 1,
+      "category": "entanglement_classification",
+      "count": 1,
+      "mean_d_phys": 0.1,
+      "median_d_phys": 0.1,
+      "stderr_d_phys": 0.0
+    },
+    {
+      "model": "m1",
+      "depth": 1,
+      "category": "measurement_prediction",
+      "count": 1,
+      "mean_d_phys": 0.1,
+      "median_d_phys": 0.1,
+      "stderr_d_phys": 0.0
+    },
+    {
+      "model": "m1",
+      "depth": 1,
+      "category": "operator_composition",
+      "count": 1,
+      "mean_d_phys": 0.1,
+      "median_d_phys": 0.1,
+      "stderr_d_phys": 0.0
+    }
+  ]
+}

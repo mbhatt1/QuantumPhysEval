@@ -1,0 +1,128 @@
+% Auto-generated paper appendix fragment.
+\subsection*{Appendix Snapshot}
+This appendix summarizes the pooled GPT-4/GPT-5 benchmark over 5376 scored responses. The full machine-generated statistics remain available separately in \texttt{combined\_quantum\_results\_live.tex}.
+The pooled fit yields $\alpha=2.257$ with 95\% interval $[1.933, 2.587]$ and $\beta=-0.137$ with interval $[-0.523, 0.258]$.
+
+\subsubsection*{Top-Line Summary}
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+Metric & Value \\
+\midrule
+Usable evaluations & 5376 \\
+Mean $d_{phys}$ & 0.440 \\
+Median $d_{phys}$ & 0.354 \\
+Exact-correct rate & 0.317 \\
+$d_{phys} \ge 0.5$ rate & 0.435 \\
+Full-error rate & 0.293 \\
+Best model & GPT-5.4 \\
+Weakest model & GPT-4o mini \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsubsection*{Model Ranking}
+\begin{center}
+\begin{tabular}{lrrrr}
+\toprule
+Model & Mean & 95\% CI & Exact & Full \\
+\midrule
+GPT-5.4 & 0.329 & [0.301, 0.357] & 0.430 & 0.195 \\
+GPT-5.2 & 0.368 & [0.338, 0.397] & 0.380 & 0.249 \\
+GPT-5.4 mini & 0.394 & [0.364, 0.424] & 0.372 & 0.267 \\
+GPT-4.1 & 0.442 & [0.412, 0.471] & 0.311 & 0.293 \\
+GPT-4.1 mini & 0.478 & [0.449, 0.507] & 0.285 & 0.311 \\
+GPT-5.1 & 0.501 & [0.472, 0.531] & 0.260 & 0.355 \\
+GPT-4o mini & 0.570 & [0.543, 0.598] & 0.177 & 0.378 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsubsection*{Depth and Category Breakdown}
+\noindent\begin{minipage}[t]{0.42\linewidth}
+\centering
+\textbf{By depth}\\[0.25em]
+\begin{tabular}{rrrr}
+\toprule
+Depth & Mean & Exact & Full \\
+\midrule
+1 & 0.445 & 0.312 & 0.301 \\
+2 & 0.444 & 0.315 & 0.291 \\
+4 & 0.432 & 0.323 & 0.285 \\
+\bottomrule
+\end{tabular}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.54\linewidth}
+\centering
+\textbf{By category}\\[0.25em]
+\begin{tabular}{lrrr}
+\toprule
+Category & Mean & Exact & Full \\
+\midrule
+Circuit & 0.698 & 0.165 & 0.502 \\
+Measurement & 0.597 & 0.225 & 0.475 \\
+Operator & 0.278 & 0.063 & 0.006 \\
+Entanglement & 0.187 & 0.813 & 0.187 \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+
+\subsubsection*{Model-by-Category Means}
+\begin{center}
+\begin{tabular}{lrrrr}
+\toprule
+Model & Circuit & Measurement & Operator & Entanglement \\
+\midrule
+GPT-5.4 & 0.592 & 0.509 & 0.215 & 0.000 \\
+GPT-5.2 & 0.659 & 0.587 & 0.224 & 0.000 \\
+GPT-5.4 mini & 0.721 & 0.586 & 0.270 & 0.000 \\
+GPT-4.1 & 0.697 & 0.552 & 0.283 & 0.234 \\
+GPT-4.1 mini & 0.728 & 0.635 & 0.308 & 0.240 \\
+GPT-5.1 & 0.707 & 0.602 & 0.302 & 0.396 \\
+GPT-4o mini & 0.786 & 0.711 & 0.347 & 0.438 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsubsection*{Time-Budget Feedback Ablation}
+We also ran a separate repair ablation on a strong-model subset (\texttt{gpt-4.1}, \texttt{gpt-5.2}, \texttt{gpt-5.4 mini}, \texttt{gpt-5.4}) using depth 4 only, temperature 0.2, four prompts per family, and a five-minute per-prompt budget. Three repair modes were compared: one-shot, self-retry without explicit error signals, and verifier-guided retry.
+
+\begin{center}
+\begin{tabular}{lrrr}
+\toprule
+Mode & Solve rate & Mean solve time & Median solve time \\
+\midrule
+One-shot & 0.422 & 0.835 s & 0.732 s \\
+Self-retry & 0.609 & 2.650 s & 1.288 s \\
+Verifier feedback & 0.688 & 2.350 s & 1.025 s \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent In the verifier-feedback run, pass@30s, pass@60s, pass@120s, and pass@300s were all equal to 0.688, indicating that recoverable gains saturated very early.
+
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+Category & One-shot & Self-retry & Verifier feedback \\
+\midrule
+Circuit & 0.250 & 0.375 & 0.500 \\
+Measurement & 0.250 & 0.500 & 0.562 \\
+Operator & 0.250 & 0.625 & 0.688 \\
+Entanglement & 0.938 & 0.938 & 1.000 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+Model & One-shot & Self-retry & Verifier feedback \\
+\midrule
+GPT-4.1 & 0.312 & 0.438 & 0.562 \\
+GPT-5.2 & 0.500 & 0.688 & 0.750 \\
+GPT-5.4 mini & 0.438 & 0.500 & 0.562 \\
+GPT-5.4 & 0.438 & 0.812 & 0.875 \\
+\bottomrule
+\end{tabular}
+\end{center}

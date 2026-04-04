@@ -1,0 +1,1856 @@
+[
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514",
+    "size": 12000000000.0,
+    "depth": 4,
+    "category": "circuit_evolution",
+    "prompt": "Start from |00>. Apply the 2-qubit gate sequence Z(0), Z(1), Z(1), S(1) in that order. Return the final state vector as a Python list of 4 complex numbers using decimal literals only and no explanation.",
+    "metadata": {
+      "bits": [
+        0,
+        0
+      ],
+      "ops": [
+        "Z(0)",
+        "Z(1)",
+        "Z(1)",
+        "S(1)"
+      ]
+    },
+    "target": {
+      "kind": "state_vector",
+      "value": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "no_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 0.9739032500000002,
+        "latency_s": 0.9724921670000004,
+        "d_phys": 0.0,
+        "solved": true,
+        "output": "[1.0, 0.0, 0.0, 0.0]"
+      }
+    ],
+    "initial_d_phys": 0.0,
+    "best_d_phys": 0.0,
+    "final_d_phys": 0.0,
+    "solved": true,
+    "solve_time_s": 0.9739032500000002,
+    "total_elapsed_s": 0.9739300420000001,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514",
+    "size": 12000000000.0,
+    "depth": 4,
+    "category": "measurement_prediction",
+    "prompt": "Start from |10>. Apply the 2-qubit gate sequence Y(0), CZ, Z(1), S(1) in that order. Return the measurement probabilities [p00, p01, p10, p11] as a Python list of 4 decimal numbers only.",
+    "metadata": {
+      "bits": [
+        1,
+        0
+      ],
+      "ops": [
+        "Y(0)",
+        "CZ",
+        "Z(1)",
+        "S(1)"
+      ]
+    },
+    "target": {
+      "kind": "probabilities",
+      "value": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "no_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 1.0857184169999998,
+        "latency_s": 1.0849499169999994,
+        "d_phys": 1.0,
+        "solved": false,
+        "output": "[0.0, 0.0, 0.0, 1.0]"
+      }
+    ],
+    "initial_d_phys": 1.0,
+    "best_d_phys": 1.0,
+    "final_d_phys": 1.0,
+    "solved": false,
+    "solve_time_s": null,
+    "total_elapsed_s": 1.0857247919999997,
+    "pass_by_time": {
+      "30s": false,
+      "60s": false,
+      "120s": false,
+      "300s": false
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514",
+    "size": 12000000000.0,
+    "depth": 4,
+    "category": "entanglement_classification",
+    "prompt": "Consider the 2-qubit state [0.00000000, 0.70710678, 0.00000000, 0.70710678]. Is it entangled? Return only True or False.",
+    "metadata": {
+      "template": "product_plus1"
+    },
+    "target": {
+      "kind": "boolean",
+      "value": false
+    },
+    "experiment": "time_budget",
+    "repair_mode": "no_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 1.1545370830000001,
+        "latency_s": 1.1545055419999994,
+        "d_phys": 0.0,
+        "solved": true,
+        "output": "False"
+      }
+    ],
+    "initial_d_phys": 0.0,
+    "best_d_phys": 0.0,
+    "final_d_phys": 0.0,
+    "solved": true,
+    "solve_time_s": 1.1545370830000001,
+    "total_elapsed_s": 1.1545626249999996,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514",
+    "size": 12000000000.0,
+    "depth": 4,
+    "category": "measurement_prediction",
+    "prompt": "Start from |11>. Apply the 2-qubit gate sequence H(1), X(0), Y(0), Z(1) in that order. Return the measurement probabilities [p00, p01, p10, p11] as a Python list of 4 decimal numbers only.",
+    "metadata": {
+      "bits": [
+        1,
+        1
+      ],
+      "ops": [
+        "H(1)",
+        "X(0)",
+        "Y(0)",
+        "Z(1)"
+      ]
+    },
+    "target": {
+      "kind": "probabilities",
+      "value": [
+        0.0,
+        0.0,
+        0.4999999999999999,
+        0.4999999999999999
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "no_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 1.1484145829999997,
+        "latency_s": 1.148259167,
+        "d_phys": 1.1102230246251565e-16,
+        "solved": true,
+        "output": "[0.0, 0.0, 0.5, 0.5]"
+      }
+    ],
+    "initial_d_phys": 1.1102230246251565e-16,
+    "best_d_phys": 1.1102230246251565e-16,
+    "final_d_phys": 1.1102230246251565e-16,
+    "solved": true,
+    "solve_time_s": 1.1484145829999997,
+    "total_elapsed_s": 1.148421542,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514",
+    "size": 12000000000.0,
+    "depth": 4,
+    "category": "circuit_evolution",
+    "prompt": "Start from |11>. Apply the 2-qubit gate sequence Y(0), H(1), Z(0), Y(1) in that order. Return the final state vector as a Python list of 4 complex numbers using decimal literals only and no explanation.",
+    "metadata": {
+      "bits": [
+        1,
+        1
+      ],
+      "ops": [
+        "Y(0)",
+        "H(1)",
+        "Z(0)",
+        "Y(1)"
+      ]
+    },
+    "target": {
+      "kind": "state_vector",
+      "value": [
+        [
+          0.7071067811865475,
+          0.0
+        ],
+        [
+          0.7071067811865475,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "no_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 1.339181125,
+        "latency_s": 1.338793875,
+        "d_phys": 1.0,
+        "solved": false,
+        "output": "[0.0, 0.0, 0.7071067811865476, 0.7071067811865476j]"
+      }
+    ],
+    "initial_d_phys": 1.0,
+    "best_d_phys": 1.0,
+    "final_d_phys": 1.0,
+    "solved": false,
+    "solve_time_s": null,
+    "total_elapsed_s": 1.3391882919999998,
+    "pass_by_time": {
+      "30s": false,
+      "60s": false,
+      "120s": false,
+      "300s": false
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514",
+    "size": 12000000000.0,
+    "depth": 4,
+    "category": "operator_composition",
+    "prompt": "Compute the 2x2 unitary matrix for the single-qubit gate sequence Y, S applied in that order. Return only a Python 2x2 list of complex numbers using decimal literals.",
+    "metadata": {
+      "ops": [
+        "Y",
+        "S"
+      ]
+    },
+    "target": {
+      "kind": "operator",
+      "value": [
+        [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            -1.0
+          ]
+        ],
+        [
+          [
+            -1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ]
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "no_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 1.8473248339999997,
+        "latency_s": 1.8464020420000002,
+        "d_phys": 0.9330127018922192,
+        "solved": false,
+        "output": "```python\n[[0.7071067811865476+0.7071067811865475j, -0.7071067811865476-0.7071067811865475j], [0.7071067811865476-0.7071067811865475j, -0.7071067811865476+0.7071067811865475j]]\n```"
+      }
+    ],
+    "initial_d_phys": 0.9330127018922192,
+    "best_d_phys": 0.9330127018922192,
+    "final_d_phys": 0.9330127018922192,
+    "solved": false,
+    "solve_time_s": null,
+    "total_elapsed_s": 1.8473312500000003,
+    "pass_by_time": {
+      "30s": false,
+      "60s": false,
+      "120s": false,
+      "300s": false
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514",
+    "size": 12000000000.0,
+    "depth": 4,
+    "category": "entanglement_classification",
+    "prompt": "Consider the 2-qubit state [0.70710678, 0.00000000, 0.00000000, -0.70710678]. Is it entangled? Return only True or False.",
+    "metadata": {
+      "template": "bell_phi_minus"
+    },
+    "target": {
+      "kind": "boolean",
+      "value": true
+    },
+    "experiment": "time_budget",
+    "repair_mode": "no_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 0.9009522499999996,
+        "latency_s": 0.9009030830000002,
+        "d_phys": 1.0,
+        "solved": false,
+        "output": "False"
+      }
+    ],
+    "initial_d_phys": 1.0,
+    "best_d_phys": 1.0,
+    "final_d_phys": 1.0,
+    "solved": false,
+    "solve_time_s": null,
+    "total_elapsed_s": 0.9009574169999999,
+    "pass_by_time": {
+      "30s": false,
+      "60s": false,
+      "120s": false,
+      "300s": false
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514",
+    "size": 12000000000.0,
+    "depth": 4,
+    "category": "measurement_prediction",
+    "prompt": "Start from |10>. Apply the 2-qubit gate sequence X(1), H(0), H(1), CZ in that order. Return the measurement probabilities [p00, p01, p10, p11] as a Python list of 4 decimal numbers only.",
+    "metadata": {
+      "bits": [
+        1,
+        0
+      ],
+      "ops": [
+        "X(1)",
+        "H(0)",
+        "H(1)",
+        "CZ"
+      ]
+    },
+    "target": {
+      "kind": "probabilities",
+      "value": [
+        0.2499999999999999,
+        0.2499999999999999,
+        0.2499999999999999,
+        0.2499999999999999
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "no_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 1.073661917,
+        "latency_s": 1.0732884170000005,
+        "d_phys": 0.5,
+        "solved": false,
+        "output": "[0.5, 0.0, 0.0, 0.5]"
+      }
+    ],
+    "initial_d_phys": 0.5,
+    "best_d_phys": 0.5,
+    "final_d_phys": 0.5,
+    "solved": false,
+    "solve_time_s": null,
+    "total_elapsed_s": 1.0736666669999995,
+    "pass_by_time": {
+      "30s": false,
+      "60s": false,
+      "120s": false,
+      "300s": false
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514",
+    "size": 12000000000.0,
+    "depth": 4,
+    "category": "entanglement_classification",
+    "prompt": "Consider the 2-qubit state [0.00000000, 0.70710678, 0.70710678, 0.00000000]. Is it entangled? Return only True or False.",
+    "metadata": {
+      "template": "bell_psi_plus"
+    },
+    "target": {
+      "kind": "boolean",
+      "value": true
+    },
+    "experiment": "time_budget",
+    "repair_mode": "no_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 0.9078823329999999,
+        "latency_s": 0.9078335830000004,
+        "d_phys": 1.0,
+        "solved": false,
+        "output": "False"
+      }
+    ],
+    "initial_d_phys": 1.0,
+    "best_d_phys": 1.0,
+    "final_d_phys": 1.0,
+    "solved": false,
+    "solve_time_s": null,
+    "total_elapsed_s": 0.9078888750000003,
+    "pass_by_time": {
+      "30s": false,
+      "60s": false,
+      "120s": false,
+      "300s": false
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514",
+    "size": 12000000000.0,
+    "depth": 4,
+    "category": "operator_composition",
+    "prompt": "Compute the 2x2 unitary matrix for the single-qubit gate sequence T, X, T applied in that order. Return only a Python 2x2 list of complex numbers using decimal literals.",
+    "metadata": {
+      "ops": [
+        "T",
+        "X",
+        "T"
+      ]
+    },
+    "target": {
+      "kind": "operator",
+      "value": [
+        [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.7071067811865476,
+            0.7071067811865475
+          ]
+        ],
+        [
+          [
+            0.7071067811865476,
+            0.7071067811865475
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ]
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "no_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 2.2338414999999996,
+        "latency_s": 2.2336029170000002,
+        "d_phys": 0.19134171618254484,
+        "solved": false,
+        "output": "```python\n[[0.5+0.5j, 0.5-0.5j], [0.5-0.5j, 0.5+0.5j]]\n```"
+      }
+    ],
+    "initial_d_phys": 0.19134171618254484,
+    "best_d_phys": 0.19134171618254484,
+    "final_d_phys": 0.19134171618254484,
+    "solved": false,
+    "solve_time_s": null,
+    "total_elapsed_s": 2.233843417,
+    "pass_by_time": {
+      "30s": false,
+      "60s": false,
+      "120s": false,
+      "300s": false
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514",
+    "size": 12000000000.0,
+    "depth": 4,
+    "category": "circuit_evolution",
+    "prompt": "Start from |00>. Apply the 2-qubit gate sequence Y(1), CZ in that order. Return the final state vector as a Python list of 4 complex numbers using decimal literals only and no explanation.",
+    "metadata": {
+      "bits": [
+        0,
+        0
+      ],
+      "ops": [
+        "Y(1)",
+        "CZ"
+      ]
+    },
+    "target": {
+      "kind": "state_vector",
+      "value": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "no_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 1.2239244999999999,
+        "latency_s": 1.2235263340000007,
+        "d_phys": 1.0,
+        "solved": false,
+        "output": "[0, 0, 0, -1j]"
+      }
+    ],
+    "initial_d_phys": 1.0,
+    "best_d_phys": 1.0,
+    "final_d_phys": 1.0,
+    "solved": false,
+    "solve_time_s": null,
+    "total_elapsed_s": 1.2239309579999995,
+    "pass_by_time": {
+      "30s": false,
+      "60s": false,
+      "120s": false,
+      "300s": false
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514",
+    "size": 12000000000.0,
+    "depth": 4,
+    "category": "measurement_prediction",
+    "prompt": "Start from |01>. Apply the 2-qubit gate sequence CNOT(1,0), CNOT(1,0), CZ, H(1) in that order. Return the measurement probabilities [p00, p01, p10, p11] as a Python list of 4 decimal numbers only.",
+    "metadata": {
+      "bits": [
+        0,
+        1
+      ],
+      "ops": [
+        "CNOT(1,0)",
+        "CNOT(1,0)",
+        "CZ",
+        "H(1)"
+      ]
+    },
+    "target": {
+      "kind": "probabilities",
+      "value": [
+        0.4999999999999999,
+        0.4999999999999999,
+        0.0,
+        0.0
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "no_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 1.215641292,
+        "latency_s": 1.2154339160000003,
+        "d_phys": 0.5,
+        "solved": false,
+        "output": "[0.0, 0.5, 0.0, 0.5]"
+      }
+    ],
+    "initial_d_phys": 0.5,
+    "best_d_phys": 0.5,
+    "final_d_phys": 0.5,
+    "solved": false,
+    "solve_time_s": null,
+    "total_elapsed_s": 1.2156445839999996,
+    "pass_by_time": {
+      "30s": false,
+      "60s": false,
+      "120s": false,
+      "300s": false
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514",
+    "size": 12000000000.0,
+    "depth": 4,
+    "category": "circuit_evolution",
+    "prompt": "Start from |10>. Apply the 2-qubit gate sequence H(1), S(1), CZ in that order. Return the final state vector as a Python list of 4 complex numbers using decimal literals only and no explanation.",
+    "metadata": {
+      "bits": [
+        1,
+        0
+      ],
+      "ops": [
+        "H(1)",
+        "S(1)",
+        "CZ"
+      ]
+    },
+    "target": {
+      "kind": "state_vector",
+      "value": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.7071067811865475,
+          0.0
+        ],
+        [
+          0.0,
+          -0.7071067811865475
+        ]
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "no_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 2.4380343330000005,
+        "latency_s": 2.4367465000000004,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.5, 0.5, 0.5j, -0.5j]"
+      }
+    ],
+    "initial_d_phys": 0.75,
+    "best_d_phys": 0.75,
+    "final_d_phys": 0.75,
+    "solved": false,
+    "solve_time_s": null,
+    "total_elapsed_s": 2.438043,
+    "pass_by_time": {
+      "30s": false,
+      "60s": false,
+      "120s": false,
+      "300s": false
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514",
+    "size": 12000000000.0,
+    "depth": 4,
+    "category": "entanglement_classification",
+    "prompt": "Consider the 2-qubit state [0.70710678, 0.00000000, 0.00000000, -0.70710678]. Is it entangled? Return only True or False.",
+    "metadata": {
+      "template": "bell_phi_minus"
+    },
+    "target": {
+      "kind": "boolean",
+      "value": true
+    },
+    "experiment": "time_budget",
+    "repair_mode": "no_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 0.8338535,
+        "latency_s": 0.8338124999999996,
+        "d_phys": 1.0,
+        "solved": false,
+        "output": "False"
+      }
+    ],
+    "initial_d_phys": 1.0,
+    "best_d_phys": 1.0,
+    "final_d_phys": 1.0,
+    "solved": false,
+    "solve_time_s": null,
+    "total_elapsed_s": 0.833860166,
+    "pass_by_time": {
+      "30s": false,
+      "60s": false,
+      "120s": false,
+      "300s": false
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514",
+    "size": 12000000000.0,
+    "depth": 4,
+    "category": "operator_composition",
+    "prompt": "Compute the 2x2 unitary matrix for the single-qubit gate sequence S, Y applied in that order. Return only a Python 2x2 list of complex numbers using decimal literals.",
+    "metadata": {
+      "ops": [
+        "S",
+        "Y"
+      ]
+    },
+    "target": {
+      "kind": "operator",
+      "value": [
+        [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0
+          ]
+        ],
+        [
+          [
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ]
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "no_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 1.568910625,
+        "latency_s": 1.5685974580000002,
+        "d_phys": 0.1913417161825449,
+        "solved": false,
+        "output": "```python\n[[0.0+0.0j, 0.0-1.0j], [0.0+1.0j, 0.0+0.0j]]\n```"
+      }
+    ],
+    "initial_d_phys": 0.1913417161825449,
+    "best_d_phys": 0.1913417161825449,
+    "final_d_phys": 0.1913417161825449,
+    "solved": false,
+    "solve_time_s": null,
+    "total_elapsed_s": 1.568913792,
+    "pass_by_time": {
+      "30s": false,
+      "60s": false,
+      "120s": false,
+      "300s": false
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514",
+    "size": 12000000000.0,
+    "depth": 4,
+    "category": "operator_composition",
+    "prompt": "Compute the 2x2 unitary matrix for the single-qubit gate sequence T, S, T applied in that order. Return only a Python 2x2 list of complex numbers using decimal literals.",
+    "metadata": {
+      "ops": [
+        "T",
+        "S",
+        "T"
+      ]
+    },
+    "target": {
+      "kind": "operator",
+      "value": [
+        [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            -1.0,
+            2.220446049250313e-16
+          ]
+        ]
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "no_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 1.4366990840000007,
+        "latency_s": 1.4364533750000001,
+        "d_phys": 0.35355339059327373,
+        "solved": false,
+        "output": "```python\n[[0.5+0.5j, 0.5-0.5j], [0.5-0.5j, 0.5+0.5j]]\n```"
+      }
+    ],
+    "initial_d_phys": 0.35355339059327373,
+    "best_d_phys": 0.35355339059327373,
+    "final_d_phys": 0.35355339059327373,
+    "solved": false,
+    "solve_time_s": null,
+    "total_elapsed_s": 1.436701084,
+    "pass_by_time": {
+      "30s": false,
+      "60s": false,
+      "120s": false,
+      "300s": false
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-opus-4-1-20250805",
+    "size": 16000000000.0,
+    "depth": 4,
+    "category": "operator_composition",
+    "prompt": "Compute the 2x2 unitary matrix for the single-qubit gate sequence Y, S applied in that order. Return only a Python 2x2 list of complex numbers using decimal literals.",
+    "metadata": {
+      "ops": [
+        "Y",
+        "S"
+      ]
+    },
+    "target": {
+      "kind": "operator",
+      "value": [
+        [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            -1.0
+          ]
+        ],
+        [
+          [
+            -1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ]
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "no_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 5.473173917,
+        "latency_s": 5.4728235,
+        "d_phys": 0.0,
+        "solved": true,
+        "output": "I'll compute the unitary matrix for the gate sequence Y followed by S.\n\nStep 1: Write the Y gate matrix:\nY = [[0, -i], [i, 0]]\n\nStep 2: Write the S gate matrix:\nS = [[1, 0], [0, i]]\n\nStep 3: Compute the product S\u00b7Y (since S is applied after Y):\nS\u00b7Y = [[1, 0], [0, i]] \u00b7 [[0, -i], [i, 0]]\n    = [[0, -i], [-1, 0]]\n\nStep 4: Convert to decimal form:\n-i = -1j in Python notation\n-1 = -1.0\n\n[[0, -1j], [-1.0, 0]]"
+      }
+    ],
+    "initial_d_phys": 0.0,
+    "best_d_phys": 0.0,
+    "final_d_phys": 0.0,
+    "solved": true,
+    "solve_time_s": 5.473173917,
+    "total_elapsed_s": 5.473188958,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-opus-4-1-20250805",
+    "size": 16000000000.0,
+    "depth": 4,
+    "category": "circuit_evolution",
+    "prompt": "Start from |00>. Apply the 2-qubit gate sequence Z(0), Z(1), Z(1), S(1) in that order. Return the final state vector as a Python list of 4 complex numbers using decimal literals only and no explanation.",
+    "metadata": {
+      "bits": [
+        0,
+        0
+      ],
+      "ops": [
+        "Z(0)",
+        "Z(1)",
+        "Z(1)",
+        "S(1)"
+      ]
+    },
+    "target": {
+      "kind": "state_vector",
+      "value": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "no_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 5.928504459,
+        "latency_s": 5.928315458,
+        "d_phys": 0.0,
+        "solved": true,
+        "output": "I'll work through this step by step.\n\nStarting state: |00\u27e9 = [1, 0, 0, 0]\n\nStep 1: Apply Z(0)\nZ on qubit 0 in |00\u27e9 leaves it unchanged since Z|0\u27e9 = |0\u27e9\nState remains: [1, 0, 0, 0]\n\nStep 2: Apply Z(1) \nZ on qubit 1 in |00\u27e9 leaves it unchanged since Z|0\u27e9 = |0\u27e9\nState remains: [1, 0, 0, 0]\n\nStep 3: Apply Z(1) again\nZ on qubit 1 in |00\u27e9 leaves it unchanged since Z|0\u27e9 = |0\u27e9\nState remains: [1, 0, 0, 0]\n\nStep 4: Apply S(1)\nS on qubit 1 in |00\u27e9 leaves it unchanged since S|0\u27e9 = |0\u27e9\nFinal state: [1, 0, 0, 0]\n\n[1.0, 0.0, 0.0, 0.0]"
+      }
+    ],
+    "initial_d_phys": 0.0,
+    "best_d_phys": 0.0,
+    "final_d_phys": 0.0,
+    "solved": true,
+    "solve_time_s": 5.928504459,
+    "total_elapsed_s": 5.928514708999999,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-opus-4-1-20250805",
+    "size": 16000000000.0,
+    "depth": 4,
+    "category": "entanglement_classification",
+    "prompt": "Consider the 2-qubit state [0.00000000, 0.70710678, 0.00000000, 0.70710678]. Is it entangled? Return only True or False.",
+    "metadata": {
+      "template": "product_plus1"
+    },
+    "target": {
+      "kind": "boolean",
+      "value": false
+    },
+    "experiment": "time_budget",
+    "repair_mode": "no_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 5.8331625,
+        "latency_s": 5.832983125,
+        "d_phys": 0.0,
+        "solved": true,
+        "output": "I need to determine if the given 2-qubit state is entangled.\n\nStep 1: The state vector is |\u03c8\u27e9 = [0, 1/\u221a2, 0, 1/\u221a2], which in computational basis means |\u03c8\u27e9 = (1/\u221a2)|01\u27e9 + (1/\u221a2)|11\u27e9.\n\nStep 2: Factor out common terms: |\u03c8\u27e9 = (1/\u221a2)(|01\u27e9 + |11\u27e9) = (1/\u221a2)|1\u27e9 \u2297 (|0\u27e9 + |1\u27e9).\n\nStep 3: This can be written as |\u03c8\u27e9 = |1\u27e9 \u2297 (1/\u221a2)(|0\u27e9 + |1\u27e9) = |1\u27e9 \u2297 |+\u27e9.\n\nStep 4: Since the state can be written as a tensor product of two single-qubit states, it is separable (not entangled).\n\nFalse"
+      }
+    ],
+    "initial_d_phys": 0.0,
+    "best_d_phys": 0.0,
+    "final_d_phys": 0.0,
+    "solved": true,
+    "solve_time_s": 5.8331625,
+    "total_elapsed_s": 5.833170334,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-opus-4-1-20250805",
+    "size": 16000000000.0,
+    "depth": 4,
+    "category": "measurement_prediction",
+    "prompt": "Start from |10>. Apply the 2-qubit gate sequence Y(0), CZ, Z(1), S(1) in that order. Return the measurement probabilities [p00, p01, p10, p11] as a Python list of 4 decimal numbers only.",
+    "metadata": {
+      "bits": [
+        1,
+        0
+      ],
+      "ops": [
+        "Y(0)",
+        "CZ",
+        "Z(1)",
+        "S(1)"
+      ]
+    },
+    "target": {
+      "kind": "probabilities",
+      "value": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "no_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 6.130088874999999,
+        "latency_s": 6.129906042000001,
+        "d_phys": 0.0,
+        "solved": true,
+        "output": "I'll work through this step by step.\n\nStarting with |10\u27e9 = |1\u27e9\u2297|0\u27e9\n\nStep 1: Apply Y(0) to qubit 0\nY|1\u27e9 = -i|0\u27e9, so state becomes -i|00\u27e9\n\nStep 2: Apply CZ gate\nCZ on |00\u27e9 leaves it unchanged, so state remains -i|00\u27e9\n\nStep 3: Apply Z(1) to qubit 1\nZ|0\u27e9 = |0\u27e9, so state remains -i|00\u27e9\n\nStep 4: Apply S(1) to qubit 1\nS|0\u27e9 = |0\u27e9, so final state is -i|00\u27e9\n\nThe measurement probabilities are |amplitude|\u00b2 for each basis state:\n- |00\u27e9: |-i|\u00b2 = 1\n- |01\u27e9: 0\n- |10\u27e9: 0\n- |11\u27e9: 0\n\n[1.0, 0.0, 0.0, 0.0]"
+      }
+    ],
+    "initial_d_phys": 0.0,
+    "best_d_phys": 0.0,
+    "final_d_phys": 0.0,
+    "solved": true,
+    "solve_time_s": 6.130088874999999,
+    "total_elapsed_s": 6.1300982500000005,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-opus-4-1-20250805",
+    "size": 16000000000.0,
+    "depth": 4,
+    "category": "circuit_evolution",
+    "prompt": "Start from |10>. Apply the 2-qubit gate sequence H(1), S(1), CZ in that order. Return the final state vector as a Python list of 4 complex numbers using decimal literals only and no explanation.",
+    "metadata": {
+      "bits": [
+        1,
+        0
+      ],
+      "ops": [
+        "H(1)",
+        "S(1)",
+        "CZ"
+      ]
+    },
+    "target": {
+      "kind": "state_vector",
+      "value": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.7071067811865475,
+          0.0
+        ],
+        [
+          0.0,
+          -0.7071067811865475
+        ]
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "no_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 6.432395875000001,
+        "latency_s": 6.431785750000001,
+        "d_phys": 0.0,
+        "solved": true,
+        "output": "I'll work through this step by step internally.\n\nStep 1: Start with |10\u27e9 = [0, 0, 1, 0]\n\nStep 2: Apply H(1) to qubit 1:\nH(1)|10\u27e9 = |1\u27e9 \u2297 (|0\u27e9 + |1\u27e9)/\u221a2 = (|10\u27e9 + |11\u27e9)/\u221a2\n\nStep 3: Apply S(1) to qubit 1:\nS(1) applies phase i to |1\u27e9 component of qubit 1\nResult: (|10\u27e9 + i|11\u27e9)/\u221a2\n\nStep 4: Apply CZ gate:\nCZ adds phase -1 when both qubits are |1\u27e9\nResult: (|10\u27e9 - i|11\u27e9)/\u221a2\n\n[0, 0, 0.7071067811865476, -0.7071067811865476j]"
+      }
+    ],
+    "initial_d_phys": 0.0,
+    "best_d_phys": 0.0,
+    "final_d_phys": 0.0,
+    "solved": true,
+    "solve_time_s": 6.432395875000001,
+    "total_elapsed_s": 6.432427166,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-opus-4-1-20250805",
+    "size": 16000000000.0,
+    "depth": 4,
+    "category": "measurement_prediction",
+    "prompt": "Start from |11>. Apply the 2-qubit gate sequence H(1), X(0), Y(0), Z(1) in that order. Return the measurement probabilities [p00, p01, p10, p11] as a Python list of 4 decimal numbers only.",
+    "metadata": {
+      "bits": [
+        1,
+        1
+      ],
+      "ops": [
+        "H(1)",
+        "X(0)",
+        "Y(0)",
+        "Z(1)"
+      ]
+    },
+    "target": {
+      "kind": "probabilities",
+      "value": [
+        0.0,
+        0.0,
+        0.4999999999999999,
+        0.4999999999999999
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "no_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 6.383155417,
+        "latency_s": 6.382380417,
+        "d_phys": 1.1102230246251565e-16,
+        "solved": true,
+        "output": "I'll work through this step by step.\n\nStarting state: |11\u27e9\n\nStep 1: Apply H(1) (Hadamard on qubit 1)\n|11\u27e9 \u2192 |1\u27e9 \u2297 (|0\u27e9 - |1\u27e9)/\u221a2 = (|10\u27e9 - |11\u27e9)/\u221a2\n\nStep 2: Apply X(0) (Pauli-X on qubit 0)\n(|10\u27e9 - |11\u27e9)/\u221a2 \u2192 (|00\u27e9 - |01\u27e9)/\u221a2\n\nStep 3: Apply Y(0) (Pauli-Y on qubit 0)\n(|00\u27e9 - |01\u27e9)/\u221a2 \u2192 (i|10\u27e9 - i|11\u27e9)/\u221a2 = i(|10\u27e9 - |11\u27e9)/\u221a2\n\nStep 4: Apply Z(1) (Pauli-Z on qubit 1)\ni(|10\u27e9 - |11\u27e9)/\u221a2 \u2192 i(|10\u27e9 + |11\u27e9)/\u221a2\n\n[0.0, 0.0, 0.5, 0.5]"
+      }
+    ],
+    "initial_d_phys": 1.1102230246251565e-16,
+    "best_d_phys": 1.1102230246251565e-16,
+    "final_d_phys": 1.1102230246251565e-16,
+    "solved": true,
+    "solve_time_s": 6.383155417,
+    "total_elapsed_s": 6.383178417000001,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-opus-4-1-20250805",
+    "size": 16000000000.0,
+    "depth": 4,
+    "category": "operator_composition",
+    "prompt": "Compute the 2x2 unitary matrix for the single-qubit gate sequence T, X, T applied in that order. Return only a Python 2x2 list of complex numbers using decimal literals.",
+    "metadata": {
+      "ops": [
+        "T",
+        "X",
+        "T"
+      ]
+    },
+    "target": {
+      "kind": "operator",
+      "value": [
+        [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.7071067811865476,
+            0.7071067811865475
+          ]
+        ],
+        [
+          [
+            0.7071067811865476,
+            0.7071067811865475
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ]
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "no_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 6.645458541999999,
+        "latency_s": 6.6449905,
+        "d_phys": 8.326672684688674e-17,
+        "solved": true,
+        "output": "I need to compute the product of three matrices: T\u00b7X\u00b7T (applied right to left on a state).\n\nStep 1: Define the matrices\n- T = [[1, 0], [0, exp(i\u03c0/4)]] = [[1, 0], [0, (1+i)/\u221a2]]\n- X = [[0, 1], [1, 0]]\n\nStep 2: Compute X\u00b7T first\nX\u00b7T = [[0, 1], [1, 0]] \u00b7 [[1, 0], [0, (1+i)/\u221a2]]\n    = [[0, (1+i)/\u221a2], [1, 0]]\n\nStep 3: Compute T\u00b7(X\u00b7T)\nT\u00b7(X\u00b7T) = [[1, 0], [0, (1+i)/\u221a2]] \u00b7 [[0, (1+i)/\u221a2], [1, 0]]\n        = [[0, (1+i)/\u221a2], [(1+i)/\u221a2, 0]]\n\nStep 4: Convert to decimal form\n(1+i)/\u221a2 = 0.7071067811865476 + 0.7071067811865476j\n\n[[0, 0.7071067811865476+0.7071067811865476j], [0.7071067811865476+0.7071067811865476j, 0]]"
+      }
+    ],
+    "initial_d_phys": 8.326672684688674e-17,
+    "best_d_phys": 8.326672684688674e-17,
+    "final_d_phys": 8.326672684688674e-17,
+    "solved": true,
+    "solve_time_s": 6.645458541999999,
+    "total_elapsed_s": 6.6454795419999995,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-opus-4-1-20250805",
+    "size": 16000000000.0,
+    "depth": 4,
+    "category": "circuit_evolution",
+    "prompt": "Start from |11>. Apply the 2-qubit gate sequence Y(0), H(1), Z(0), Y(1) in that order. Return the final state vector as a Python list of 4 complex numbers using decimal literals only and no explanation.",
+    "metadata": {
+      "bits": [
+        1,
+        1
+      ],
+      "ops": [
+        "Y(0)",
+        "H(1)",
+        "Z(0)",
+        "Y(1)"
+      ]
+    },
+    "target": {
+      "kind": "state_vector",
+      "value": [
+        [
+          0.7071067811865475,
+          0.0
+        ],
+        [
+          0.7071067811865475,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "no_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 9.757220958000001,
+        "latency_s": 9.756726875000002,
+        "d_phys": 0.0,
+        "solved": true,
+        "output": "I'll work through this step by step.\n\nStarting state: |11\u27e9 = [0, 0, 0, 1]\n\nStep 1: Apply Y(0) to qubit 0\nY gate on qubit 0 transforms |11\u27e9 \u2192 -i|01\u27e9\nState: [0, 0, -1j, 0]\n\nStep 2: Apply H(1) to qubit 1  \nH gate on qubit 1 transforms -i|01\u27e9 \u2192 -i/\u221a2(|00\u27e9 - |01\u27e9)\nState: [-0.7071067811865476j, 0.7071067811865476j, 0, 0]\n\nStep 3: Apply Z(0) to qubit 0\nZ gate on qubit 0 gives phase -1 when qubit 0 is |1\u27e9\nState: [-0.7071067811865476j, 0.7071067811865476j, 0, 0]\n\nStep 4: Apply Y(1) to qubit 1\nY gate on qubit 1 transforms the state\nState: [0.7071067811865476, 0.7071067811865476, 0, 0]\n\n[0.7071067811865476, 0.7071067811865476, 0, 0]"
+      }
+    ],
+    "initial_d_phys": 0.0,
+    "best_d_phys": 0.0,
+    "final_d_phys": 0.0,
+    "solved": true,
+    "solve_time_s": 9.757220958000001,
+    "total_elapsed_s": 9.757246208000002,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-opus-4-1-20250805",
+    "size": 16000000000.0,
+    "depth": 4,
+    "category": "circuit_evolution",
+    "prompt": "Start from |00>. Apply the 2-qubit gate sequence Y(1), CZ in that order. Return the final state vector as a Python list of 4 complex numbers using decimal literals only and no explanation.",
+    "metadata": {
+      "bits": [
+        0,
+        0
+      ],
+      "ops": [
+        "Y(1)",
+        "CZ"
+      ]
+    },
+    "target": {
+      "kind": "state_vector",
+      "value": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "no_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 6.174122417000001,
+        "latency_s": 6.173726792000002,
+        "d_phys": 0.0,
+        "solved": true,
+        "output": "I'll work through this step-by-step internally.\n\nStep 1: Start with |00\u27e9 = [1, 0, 0, 0]\n\nStep 2: Apply Y(1) gate (Y gate on qubit 1):\nY(1) transforms |00\u27e9 to |01\u27e9 with coefficient -i\nResult: [0, -1j, 0, 0]\n\nStep 3: Apply CZ gate:\nCZ applies a phase of -1 when both qubits are |1\u27e9\nSince we have |01\u27e9, CZ doesn't affect it\nResult: [0, -1j, 0, 0]\n\nStep 4: Convert to decimal form:\n-1j = 0 - 1j = complex(0, -1)\n\n[0, -1j, 0, 0]"
+      }
+    ],
+    "initial_d_phys": 0.0,
+    "best_d_phys": 0.0,
+    "final_d_phys": 0.0,
+    "solved": true,
+    "solve_time_s": 6.174122417000001,
+    "total_elapsed_s": 6.174145042000001,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-opus-4-1-20250805",
+    "size": 16000000000.0,
+    "depth": 4,
+    "category": "measurement_prediction",
+    "prompt": "Start from |10>. Apply the 2-qubit gate sequence X(1), H(0), H(1), CZ in that order. Return the measurement probabilities [p00, p01, p10, p11] as a Python list of 4 decimal numbers only.",
+    "metadata": {
+      "bits": [
+        1,
+        0
+      ],
+      "ops": [
+        "X(1)",
+        "H(0)",
+        "H(1)",
+        "CZ"
+      ]
+    },
+    "target": {
+      "kind": "probabilities",
+      "value": [
+        0.2499999999999999,
+        0.2499999999999999,
+        0.2499999999999999,
+        0.2499999999999999
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "no_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 7.667861332999999,
+        "latency_s": 7.667359500000002,
+        "d_phys": 2.220446049250313e-16,
+        "solved": true,
+        "output": "I'll work through this step by step.\n\nStarting with |10\u27e9 = |1\u27e9\u2297|0\u27e9\n\nStep 1: Apply X(1) (X gate on qubit 1)\n|10\u27e9 \u2192 |11\u27e9\n\nStep 2: Apply H(0) (Hadamard on qubit 0)\n|11\u27e9 \u2192 (1/\u221a2)(|0\u27e9 + |1\u27e9)\u2297|1\u27e9 = (1/\u221a2)(|01\u27e9 + |11\u27e9)\n\nStep 3: Apply H(1) (Hadamard on qubit 1)\n(1/\u221a2)(|01\u27e9 + |11\u27e9) \u2192 (1/\u221a2)(|0\u27e9\u2297(1/\u221a2)(|0\u27e9 + |1\u27e9) + |1\u27e9\u2297(1/\u221a2)(|0\u27e9 + |1\u27e9))\n= (1/2)(|00\u27e9 + |01\u27e9 + |10\u27e9 + |11\u27e9)\n\nStep 4: Apply CZ (Controlled-Z gate)\nCZ applies a phase of -1 only to |11\u27e9\n(1/2)(|00\u27e9 + |01\u27e9 + |10\u27e9 + |11\u27e9) \u2192 (1/2)(|00\u27e9 + |01\u27e9 + |10\u27e9 - |11\u27e9)\n\n[0.25, 0.25, 0.25, 0.25]"
+      }
+    ],
+    "initial_d_phys": 2.220446049250313e-16,
+    "best_d_phys": 2.220446049250313e-16,
+    "final_d_phys": 2.220446049250313e-16,
+    "solved": true,
+    "solve_time_s": 7.667861332999999,
+    "total_elapsed_s": 7.667889582999999,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-opus-4-1-20250805",
+    "size": 16000000000.0,
+    "depth": 4,
+    "category": "operator_composition",
+    "prompt": "Compute the 2x2 unitary matrix for the single-qubit gate sequence S, Y applied in that order. Return only a Python 2x2 list of complex numbers using decimal literals.",
+    "metadata": {
+      "ops": [
+        "S",
+        "Y"
+      ]
+    },
+    "target": {
+      "kind": "operator",
+      "value": [
+        [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0
+          ]
+        ],
+        [
+          [
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ]
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "no_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 6.201669541000001,
+        "latency_s": 6.201031791999998,
+        "d_phys": 0.0,
+        "solved": true,
+        "output": "I need to compute the matrix for the gate sequence S followed by Y.\n\nStep 1: Identify the individual gate matrices.\n- S gate: [[1, 0], [0, 1j]]\n- Y gate: [[0, -1j], [1j, 0]]\n\nStep 2: The combined operation is Y\u00b7S (Y applied after S means Y multiplies S from the left).\n\nStep 3: Perform matrix multiplication Y\u00b7S:\n- Element (0,0): 0\u00b71 + (-1j)\u00b70 = 0\n- Element (0,1): 0\u00b70 + (-1j)\u00b71j = -1j\u00b71j = 1\n- Element (1,0): 1j\u00b71 + 0\u00b70 = 1j\n- Element (1,1): 1j\u00b70 + 0\u00b71j = 0\n\nStep 4: Write the final matrix.\n\n[[0, 1], [1j, 0]]"
+      }
+    ],
+    "initial_d_phys": 0.0,
+    "best_d_phys": 0.0,
+    "final_d_phys": 0.0,
+    "solved": true,
+    "solve_time_s": 6.201669541000001,
+    "total_elapsed_s": 6.201701249999999,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-opus-4-1-20250805",
+    "size": 16000000000.0,
+    "depth": 4,
+    "category": "measurement_prediction",
+    "prompt": "Start from |01>. Apply the 2-qubit gate sequence CNOT(1,0), CNOT(1,0), CZ, H(1) in that order. Return the measurement probabilities [p00, p01, p10, p11] as a Python list of 4 decimal numbers only.",
+    "metadata": {
+      "bits": [
+        0,
+        1
+      ],
+      "ops": [
+        "CNOT(1,0)",
+        "CNOT(1,0)",
+        "CZ",
+        "H(1)"
+      ]
+    },
+    "target": {
+      "kind": "probabilities",
+      "value": [
+        0.4999999999999999,
+        0.4999999999999999,
+        0.0,
+        0.0
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "no_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 7.687620542000001,
+        "latency_s": 7.687226999999998,
+        "d_phys": 1.1102230246251565e-16,
+        "solved": true,
+        "output": "I'll trace through the quantum state evolution step by step.\n\nStarting state: |01\u27e9\n\nStep 1: Apply CNOT(1,0) - control on qubit 1, target on qubit 0\nSince qubit 1 is in |1\u27e9, this flips qubit 0: |01\u27e9 \u2192 |11\u27e9\n\nStep 2: Apply CNOT(1,0) again\nSince qubit 1 is in |1\u27e9, this flips qubit 0: |11\u27e9 \u2192 |01\u27e9\n\nStep 3: Apply CZ gate\nCZ adds a phase of -1 when both qubits are |1\u27e9. Since we have |01\u27e9, no phase is added: |01\u27e9 \u2192 |01\u27e9\n\nStep 4: Apply H(1) - Hadamard on qubit 1\nThis transforms qubit 1: |1\u27e9 \u2192 (|0\u27e9 - |1\u27e9)/\u221a2\nFinal state: |0\u27e9 \u2297 (|0\u27e9 - |1\u27e9)/\u221a2 = (|00\u27e9 - |01\u27e9)/\u221a2\n\n[0.5, 0.5, 0.0, 0.0]"
+      }
+    ],
+    "initial_d_phys": 1.1102230246251565e-16,
+    "best_d_phys": 1.1102230246251565e-16,
+    "final_d_phys": 1.1102230246251565e-16,
+    "solved": true,
+    "solve_time_s": 7.687620542000001,
+    "total_elapsed_s": 7.687641958,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-opus-4-1-20250805",
+    "size": 16000000000.0,
+    "depth": 4,
+    "category": "entanglement_classification",
+    "prompt": "Consider the 2-qubit state [0.70710678, 0.00000000, 0.00000000, -0.70710678]. Is it entangled? Return only True or False.",
+    "metadata": {
+      "template": "bell_phi_minus"
+    },
+    "target": {
+      "kind": "boolean",
+      "value": true
+    },
+    "experiment": "time_budget",
+    "repair_mode": "no_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 8.111797500000002,
+        "latency_s": 8.111675958,
+        "d_phys": 0.0,
+        "solved": true,
+        "output": "I need to determine if the given 2-qubit state is entangled.\n\nStep 1: The state vector is |\u03c8\u27e9 = 0.70710678|00\u27e9 + 0|01\u27e9 + 0|10\u27e9 - 0.70710678|11\u27e9, which can be written as (1/\u221a2)(|00\u27e9 - |11\u27e9).\n\nStep 2: To check for entanglement, I'll try to write this as a product state |\u03c8\u27e9 = |a\u27e9 \u2297 |b\u27e9 where |a\u27e9 = \u03b1|0\u27e9 + \u03b2|1\u27e9 and |b\u27e9 = \u03b3|0\u27e9 + \u03b4|1\u27e9.\n\nStep 3: If it were separable, we'd have: \u03b1\u03b3 = 1/\u221a2, \u03b1\u03b4 = 0, \u03b2\u03b3 = 0, and \u03b2\u03b4 = -1/\u221a2. From equations 2 and 3, either \u03b1=0 or \u03b4=0, and either \u03b2=0 or \u03b3=0.\n\nStep 4: These constraints are incompatible with equations 1 and 4 (which require both \u03b1\u03b3 \u2260 0 and \u03b2\u03b4 \u2260 0), so the state cannot be written as a product state.\n\nTrue"
+      }
+    ],
+    "initial_d_phys": 0.0,
+    "best_d_phys": 0.0,
+    "final_d_phys": 0.0,
+    "solved": true,
+    "solve_time_s": 8.111797500000002,
+    "total_elapsed_s": 8.111826875000002,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-opus-4-1-20250805",
+    "size": 16000000000.0,
+    "depth": 4,
+    "category": "entanglement_classification",
+    "prompt": "Consider the 2-qubit state [0.00000000, 0.70710678, 0.70710678, 0.00000000]. Is it entangled? Return only True or False.",
+    "metadata": {
+      "template": "bell_psi_plus"
+    },
+    "target": {
+      "kind": "boolean",
+      "value": true
+    },
+    "experiment": "time_budget",
+    "repair_mode": "no_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 8.582544083,
+        "latency_s": 8.582394958000002,
+        "d_phys": 0.0,
+        "solved": true,
+        "output": "I need to determine if the given 2-qubit state is entangled.\n\nStep 1: The state vector is |\u03c8\u27e9 = 0|00\u27e9 + (1/\u221a2)|01\u27e9 + (1/\u221a2)|10\u27e9 + 0|11\u27e9 = (1/\u221a2)(|01\u27e9 + |10\u27e9).\n\nStep 2: To check for entanglement, I'll try to write this as a product state |\u03c8\u27e9 = |a\u27e9 \u2297 |b\u27e9 where |a\u27e9 = \u03b1|0\u27e9 + \u03b2|1\u27e9 and |b\u27e9 = \u03b3|0\u27e9 + \u03b4|1\u27e9.\n\nStep 3: If it were separable, we'd have: \u03b1\u03b3|00\u27e9 + \u03b1\u03b4|01\u27e9 + \u03b2\u03b3|10\u27e9 + \u03b2\u03b4|11\u27e9. Comparing coefficients: \u03b1\u03b3 = 0, \u03b1\u03b4 = 1/\u221a2, \u03b2\u03b3 = 1/\u221a2, \u03b2\u03b4 = 0.\n\nStep 4: From \u03b1\u03b3 = 0 and \u03b2\u03b4 = 0, either \u03b1=0 or \u03b3=0, and either \u03b2=0 or \u03b4=0. But \u03b1\u03b4 = 1/\u221a2 \u2260 0 requires both \u03b1\u22600 and \u03b4\u22600, while \u03b2\u03b3 = 1/\u221a2 \u2260 0 requires both \u03b2\u22600 and \u03b3\u22600. This is a contradiction.\n\nTrue"
+      }
+    ],
+    "initial_d_phys": 0.0,
+    "best_d_phys": 0.0,
+    "final_d_phys": 0.0,
+    "solved": true,
+    "solve_time_s": 8.582544083,
+    "total_elapsed_s": 8.582570292000002,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-opus-4-1-20250805",
+    "size": 16000000000.0,
+    "depth": 4,
+    "category": "entanglement_classification",
+    "prompt": "Consider the 2-qubit state [0.70710678, 0.00000000, 0.00000000, -0.70710678]. Is it entangled? Return only True or False.",
+    "metadata": {
+      "template": "bell_phi_minus"
+    },
+    "target": {
+      "kind": "boolean",
+      "value": true
+    },
+    "experiment": "time_budget",
+    "repair_mode": "no_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 8.202006208,
+        "latency_s": 8.201861375,
+        "d_phys": 0.0,
+        "solved": true,
+        "output": "I need to determine if the given 2-qubit state is entangled.\n\nStep 1: The state vector is |\u03c8\u27e9 = 0.70710678|00\u27e9 + 0|01\u27e9 + 0|10\u27e9 - 0.70710678|11\u27e9, which can be written as (1/\u221a2)(|00\u27e9 - |11\u27e9).\n\nStep 2: To check for entanglement, I'll try to write this as a product state |\u03c8\u27e9 = |a\u27e9 \u2297 |b\u27e9 where |a\u27e9 = \u03b1|0\u27e9 + \u03b2|1\u27e9 and |b\u27e9 = \u03b3|0\u27e9 + \u03b4|1\u27e9.\n\nStep 3: If it were separable, we'd have: \u03b1\u03b3 = 1/\u221a2, \u03b1\u03b4 = 0, \u03b2\u03b3 = 0, and \u03b2\u03b4 = -1/\u221a2. From equations 2 and 3, either \u03b1=0 or \u03b4=0, and either \u03b2=0 or \u03b3=0.\n\nStep 4: If \u03b1=0, then from equation 1, \u03b1\u03b3 = 0 \u2260 1/\u221a2 (contradiction). If \u03b4=0, then from equation 4, \u03b2\u03b4 = 0 \u2260 -1/\u221a2 (contradiction). No valid solution exists for a product state.\n\nTrue"
+      }
+    ],
+    "initial_d_phys": 0.0,
+    "best_d_phys": 0.0,
+    "final_d_phys": 0.0,
+    "solved": true,
+    "solve_time_s": 8.202006208,
+    "total_elapsed_s": 8.202036417000002,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-opus-4-1-20250805",
+    "size": 16000000000.0,
+    "depth": 4,
+    "category": "operator_composition",
+    "prompt": "Compute the 2x2 unitary matrix for the single-qubit gate sequence T, S, T applied in that order. Return only a Python 2x2 list of complex numbers using decimal literals.",
+    "metadata": {
+      "ops": [
+        "T",
+        "S",
+        "T"
+      ]
+    },
+    "target": {
+      "kind": "operator",
+      "value": [
+        [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            -1.0,
+            2.220446049250313e-16
+          ]
+        ]
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "no_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 7.676508125,
+        "latency_s": 7.675981875,
+        "d_phys": 2.7755575615628914e-17,
+        "solved": true,
+        "output": "I need to compute the product of three gates: T\u00b7S\u00b7T (applied right to left).\n\nStep 1: Define the gate matrices.\nT = [[1, 0], [0, exp(i\u03c0/4)]] = [[1, 0], [0, (1+i)/\u221a2]]\nS = [[1, 0], [0, i]]\n\nStep 2: First compute S\u00b7T (rightmost multiplication).\nS\u00b7T = [[1, 0], [0, i]] \u00b7 [[1, 0], [0, (1+i)/\u221a2]]\n    = [[1, 0], [0, i\u00b7(1+i)/\u221a2]]\n    = [[1, 0], [0, (i-1)/\u221a2]]\n\nStep 3: Now compute T\u00b7(S\u00b7T).\nT\u00b7(S\u00b7T) = [[1, 0], [0, (1+i)/\u221a2]] \u00b7 [[1, 0], [0, (i-1)/\u221a2]]\n        = [[1, 0], [0, (1+i)/\u221a2 \u00b7 (i-1)/\u221a2]]\n        = [[1, 0], [0, (1+i)(i-1)/2]]\n\nStep 4: Simplify (1+i)(i-1).\n(1+i)(i-1) = i - 1 + i\u00b2 - i = i - 1 - 1 - i = -2\nSo the final matrix is [[1, 0], [0, -1]]\n\n[[1, 0], [0, -1]]"
+      }
+    ],
+    "initial_d_phys": 2.7755575615628914e-17,
+    "best_d_phys": 2.7755575615628914e-17,
+    "final_d_phys": 2.7755575615628914e-17,
+    "solved": true,
+    "solve_time_s": 7.676508125,
+    "total_elapsed_s": 7.676534208999998,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  }
+]

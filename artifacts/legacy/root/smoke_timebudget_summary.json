@@ -1,0 +1,62 @@
+{
+  "experiment": "time_budget",
+  "num_rows": 4,
+  "num_api_errors": 0,
+  "solve_rate": 0.5,
+  "mean_solve_time_s": 1.0698936455000003,
+  "median_solve_time_s": 1.0698936455000003,
+  "overall_pass_by_time": {
+    "5s": 0.5,
+    "15s": 0.5
+  },
+  "rows": [
+    {
+      "model": "gpt-4.1",
+      "category": "circuit_evolution",
+      "count": 1,
+      "solve_rate": 1.0,
+      "mean_attempts": 1.0,
+      "mean_best_d_phys": 0.0,
+      "mean_solve_time_s": 0.6026275830000003,
+      "median_solve_time_s": 0.6026275830000003,
+      "pass_5s": 1.0,
+      "pass_15s": 1.0
+    },
+    {
+      "model": "gpt-4.1",
+      "category": "entanglement_classification",
+      "count": 1,
+      "solve_rate": 1.0,
+      "mean_attempts": 1.0,
+      "mean_best_d_phys": 0.0,
+      "mean_solve_time_s": 1.5371597080000003,
+      "median_solve_time_s": 1.5371597080000003,
+      "pass_5s": 1.0,
+      "pass_15s": 1.0
+    },
+    {
+      "model": "gpt-4.1",
+      "category": "measurement_prediction",
+      "count": 1,
+      "solve_rate": 0.0,
+      "mean_attempts": 3.0,
+      "mean_best_d_phys": 0.5,
+      "mean_solve_time_s": null,
+      "median_solve_time_s": null,
+      "pass_5s": 0.0,
+      "pass_15s": 0.0
+    },
+    {
+      "model": "gpt-4.1",
+      "category": "operator_composition",
+      "count": 1,
+      "solve_rate": 0.0,
+      "mean_attempts": 3.0,
+      "mean_best_d_phys": 0.35355339059327373,
+      "mean_solve_time_s": null,
+      "median_solve_time_s": null,
+      "pass_5s": 0.0,
+      "pass_15s": 0.0
+    }
+  ]
+}

@@ -1,0 +1,295 @@
+{
+  "models": [
+    "gpt-4o-mini",
+    "gpt-4.1-mini",
+    "gpt-5.4-mini",
+    "gpt-4.1",
+    "gpt-5.1",
+    "gpt-5.2",
+    "gpt-5.4"
+  ],
+  "categories": [
+    "circuit_evolution",
+    "operator_composition",
+    "measurement_prediction",
+    "entanglement_classification"
+  ],
+  "varying_categories": [
+    "circuit_evolution",
+    "measurement_prediction",
+    "entanglement_classification"
+  ],
+  "baseline_count": 5376,
+  "variant_count": 5376,
+  "overall": {
+    "baseline_mean_d_phys": 0.44026291024591935,
+    "variant_mean_d_phys": 0.5607972210107286,
+    "delta_variant_minus_baseline": 0.12053431076480925,
+    "baseline_mean_d_phys_varying_categories": 0.4941978863174914,
+    "variant_mean_d_phys_varying_categories": 0.6600246251308793,
+    "delta_variant_minus_baseline_varying_categories": 0.16582673881338794
+  },
+  "per_model": [
+    {
+      "model": "gpt-4o-mini",
+      "baseline_mean_d_phys": 0.5703239064790134,
+      "variant_mean_d_phys": 0.6429816646155059,
+      "delta_variant_minus_baseline": 0.07265775813649245,
+      "baseline_mean_d_phys_varying_categories": 0.6446546316178219,
+      "variant_mean_d_phys_varying_categories": 0.7459852430555556,
+      "delta_variant_minus_baseline_varying_categories": 0.1013306114377337
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "baseline_mean_d_phys": 0.4777338294513888,
+      "variant_mean_d_phys": 0.6018823964130243,
+      "delta_variant_minus_baseline": 0.12414856696163551,
+      "baseline_mean_d_phys_varying_categories": 0.5342486075966756,
+      "variant_mean_d_phys_varying_categories": 0.7017144097222222,
+      "delta_variant_minus_baseline_varying_categories": 0.16746580212554663
+    },
+    {
+      "model": "gpt-5.4-mini",
+      "baseline_mean_d_phys": 0.39410261417211734,
+      "variant_mean_d_phys": 0.5719889560890472,
+      "delta_variant_minus_baseline": 0.17788634191692987,
+      "baseline_mean_d_phys_varying_categories": 0.4354915724835202,
+      "variant_mean_d_phys_varying_categories": 0.6752387152777778,
+      "delta_variant_minus_baseline_varying_categories": 0.23974714279425757
+    },
+    {
+      "model": "gpt-4.1",
+      "baseline_mean_d_phys": 0.44157164632070495,
+      "variant_mean_d_phys": 0.5549247166586202,
+      "delta_variant_minus_baseline": 0.11335307033791525,
+      "baseline_mean_d_phys_varying_categories": 0.49437041547375116,
+      "variant_mean_d_phys_varying_categories": 0.641507571736358,
+      "delta_variant_minus_baseline_varying_categories": 0.14713715626260682
+    },
+    {
+      "model": "gpt-5.1",
+      "baseline_mean_d_phys": 0.501436749963102,
+      "variant_mean_d_phys": 0.5317414368886367,
+      "delta_variant_minus_baseline": 0.030304686925534785,
+      "baseline_mean_d_phys_varying_categories": 0.5680678937173378,
+      "variant_mean_d_phys_varying_categories": 0.6214939826193575,
+      "delta_variant_minus_baseline_varying_categories": 0.05342608890201972
+    },
+    {
+      "model": "gpt-5.2",
+      "baseline_mean_d_phys": 0.36757896452254474,
+      "variant_mean_d_phys": 0.4966948766813373,
+      "delta_variant_minus_baseline": 0.1291159121587926,
+      "baseline_mean_d_phys_varying_categories": 0.4153645833333333,
+      "variant_mean_d_phys_varying_categories": 0.5972222222222222,
+      "delta_variant_minus_baseline_varying_categories": 0.1818576388888889
+    },
+    {
+      "model": "gpt-5.4",
+      "baseline_mean_d_phys": 0.32909266081256416,
+      "variant_mean_d_phys": 0.5253664997289281,
+      "delta_variant_minus_baseline": 0.19627383891636396,
+      "baseline_mean_d_phys_varying_categories": 0.3671875,
+      "variant_mean_d_phys_varying_categories": 0.6370102312826622,
+      "delta_variant_minus_baseline_varying_categories": 0.2698227312826622
+    }
+  ],
+  "per_model_category": [
+    {
+      "model": "gpt-4o-mini",
+      "category": "circuit_evolution",
+      "baseline_mean_d_phys": 0.785526394853466,
+      "variant_mean_d_phys": 0.9501953125,
+      "delta_variant_minus_baseline": 0.16466891764653402
+    },
+    {
+      "model": "gpt-4o-mini",
+      "category": "operator_composition",
+      "baseline_mean_d_phys": 0.34733173106258786,
+      "variant_mean_d_phys": 0.33397092929535654,
+      "delta_variant_minus_baseline": -0.013360801767231312
+    },
+    {
+      "model": "gpt-4o-mini",
+      "category": "measurement_prediction",
+      "baseline_mean_d_phys": 0.7109375,
+      "variant_mean_d_phys": 0.8763020833333334,
+      "delta_variant_minus_baseline": 0.16536458333333337
+    },
+    {
+      "model": "gpt-4o-mini",
+      "category": "entanglement_classification",
+      "baseline_mean_d_phys": 0.4375,
+      "variant_mean_d_phys": 0.4114583333333333,
+      "delta_variant_minus_baseline": -0.026041666666666685
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "category": "circuit_evolution",
+      "baseline_mean_d_phys": 0.7277458227900269,
+      "variant_mean_d_phys": 0.9514973958333334,
+      "delta_variant_minus_baseline": 0.2237515730433065
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "category": "operator_composition",
+      "baseline_mean_d_phys": 0.30818949501552845,
+      "variant_mean_d_phys": 0.30238635648543055,
+      "delta_variant_minus_baseline": -0.0058031385300978955
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "category": "measurement_prediction",
+      "baseline_mean_d_phys": 0.6354166666666666,
+      "variant_mean_d_phys": 0.7786458333333334,
+      "delta_variant_minus_baseline": 0.14322916666666674
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "category": "entanglement_classification",
+      "baseline_mean_d_phys": 0.23958333333333334,
+      "variant_mean_d_phys": 0.375,
+      "delta_variant_minus_baseline": 0.13541666666666666
+    },
+    {
+      "model": "gpt-5.4-mini",
+      "category": "circuit_evolution",
+      "baseline_mean_d_phys": 0.7205372174505605,
+      "variant_mean_d_phys": 0.9645182291666666,
+      "delta_variant_minus_baseline": 0.2439810117161061
+    },
+    {
+      "model": "gpt-5.4-mini",
+      "category": "operator_composition",
+      "baseline_mean_d_phys": 0.26993573923790876,
+      "variant_mean_d_phys": 0.2622396785228553,
+      "delta_variant_minus_baseline": -0.0076960607150534655
+    },
+    {
+      "model": "gpt-5.4-mini",
+      "category": "measurement_prediction",
+      "baseline_mean_d_phys": 0.5859375,
+      "variant_mean_d_phys": 0.75390625,
+      "delta_variant_minus_baseline": 0.16796875
+    },
+    {
+      "model": "gpt-5.4-mini",
+      "category": "entanglement_classification",
+      "baseline_mean_d_phys": 0.0,
+      "variant_mean_d_phys": 0.3072916666666667,
+      "delta_variant_minus_baseline": 0.3072916666666667
+    },
+    {
+      "model": "gpt-4.1",
+      "category": "circuit_evolution",
+      "baseline_mean_d_phys": 0.6966529130879205,
+      "variant_mean_d_phys": 0.9498016391184138,
+      "delta_variant_minus_baseline": 0.2531487260304932
+    },
+    {
+      "model": "gpt-4.1",
+      "category": "operator_composition",
+      "baseline_mean_d_phys": 0.28317533886156615,
+      "variant_mean_d_phys": 0.29517615142540704,
+      "delta_variant_minus_baseline": 0.01200081256384089
+    },
+    {
+      "model": "gpt-4.1",
+      "category": "measurement_prediction",
+      "baseline_mean_d_phys": 0.5520833333333334,
+      "variant_mean_d_phys": 0.74034607609066,
+      "delta_variant_minus_baseline": 0.18826274275732668
+    },
+    {
+      "model": "gpt-4.1",
+      "category": "entanglement_classification",
+      "baseline_mean_d_phys": 0.234375,
+      "variant_mean_d_phys": 0.234375,
+      "delta_variant_minus_baseline": 0.0
+    },
+    {
+      "model": "gpt-5.1",
+      "category": "circuit_evolution",
+      "baseline_mean_d_phys": 0.70680784781868,
+      "variant_mean_d_phys": 0.9087527811914057,
+      "delta_variant_minus_baseline": 0.20194493337272568
+    },
+    {
+      "model": "gpt-5.1",
+      "category": "operator_composition",
+      "baseline_mean_d_phys": 0.3015433187003947,
+      "variant_mean_d_phys": 0.2624837996964749,
+      "delta_variant_minus_baseline": -0.039059519003919796
+    },
+    {
+      "model": "gpt-5.1",
+      "category": "measurement_prediction",
+      "baseline_mean_d_phys": 0.6015625,
+      "variant_mean_d_phys": 0.7421875,
+      "delta_variant_minus_baseline": 0.140625
+    },
+    {
+      "model": "gpt-5.1",
+      "category": "entanglement_classification",
+      "baseline_mean_d_phys": 0.3958333333333333,
+      "variant_mean_d_phys": 0.21354166666666666,
+      "delta_variant_minus_baseline": -0.18229166666666666
+    },
+    {
+      "model": "gpt-5.2",
+      "category": "circuit_evolution",
+      "baseline_mean_d_phys": 0.6588541666666666,
+      "variant_mean_d_phys": 0.8776041666666666,
+      "delta_variant_minus_baseline": 0.21875
+    },
+    {
+      "model": "gpt-5.2",
+      "category": "operator_composition",
+      "baseline_mean_d_phys": 0.2242221080901788,
+      "variant_mean_d_phys": 0.19511284005868265,
+      "delta_variant_minus_baseline": -0.02910926803149616
+    },
+    {
+      "model": "gpt-5.2",
+      "category": "measurement_prediction",
+      "baseline_mean_d_phys": 0.5872395833333334,
+      "variant_mean_d_phys": 0.6901041666666666,
+      "delta_variant_minus_baseline": 0.10286458333333326
+    },
+    {
+      "model": "gpt-5.2",
+      "category": "entanglement_classification",
+      "baseline_mean_d_phys": 0.0,
+      "variant_mean_d_phys": 0.22395833333333334,
+      "delta_variant_minus_baseline": 0.22395833333333334
+    },
+    {
+      "model": "gpt-5.4",
+      "category": "circuit_evolution",
+      "baseline_mean_d_phys": 0.5924479166666666,
+      "variant_mean_d_phys": 0.83030152718132,
+      "delta_variant_minus_baseline": 0.23785361051465337
+    },
+    {
+      "model": "gpt-5.4",
+      "category": "operator_composition",
+      "baseline_mean_d_phys": 0.21480814325025657,
+      "variant_mean_d_phys": 0.1904353050677258,
+      "delta_variant_minus_baseline": -0.024372838182530776
+    },
+    {
+      "model": "gpt-5.4",
+      "category": "measurement_prediction",
+      "baseline_mean_d_phys": 0.5091145833333334,
+      "variant_mean_d_phys": 0.7630208333333334,
+      "delta_variant_minus_baseline": 0.25390625
+    },
+    {
+      "model": "gpt-5.4",
+      "category": "entanglement_classification",
+      "baseline_mean_d_phys": 0.0,
+      "variant_mean_d_phys": 0.3177083333333333,
+      "delta_variant_minus_baseline": 0.3177083333333333
+    }
+  ]
+}

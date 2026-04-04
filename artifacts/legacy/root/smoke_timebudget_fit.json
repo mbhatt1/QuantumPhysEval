@@ -1,0 +1,16 @@
+{
+  "experiment": "time_budget",
+  "time_budget_s": 15.0,
+  "checkpoint_seconds": [
+    5.0,
+    15.0
+  ],
+  "solve_rate": 0.5,
+  "mean_solve_time_s": 1.0698936455000003,
+  "median_solve_time_s": 1.0698936455000003,
+  "overall_pass_by_time": {
+    "5s": 0.5,
+    "15s": 0.5
+  },
+  "is_partial": false
+}

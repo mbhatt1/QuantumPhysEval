@@ -1,0 +1,58 @@
+{
+  "overall": {
+    "no_retry": {
+      "solve_rate": 0.59375,
+      "mean_solve_time_s": 6.1139023793684215,
+      "median_solve_time_s": 6.383155417
+    },
+    "self_retry": {
+      "solve_rate": 0.8125,
+      "mean_solve_time_s": 7.506007197153846,
+      "median_solve_time_s": 6.806375062500003
+    },
+    "verifier_feedback": {
+      "solve_rate": 0.9375,
+      "mean_solve_time_s": 11.257791736,
+      "median_solve_time_s": 7.1142224999999994
+    }
+  },
+  "by_category": {
+    "circuit_evolution": {
+      "no_retry": 0.625,
+      "self_retry": 0.625,
+      "verifier_feedback": 0.875
+    },
+    "entanglement_classification": {
+      "no_retry": 0.625,
+      "self_retry": 1.0,
+      "verifier_feedback": 1.0
+    },
+    "measurement_prediction": {
+      "no_retry": 0.625,
+      "self_retry": 0.875,
+      "verifier_feedback": 0.875
+    },
+    "operator_composition": {
+      "no_retry": 0.5,
+      "self_retry": 0.75,
+      "verifier_feedback": 1.0
+    }
+  },
+  "by_model": {
+    "claude-opus-4-1-20250805": {
+      "no_retry": 1.0,
+      "self_retry": 1.0,
+      "verifier_feedback": 1.0
+    },
+    "claude-sonnet-4-20250514": {
+      "no_retry": 0.1875,
+      "self_retry": 0.625,
+      "verifier_feedback": 0.875
+    }
+  },
+  "deltas": {
+    "self_retry_vs_no_retry": 0.21875,
+    "verifier_feedback_vs_no_retry": 0.34375,
+    "verifier_feedback_vs_self_retry": 0.125
+  }
+}

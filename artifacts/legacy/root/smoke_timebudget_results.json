@@ -1,0 +1,249 @@
+[
+  {
+    "model": "gpt-4.1",
+    "size": 10000000000.0,
+    "depth": 4,
+    "category": "entanglement_classification",
+    "prompt": "Consider the 2-qubit state [0.70710678, 0.00000000, 0.70710678, 0.00000000]. Is it entangled? Return only True or False.",
+    "metadata": {
+      "template": "product_plus0"
+    },
+    "target": {
+      "kind": "boolean",
+      "value": false
+    },
+    "experiment": "time_budget",
+    "time_budget_s": 15.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 1.5371597080000003,
+        "latency_s": 1.537149833,
+        "d_phys": 0.0,
+        "solved": true,
+        "output": "False"
+      }
+    ],
+    "initial_d_phys": 0.0,
+    "best_d_phys": 0.0,
+    "final_d_phys": 0.0,
+    "solved": true,
+    "solve_time_s": 1.5371597080000003,
+    "total_elapsed_s": 1.5371673750000001,
+    "pass_by_time": {
+      "5s": true,
+      "15s": true
+    },
+    "api_error": null
+  },
+  {
+    "model": "gpt-4.1",
+    "size": 10000000000.0,
+    "depth": 4,
+    "category": "measurement_prediction",
+    "prompt": "Start from |01>. Apply the 2-qubit gate sequence H(0), Z(1), H(1) in that order. Return the measurement probabilities [p00, p01, p10, p11] as a Python list of 4 decimal numbers only.",
+    "metadata": {
+      "bits": [
+        0,
+        1
+      ],
+      "ops": [
+        "H(0)",
+        "Z(1)",
+        "H(1)"
+      ]
+    },
+    "target": {
+      "kind": "probabilities",
+      "value": [
+        0.2499999999999999,
+        0.2499999999999999,
+        0.2499999999999999,
+        0.2499999999999999
+      ]
+    },
+    "experiment": "time_budget",
+    "time_budget_s": 15.0,
+    "attempt_count": 3,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 1.522447792,
+        "latency_s": 1.5221476249999997,
+        "d_phys": 0.5,
+        "solved": false,
+        "output": "[0.0, 0.0, 0.5, 0.5]"
+      },
+      {
+        "attempt": 2,
+        "elapsed_s": 2.636622667,
+        "latency_s": 1.1140534580000003,
+        "d_phys": 0.5,
+        "solved": false,
+        "output": "[0.0, 0.5, 0.0, 0.5]"
+      },
+      {
+        "attempt": 3,
+        "elapsed_s": 3.3444940420000004,
+        "latency_s": 0.7076102080000002,
+        "d_phys": 0.5,
+        "solved": false,
+        "output": "[0.0, 0.0, 0.5, 0.5]"
+      }
+    ],
+    "initial_d_phys": 0.5,
+    "best_d_phys": 0.5,
+    "final_d_phys": 0.5,
+    "solved": false,
+    "solve_time_s": null,
+    "total_elapsed_s": 3.344498417,
+    "pass_by_time": {
+      "5s": false,
+      "15s": false
+    },
+    "api_error": null
+  },
+  {
+    "model": "gpt-4.1",
+    "size": 10000000000.0,
+    "depth": 4,
+    "category": "circuit_evolution",
+    "prompt": "Start from |00>. Apply the 2-qubit gate sequence Z(0), Z(1), Z(1), S(1) in that order. Return the final state vector as a Python list of 4 complex numbers using decimal literals only and no explanation.",
+    "metadata": {
+      "bits": [
+        0,
+        0
+      ],
+      "ops": [
+        "Z(0)",
+        "Z(1)",
+        "Z(1)",
+        "S(1)"
+      ]
+    },
+    "target": {
+      "kind": "state_vector",
+      "value": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    "experiment": "time_budget",
+    "time_budget_s": 15.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 0.6026275830000003,
+        "latency_s": 0.6024867080000007,
+        "d_phys": 0.0,
+        "solved": true,
+        "output": "[1.0, 0.0, 0.0, 0.0]"
+      }
+    ],
+    "initial_d_phys": 0.0,
+    "best_d_phys": 0.0,
+    "final_d_phys": 0.0,
+    "solved": true,
+    "solve_time_s": 0.6026275830000003,
+    "total_elapsed_s": 0.6026337499999999,
+    "pass_by_time": {
+      "5s": true,
+      "15s": true
+    },
+    "api_error": null
+  },
+  {
+    "model": "gpt-4.1",
+    "size": 10000000000.0,
+    "depth": 4,
+    "category": "operator_composition",
+    "prompt": "Compute the 2x2 unitary matrix for the single-qubit gate sequence Y, H applied in that order. Return only a Python 2x2 list of complex numbers using decimal literals.",
+    "metadata": {
+      "ops": [
+        "Y",
+        "H"
+      ]
+    },
+    "target": {
+      "kind": "operator",
+      "value": [
+        [
+          [
+            0.0,
+            0.7071067811865475
+          ],
+          [
+            0.0,
+            -0.7071067811865475
+          ]
+        ],
+        [
+          [
+            0.0,
+            -0.7071067811865475
+          ],
+          [
+            0.0,
+            -0.7071067811865475
+          ]
+        ]
+      ]
+    },
+    "experiment": "time_budget",
+    "time_budget_s": 15.0,
+    "attempt_count": 3,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 1.0618817919999999,
+        "latency_s": 1.060360958,
+        "d_phys": 0.6035533905932737,
+        "solved": false,
+        "output": "[[0.5-0.5j, 0.5+0.5j], [-0.5-0.5j, 0.5-0.5j]]"
+      },
+      {
+        "attempt": 2,
+        "elapsed_s": 1.8081085419999998,
+        "latency_s": 0.7460343329999999,
+        "d_phys": 0.35355339059327373,
+        "solved": false,
+        "output": "[[0.7071067811865475, 0.7071067811865475], [0-0.7071067811865475j, 0+0.7071067811865475j]]"
+      },
+      {
+        "attempt": 3,
+        "elapsed_s": 2.6712019999999996,
+        "latency_s": 0.8628867909999993,
+        "d_phys": 0.3932189138830738,
+        "solved": false,
+        "output": "[[0.5+0j, 0.5-0.5j], [0.5+0.5j, -0.5+0j]]"
+      }
+    ],
+    "initial_d_phys": 0.6035533905932737,
+    "best_d_phys": 0.35355339059327373,
+    "final_d_phys": 0.3932189138830738,
+    "solved": false,
+    "solve_time_s": null,
+    "total_elapsed_s": 2.6712038750000002,
+    "pass_by_time": {
+      "5s": false,
+      "15s": false
+    },
+    "api_error": null
+  }
+]

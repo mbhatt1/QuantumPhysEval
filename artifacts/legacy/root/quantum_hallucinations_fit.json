@@ -1,0 +1,7 @@
+{
+  "k": 4.5268125099149024e+17,
+  "alpha": 2.556046976138329,
+  "beta": -0.5610333933838603,
+  "equation": "d_phys = k * S^(-alpha) * D^(beta)",
+  "fit_method": "log_linear_least_squares"
+}

@@ -1,0 +1,26 @@
+{
+  "k": 0.009999999999972933,
+  "alpha": -1.157765306580059e-13,
+  "beta": 0.0,
+  "equation": "d_phys = k * S^(-alpha) * D^(beta)",
+  "fit_method": "log_linear_least_squares",
+  "bootstrap": {
+    "samples": 500,
+    "k_mean": Infinity,
+    "alpha_mean": 1.1394654198376835,
+    "beta_mean": 0.0,
+    "k_ci95": [
+      4.0471792779619566e-291,
+      8.190754289384747e+295
+    ],
+    "alpha_ci95": [
+      -28.458392105425787,
+      29.299208235813072
+    ],
+    "beta_ci95": [
+      0.0,
+      0.0
+    ]
+  },
+  "is_partial": false
+}

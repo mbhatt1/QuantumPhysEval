@@ -1,0 +1,68 @@
+{
+  "overall": {
+    "no_retry": {
+      "solve_rate": 0.421875,
+      "mean_solve_time_s": 0.8346613008148148,
+      "median_solve_time_s": 0.7319300419999997
+    },
+    "self_retry": {
+      "solve_rate": 0.609375,
+      "mean_solve_time_s": 2.6501588226666666,
+      "median_solve_time_s": 1.287718
+    },
+    "verifier_feedback": {
+      "solve_rate": 0.6875,
+      "mean_solve_time_s": 2.3495959981363637,
+      "median_solve_time_s": 1.0246033749999996
+    }
+  },
+  "by_category": {
+    "circuit_evolution": {
+      "no_retry": 0.25,
+      "self_retry": 0.375,
+      "verifier_feedback": 0.5
+    },
+    "measurement_prediction": {
+      "no_retry": 0.25,
+      "self_retry": 0.5,
+      "verifier_feedback": 0.5625
+    },
+    "operator_composition": {
+      "no_retry": 0.25,
+      "self_retry": 0.625,
+      "verifier_feedback": 0.6875
+    },
+    "entanglement_classification": {
+      "no_retry": 0.9375,
+      "self_retry": 0.9375,
+      "verifier_feedback": 1.0
+    }
+  },
+  "by_model": {
+    "gpt-4.1": {
+      "no_retry": 0.3125,
+      "self_retry": 0.4375,
+      "verifier_feedback": 0.5625
+    },
+    "gpt-5.2": {
+      "no_retry": 0.5,
+      "self_retry": 0.6875,
+      "verifier_feedback": 0.75
+    },
+    "gpt-5.4-mini": {
+      "no_retry": 0.4375,
+      "self_retry": 0.5,
+      "verifier_feedback": 0.5625
+    },
+    "gpt-5.4": {
+      "no_retry": 0.4375,
+      "self_retry": 0.8125,
+      "verifier_feedback": 0.875
+    }
+  },
+  "deltas": {
+    "self_retry_vs_no_retry": 0.1875,
+    "verifier_feedback_vs_no_retry": 0.265625,
+    "verifier_feedback_vs_self_retry": 0.078125
+  }
+}

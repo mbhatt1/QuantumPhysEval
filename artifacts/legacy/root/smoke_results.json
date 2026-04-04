@@ -1,0 +1,92 @@
+[
+  {
+    "model": "gpt-4o-mini",
+    "size": 2000000000.0,
+    "depth": 1,
+    "category": "entanglement_reasoning",
+    "prompt": "Check whether the state (|00> + |11>)/sqrt(2) is entangled. Return only True or False.",
+    "output": "True",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4o-mini",
+    "size": 2000000000.0,
+    "depth": 2,
+    "category": "entanglement_reasoning",
+    "prompt": "Check whether the state (|00> + |11>)/sqrt(2) is entangled. Return only True or False.",
+    "output": "True",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4o-mini",
+    "size": 2000000000.0,
+    "depth": 4,
+    "category": "entanglement_reasoning",
+    "prompt": "Check whether the state (|00> + |11>)/sqrt(2) is entangled. Return only True or False.",
+    "output": "True",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4.1-mini",
+    "size": 5000000000.0,
+    "depth": 1,
+    "category": "entanglement_reasoning",
+    "prompt": "Check whether the state (|00> + |11>)/sqrt(2) is entangled. Return only True or False.",
+    "output": "True",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4.1-mini",
+    "size": 5000000000.0,
+    "depth": 2,
+    "category": "entanglement_reasoning",
+    "prompt": "Check whether the state (|00> + |11>)/sqrt(2) is entangled. Return only True or False.",
+    "output": "True",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4.1-mini",
+    "size": 5000000000.0,
+    "depth": 4,
+    "category": "entanglement_reasoning",
+    "prompt": "Check whether the state (|00> + |11>)/sqrt(2) is entangled. Return only True or False.",
+    "output": "True",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4.1",
+    "size": 10000000000.0,
+    "depth": 1,
+    "category": "entanglement_reasoning",
+    "prompt": "Check whether the state (|00> + |11>)/sqrt(2) is entangled. Return only True or False.",
+    "output": "True",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4.1",
+    "size": 10000000000.0,
+    "depth": 2,
+    "category": "entanglement_reasoning",
+    "prompt": "Check whether the state (|00> + |11>)/sqrt(2) is entangled. Return only True or False.",
+    "output": "True",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4.1",
+    "size": 10000000000.0,
+    "depth": 4,
+    "category": "entanglement_reasoning",
+    "prompt": "Check whether the state (|00> + |11>)/sqrt(2) is entangled. Return only True or False.",
+    "output": "True",
+    "d_phys": 0.0,
+    "api_error": null
+  }
+]

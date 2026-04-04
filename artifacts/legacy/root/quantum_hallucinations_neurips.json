@@ -1,0 +1,452 @@
+[
+  {
+    "model": "gpt-4o-mini",
+    "size": 2000000000.0,
+    "depth": 1,
+    "category": "circuit_evolution",
+    "prompt": "Apply Hadamard to qubit 1 and CNOT to qubits 1,2 on |00>. Return the final state as a Python list of 4 complex numbers only, using decimal numeric literals.",
+    "output": "[0.5, 0.0, 0.5, 0.0]",
+    "d_phys": 0.5,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4o-mini",
+    "size": 2000000000.0,
+    "depth": 1,
+    "category": "state_construction",
+    "prompt": "Construct a valid 2-qubit quantum state as a Python list of 4 complex numbers. Use decimal numeric literals only, with no symbolic expressions. Return only the list.",
+    "output": "[0.5, 0.5, 0.5, 0.5]",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4o-mini",
+    "size": 2000000000.0,
+    "depth": 1,
+    "category": "state_construction",
+    "prompt": "Construct a valid 2-qubit quantum state as a Python list of 4 complex numbers. Use decimal numeric literals only, with no symbolic expressions. Return only the list.",
+    "output": "[0.5, 0.5, 0.5, 0.5]",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4o-mini",
+    "size": 2000000000.0,
+    "depth": 1,
+    "category": "operator_synthesis",
+    "prompt": "Write a 2x2 unitary matrix as a Python 2x2 list of complex numbers. Use decimal numeric literals only, with no symbolic expressions. Return only the matrix.",
+    "output": "[[0.7071067811865476, -0.7071067811865475], [0.7071067811865475, 0.7071067811865476]]",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4o-mini",
+    "size": 2000000000.0,
+    "depth": 1,
+    "category": "entanglement_reasoning",
+    "prompt": "Check whether the state (|00> + |11>)/sqrt(2) is entangled. Return only True or False.",
+    "output": "True",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4o-mini",
+    "size": 2000000000.0,
+    "depth": 2,
+    "category": "circuit_evolution",
+    "prompt": "Apply Hadamard to qubit 1 and CNOT to qubits 1,2 on |00>. Return the final state as a Python list of 4 complex numbers only, using decimal numeric literals.",
+    "output": "[0.5, 0.0, 0.5, 0.0]",
+    "d_phys": 0.5,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4o-mini",
+    "size": 2000000000.0,
+    "depth": 2,
+    "category": "state_construction",
+    "prompt": "Construct a valid 2-qubit quantum state as a Python list of 4 complex numbers. Use decimal numeric literals only, with no symbolic expressions. Return only the list.",
+    "output": "[0.5, 0.5, 0.5j, 0.5j]",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4o-mini",
+    "size": 2000000000.0,
+    "depth": 2,
+    "category": "state_construction",
+    "prompt": "Construct a valid 2-qubit quantum state as a Python list of 4 complex numbers. Use decimal numeric literals only, with no symbolic expressions. Return only the list.",
+    "output": "[0.5, 0.5, 0.5j, 0.5j]",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4o-mini",
+    "size": 2000000000.0,
+    "depth": 2,
+    "category": "operator_synthesis",
+    "prompt": "Write a 2x2 unitary matrix as a Python 2x2 list of complex numbers. Use decimal numeric literals only, with no symbolic expressions. Return only the matrix.",
+    "output": "[[0.7071067811865476, -0.7071067811865475], [0.7071067811865475, 0.7071067811865476]]",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4o-mini",
+    "size": 2000000000.0,
+    "depth": 2,
+    "category": "entanglement_reasoning",
+    "prompt": "Check whether the state (|00> + |11>)/sqrt(2) is entangled. Return only True or False.",
+    "output": "True",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4o-mini",
+    "size": 2000000000.0,
+    "depth": 4,
+    "category": "circuit_evolution",
+    "prompt": "Apply Hadamard to qubit 1 and CNOT to qubits 1,2 on |00>. Return the final state as a Python list of 4 complex numbers only, using decimal numeric literals.",
+    "output": "[0.5, 0.0, 0.5, 0.0]",
+    "d_phys": 0.5,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4o-mini",
+    "size": 2000000000.0,
+    "depth": 4,
+    "category": "state_construction",
+    "prompt": "Construct a valid 2-qubit quantum state as a Python list of 4 complex numbers. Use decimal numeric literals only, with no symbolic expressions. Return only the list.",
+    "output": "[0.5, 0.5, 0.5, 0.5]",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4o-mini",
+    "size": 2000000000.0,
+    "depth": 4,
+    "category": "state_construction",
+    "prompt": "Construct a valid 2-qubit quantum state as a Python list of 4 complex numbers. Use decimal numeric literals only, with no symbolic expressions. Return only the list.",
+    "output": "[0.5, 0.5, 0.5, 0.5]",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4o-mini",
+    "size": 2000000000.0,
+    "depth": 4,
+    "category": "operator_synthesis",
+    "prompt": "Write a 2x2 unitary matrix as a Python 2x2 list of complex numbers. Use decimal numeric literals only, with no symbolic expressions. Return only the matrix.",
+    "output": "[[0.7071+0j, -0.7071+0j], [0.7071+0j, 0.7071+0j]]",
+    "d_phys": 2.7124616126483613e-05,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4o-mini",
+    "size": 2000000000.0,
+    "depth": 4,
+    "category": "entanglement_reasoning",
+    "prompt": "Check whether the state (|00> + |11>)/sqrt(2) is entangled. Return only True or False.",
+    "output": "True",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4.1-mini",
+    "size": 5000000000.0,
+    "depth": 1,
+    "category": "circuit_evolution",
+    "prompt": "Apply Hadamard to qubit 1 and CNOT to qubits 1,2 on |00>. Return the final state as a Python list of 4 complex numbers only, using decimal numeric literals.",
+    "output": "[0.7071067811865475+0j, 0+0j, 0+0j, 0.7071067811865475+0j]",
+    "d_phys": 2.220446049250313e-16,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4.1-mini",
+    "size": 5000000000.0,
+    "depth": 1,
+    "category": "state_construction",
+    "prompt": "Construct a valid 2-qubit quantum state as a Python list of 4 complex numbers. Use decimal numeric literals only, with no symbolic expressions. Return only the list.",
+    "output": "[0.5+0j, 0.5+0j, 0.5+0j, 0.5+0j]",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4.1-mini",
+    "size": 5000000000.0,
+    "depth": 1,
+    "category": "state_construction",
+    "prompt": "Construct a valid 2-qubit quantum state as a Python list of 4 complex numbers. Use decimal numeric literals only, with no symbolic expressions. Return only the list.",
+    "output": "[0.5+0j, 0.5+0j, 0.5+0j, 0.5+0j]",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4.1-mini",
+    "size": 5000000000.0,
+    "depth": 1,
+    "category": "operator_synthesis",
+    "prompt": "Write a 2x2 unitary matrix as a Python 2x2 list of complex numbers. Use decimal numeric literals only, with no symbolic expressions. Return only the matrix.",
+    "output": "[[0.0+1.0j, 1.0+0.0j], [1.0+0.0j, 0.0-1.0j]]",
+    "d_phys": 3.1622776601683795,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4.1-mini",
+    "size": 5000000000.0,
+    "depth": 1,
+    "category": "entanglement_reasoning",
+    "prompt": "Check whether the state (|00> + |11>)/sqrt(2) is entangled. Return only True or False.",
+    "output": "True",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4.1-mini",
+    "size": 5000000000.0,
+    "depth": 2,
+    "category": "circuit_evolution",
+    "prompt": "Apply Hadamard to qubit 1 and CNOT to qubits 1,2 on |00>. Return the final state as a Python list of 4 complex numbers only, using decimal numeric literals.",
+    "output": "[0.7071067811865475+0j, 0+0j, 0+0j, 0.7071067811865475+0j]",
+    "d_phys": 2.220446049250313e-16,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4.1-mini",
+    "size": 5000000000.0,
+    "depth": 2,
+    "category": "state_construction",
+    "prompt": "Construct a valid 2-qubit quantum state as a Python list of 4 complex numbers. Use decimal numeric literals only, with no symbolic expressions. Return only the list.",
+    "output": "[0.5+0j, 0.5+0j, 0.5+0j, 0.5+0j]",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4.1-mini",
+    "size": 5000000000.0,
+    "depth": 2,
+    "category": "state_construction",
+    "prompt": "Construct a valid 2-qubit quantum state as a Python list of 4 complex numbers. Use decimal numeric literals only, with no symbolic expressions. Return only the list.",
+    "output": "[0.5+0j, 0.5+0j, 0.5+0j, 0.5+0j]",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4.1-mini",
+    "size": 5000000000.0,
+    "depth": 2,
+    "category": "operator_synthesis",
+    "prompt": "Write a 2x2 unitary matrix as a Python 2x2 list of complex numbers. Use decimal numeric literals only, with no symbolic expressions. Return only the matrix.",
+    "output": "[[0.7071067811865476+0j, 0.7071067811865475+0j], [0.7071067811865475+0j, -0.7071067811865476+0j]]",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4.1-mini",
+    "size": 5000000000.0,
+    "depth": 2,
+    "category": "entanglement_reasoning",
+    "prompt": "Check whether the state (|00> + |11>)/sqrt(2) is entangled. Return only True or False.",
+    "output": "True",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4.1-mini",
+    "size": 5000000000.0,
+    "depth": 4,
+    "category": "circuit_evolution",
+    "prompt": "Apply Hadamard to qubit 1 and CNOT to qubits 1,2 on |00>. Return the final state as a Python list of 4 complex numbers only, using decimal numeric literals.",
+    "output": "[0.7071067811865475+0j, 0+0j, 0+0j, 0.7071067811865475+0j]",
+    "d_phys": 2.220446049250313e-16,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4.1-mini",
+    "size": 5000000000.0,
+    "depth": 4,
+    "category": "state_construction",
+    "prompt": "Construct a valid 2-qubit quantum state as a Python list of 4 complex numbers. Use decimal numeric literals only, with no symbolic expressions. Return only the list.",
+    "output": "[0.5+0j, 0.5+0j, 0.5+0j, 0.5+0j]",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4.1-mini",
+    "size": 5000000000.0,
+    "depth": 4,
+    "category": "state_construction",
+    "prompt": "Construct a valid 2-qubit quantum state as a Python list of 4 complex numbers. Use decimal numeric literals only, with no symbolic expressions. Return only the list.",
+    "output": "[0.5+0j, 0.5+0j, 0.5+0j, 0.5+0j]",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4.1-mini",
+    "size": 5000000000.0,
+    "depth": 4,
+    "category": "operator_synthesis",
+    "prompt": "Write a 2x2 unitary matrix as a Python 2x2 list of complex numbers. Use decimal numeric literals only, with no symbolic expressions. Return only the matrix.",
+    "output": "[[0.7071067811865476+0j, 0.7071067811865475+0j], [0.7071067811865475+0j, -0.7071067811865476+0j]]",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4.1-mini",
+    "size": 5000000000.0,
+    "depth": 4,
+    "category": "entanglement_reasoning",
+    "prompt": "Check whether the state (|00> + |11>)/sqrt(2) is entangled. Return only True or False.",
+    "output": "True",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4.1",
+    "size": 10000000000.0,
+    "depth": 1,
+    "category": "circuit_evolution",
+    "prompt": "Apply Hadamard to qubit 1 and CNOT to qubits 1,2 on |00>. Return the final state as a Python list of 4 complex numbers only, using decimal numeric literals.",
+    "output": "[0.7071067811865475, 0.0, 0.0, 0.7071067811865475]",
+    "d_phys": 2.220446049250313e-16,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4.1",
+    "size": 10000000000.0,
+    "depth": 1,
+    "category": "state_construction",
+    "prompt": "Construct a valid 2-qubit quantum state as a Python list of 4 complex numbers. Use decimal numeric literals only, with no symbolic expressions. Return only the list.",
+    "output": "[0.5, 0.5, 0.5, 0.5]",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4.1",
+    "size": 10000000000.0,
+    "depth": 1,
+    "category": "state_construction",
+    "prompt": "Construct a valid 2-qubit quantum state as a Python list of 4 complex numbers. Use decimal numeric literals only, with no symbolic expressions. Return only the list.",
+    "output": "[0.5, 0.5, 0.5, 0.5]",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4.1",
+    "size": 10000000000.0,
+    "depth": 1,
+    "category": "operator_synthesis",
+    "prompt": "Write a 2x2 unitary matrix as a Python 2x2 list of complex numbers. Use decimal numeric literals only, with no symbolic expressions. Return only the matrix.",
+    "output": "[[0.70710678+0.0j, 0.70710678+0.0j], [0.70710678+0.0j, -0.70710678+0.0j]]",
+    "d_phys": 4.746189943849553e-09,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4.1",
+    "size": 10000000000.0,
+    "depth": 1,
+    "category": "entanglement_reasoning",
+    "prompt": "Check whether the state (|00> + |11>)/sqrt(2) is entangled. Return only True or False.",
+    "output": "True",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4.1",
+    "size": 10000000000.0,
+    "depth": 2,
+    "category": "circuit_evolution",
+    "prompt": "Apply Hadamard to qubit 1 and CNOT to qubits 1,2 on |00>. Return the final state as a Python list of 4 complex numbers only, using decimal numeric literals.",
+    "output": "[0.7071067811865476, 0.0, 0.0, 0.7071067811865476]",
+    "d_phys": 2.220446049250313e-16,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4.1",
+    "size": 10000000000.0,
+    "depth": 2,
+    "category": "state_construction",
+    "prompt": "Construct a valid 2-qubit quantum state as a Python list of 4 complex numbers. Use decimal numeric literals only, with no symbolic expressions. Return only the list.",
+    "output": "[0.6, 0.0, 0.0, 0.8]",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4.1",
+    "size": 10000000000.0,
+    "depth": 2,
+    "category": "state_construction",
+    "prompt": "Construct a valid 2-qubit quantum state as a Python list of 4 complex numbers. Use decimal numeric literals only, with no symbolic expressions. Return only the list.",
+    "output": "[0.5, 0.5, 0.5, 0.5]",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4.1",
+    "size": 10000000000.0,
+    "depth": 2,
+    "category": "operator_synthesis",
+    "prompt": "Write a 2x2 unitary matrix as a Python 2x2 list of complex numbers. Use decimal numeric literals only, with no symbolic expressions. Return only the matrix.",
+    "output": "[[0.70710678+0.0j, 0.70710678+0.0j], [0.70710678+0.0j, -0.70710678+0.0j]]",
+    "d_phys": 4.746189943849553e-09,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4.1",
+    "size": 10000000000.0,
+    "depth": 2,
+    "category": "entanglement_reasoning",
+    "prompt": "Check whether the state (|00> + |11>)/sqrt(2) is entangled. Return only True or False.",
+    "output": "True",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4.1",
+    "size": 10000000000.0,
+    "depth": 4,
+    "category": "circuit_evolution",
+    "prompt": "Apply Hadamard to qubit 1 and CNOT to qubits 1,2 on |00>. Return the final state as a Python list of 4 complex numbers only, using decimal numeric literals.",
+    "output": "[0.7071067811865475, 0.0, 0.0, 0.7071067811865475]",
+    "d_phys": 2.220446049250313e-16,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4.1",
+    "size": 10000000000.0,
+    "depth": 4,
+    "category": "state_construction",
+    "prompt": "Construct a valid 2-qubit quantum state as a Python list of 4 complex numbers. Use decimal numeric literals only, with no symbolic expressions. Return only the list.",
+    "output": "[0.5, 0.5, 0.5, 0.5]",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4.1",
+    "size": 10000000000.0,
+    "depth": 4,
+    "category": "state_construction",
+    "prompt": "Construct a valid 2-qubit quantum state as a Python list of 4 complex numbers. Use decimal numeric literals only, with no symbolic expressions. Return only the list.",
+    "output": "[0.5, 0.5, 0.5, 0.5]",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4.1",
+    "size": 10000000000.0,
+    "depth": 4,
+    "category": "operator_synthesis",
+    "prompt": "Write a 2x2 unitary matrix as a Python 2x2 list of complex numbers. Use decimal numeric literals only, with no symbolic expressions. Return only the matrix.",
+    "output": "[[0.70710678+0.0j, 0.70710678+0.0j], [0.70710678+0.0j, -0.70710678+0.0j]]",
+    "d_phys": 4.746189943849553e-09,
+    "api_error": null
+  },
+  {
+    "model": "gpt-4.1",
+    "size": 10000000000.0,
+    "depth": 4,
+    "category": "entanglement_reasoning",
+    "prompt": "Check whether the state (|00> + |11>)/sqrt(2) is entangled. Return only True or False.",
+    "output": "True",
+    "d_phys": 0.0,
+    "api_error": null
+  }
+]

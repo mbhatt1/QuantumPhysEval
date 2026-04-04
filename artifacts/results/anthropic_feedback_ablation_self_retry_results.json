@@ -1,0 +1,3064 @@
+[
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514",
+    "size": 12000000000.0,
+    "depth": 4,
+    "category": "entanglement_classification",
+    "prompt": "Consider the 2-qubit state [0.00000000, 0.70710678, 0.00000000, 0.70710678]. Is it entangled? Return only True or False.",
+    "metadata": {
+      "template": "product_plus1"
+    },
+    "target": {
+      "kind": "boolean",
+      "value": false
+    },
+    "experiment": "time_budget",
+    "repair_mode": "self_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 0.970213958,
+        "latency_s": 0.970125833,
+        "d_phys": 0.0,
+        "solved": true,
+        "output": "False"
+      }
+    ],
+    "initial_d_phys": 0.0,
+    "best_d_phys": 0.0,
+    "final_d_phys": 0.0,
+    "solved": true,
+    "solve_time_s": 0.970213958,
+    "total_elapsed_s": 0.9702404169999999,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514",
+    "size": 12000000000.0,
+    "depth": 4,
+    "category": "circuit_evolution",
+    "prompt": "Start from |00>. Apply the 2-qubit gate sequence Z(0), Z(1), Z(1), S(1) in that order. Return the final state vector as a Python list of 4 complex numbers using decimal literals only and no explanation.",
+    "metadata": {
+      "bits": [
+        0,
+        0
+      ],
+      "ops": [
+        "Z(0)",
+        "Z(1)",
+        "Z(1)",
+        "S(1)"
+      ]
+    },
+    "target": {
+      "kind": "state_vector",
+      "value": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "self_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 1.0776419170000002,
+        "latency_s": 1.0770470000000003,
+        "d_phys": 0.0,
+        "solved": true,
+        "output": "[1.0, 0.0, 0.0, 0.0]"
+      }
+    ],
+    "initial_d_phys": 0.0,
+    "best_d_phys": 0.0,
+    "final_d_phys": 0.0,
+    "solved": true,
+    "solve_time_s": 1.0776419170000002,
+    "total_elapsed_s": 1.077652375,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514",
+    "size": 12000000000.0,
+    "depth": 4,
+    "category": "measurement_prediction",
+    "prompt": "Start from |11>. Apply the 2-qubit gate sequence H(1), X(0), Y(0), Z(1) in that order. Return the measurement probabilities [p00, p01, p10, p11] as a Python list of 4 decimal numbers only.",
+    "metadata": {
+      "bits": [
+        1,
+        1
+      ],
+      "ops": [
+        "H(1)",
+        "X(0)",
+        "Y(0)",
+        "Z(1)"
+      ]
+    },
+    "target": {
+      "kind": "probabilities",
+      "value": [
+        0.0,
+        0.0,
+        0.4999999999999999,
+        0.4999999999999999
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "self_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 3.028358125,
+        "latency_s": 3.0281985419999997,
+        "d_phys": 1.1102230246251565e-16,
+        "solved": true,
+        "output": "[0.0, 0.0, 0.5, 0.5]"
+      }
+    ],
+    "initial_d_phys": 1.1102230246251565e-16,
+    "best_d_phys": 1.1102230246251565e-16,
+    "final_d_phys": 1.1102230246251565e-16,
+    "solved": true,
+    "solve_time_s": 3.028358125,
+    "total_elapsed_s": 3.0283678340000004,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514",
+    "size": 12000000000.0,
+    "depth": 4,
+    "category": "measurement_prediction",
+    "prompt": "Start from |10>. Apply the 2-qubit gate sequence X(1), H(0), H(1), CZ in that order. Return the measurement probabilities [p00, p01, p10, p11] as a Python list of 4 decimal numbers only.",
+    "metadata": {
+      "bits": [
+        1,
+        0
+      ],
+      "ops": [
+        "X(1)",
+        "H(0)",
+        "H(1)",
+        "CZ"
+      ]
+    },
+    "target": {
+      "kind": "probabilities",
+      "value": [
+        0.2499999999999999,
+        0.2499999999999999,
+        0.2499999999999999,
+        0.2499999999999999
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "self_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 2,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 1.2253087910000002,
+        "latency_s": 1.224945167,
+        "d_phys": 0.5,
+        "solved": false,
+        "output": "[0.5, 0.0, 0.0, 0.5]"
+      },
+      {
+        "attempt": 2,
+        "elapsed_s": 6.6153005,
+        "latency_s": 5.389795625,
+        "d_phys": 2.220446049250313e-16,
+        "solved": true,
+        "output": "I'll work through this step by step.\n\nStep 1: Start with |10\u27e9\nInitial state: |10\u27e9\n\nStep 2: Apply X(1)\nX gate on qubit 1 flips it: |10\u27e9 \u2192 |11\u27e9\n\nStep 3: Apply H(0)\nHadamard on qubit 0: |11\u27e9 \u2192 (1/\u221a2)(|01\u27e9 + |11\u27e9)\n\nStep 4: Apply H(1)\nHadamard on qubit 1: (1/\u221a2)(|01\u27e9 + |11\u27e9) \u2192 (1/2)(|00\u27e9 - |01\u27e9 + |10\u27e9 - |11\u27e9)\n\nStep 5: Apply CZ\nCZ flips phase of |11\u27e9: (1/2)(|00\u27e9 - |01\u27e9 + |10\u27e9 - |11\u27e9) \u2192 (1/2)(|00\u27e9 - |01\u27e9 + |10\u27e9 + |11\u27e9)\n\nFinal amplitudes: |00\u27e9: 1/2, |01\u27e9: -1/2, |10\u27e9: 1/2, |11\u27e9: 1/2\n\nProbabilities: |1/2|\u00b2 = 0.25 for each state\n\n[0.25, 0.25, 0.25, 0.25]"
+      }
+    ],
+    "initial_d_phys": 0.5,
+    "best_d_phys": 2.220446049250313e-16,
+    "final_d_phys": 2.220446049250313e-16,
+    "solved": true,
+    "solve_time_s": 6.6153005,
+    "total_elapsed_s": 6.615309666,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514",
+    "size": 12000000000.0,
+    "depth": 4,
+    "category": "entanglement_classification",
+    "prompt": "Consider the 2-qubit state [0.70710678, 0.00000000, 0.00000000, -0.70710678]. Is it entangled? Return only True or False.",
+    "metadata": {
+      "template": "bell_phi_minus"
+    },
+    "target": {
+      "kind": "boolean",
+      "value": true
+    },
+    "experiment": "time_budget",
+    "repair_mode": "self_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 2,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 1.1664832090000004,
+        "latency_s": 1.1664179160000003,
+        "d_phys": 1.0,
+        "solved": false,
+        "output": "False"
+      },
+      {
+        "attempt": 2,
+        "elapsed_s": 7.430637166999999,
+        "latency_s": 6.263572166,
+        "d_phys": 0.0,
+        "solved": true,
+        "output": "Looking at the state [0.70710678, 0.00000000, 0.00000000, -0.70710678]:\n\nStep 1: Check normalization\n|0.70710678|\u00b2 + |0|\u00b2 + |0|\u00b2 + |-0.70710678|\u00b2 = 0.5 + 0 + 0 + 0.5 = 1 \u2713\n\nStep 2: Identify the state in computational basis\nThis is (1/\u221a2)|00\u27e9 + 0|01\u27e9 + 0|10\u27e9 + (-1/\u221a2)|11\u27e9 = (1/\u221a2)(|00\u27e9 - |11\u27e9)\n\nStep 3: Attempt tensor product decomposition\nFor separability, need |\u03c8\u27e9 = (\u03b1|0\u27e9 + \u03b2|1\u27e9) \u2297 (\u03b3|0\u27e9 + \u03b4|1\u27e9)\nThis gives: \u03b1\u03b3|00\u27e9 + \u03b1\u03b4|01\u27e9 + \u03b2\u03b3|10\u27e9 + \u03b2\u03b4|11\u27e9\nComparing coefficients: \u03b1\u03b3 = 1/\u221a2, \u03b1\u03b4 = 0, \u03b2\u03b3 = 0, \u03b2\u03b4 = -1/\u221a2\nFrom \u03b1\u03b4 = 0 and \u03b2\u03b3 = 0, either \u03b1 = 0 or \u03b4 = 0, and either \u03b2 = 0 or \u03b3 = 0\nBut if \u03b1 = 0, then \u03b1\u03b3 = 0 \u2260 1/\u221a2. Similar contradictions arise for other cases.\n\nStep 4: Verify entanglement\nNo valid tensor product decomposition exists, confirming entanglement.\n\nTrue"
+      }
+    ],
+    "initial_d_phys": 1.0,
+    "best_d_phys": 0.0,
+    "final_d_phys": 0.0,
+    "solved": true,
+    "solve_time_s": 7.430637166999999,
+    "total_elapsed_s": 7.430676416999999,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514",
+    "size": 12000000000.0,
+    "depth": 4,
+    "category": "entanglement_classification",
+    "prompt": "Consider the 2-qubit state [0.00000000, 0.70710678, 0.70710678, 0.00000000]. Is it entangled? Return only True or False.",
+    "metadata": {
+      "template": "bell_psi_plus"
+    },
+    "target": {
+      "kind": "boolean",
+      "value": true
+    },
+    "experiment": "time_budget",
+    "repair_mode": "self_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 2,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 0.960252208,
+        "latency_s": 0.9601942500000007,
+        "d_phys": 1.0,
+        "solved": false,
+        "output": "False"
+      },
+      {
+        "attempt": 2,
+        "elapsed_s": 1.9137042500000003,
+        "latency_s": 0.953432166999999,
+        "d_phys": 0.0,
+        "solved": true,
+        "output": "True"
+      }
+    ],
+    "initial_d_phys": 1.0,
+    "best_d_phys": 0.0,
+    "final_d_phys": 0.0,
+    "solved": true,
+    "solve_time_s": 1.9137042500000003,
+    "total_elapsed_s": 1.9137183750000002,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514",
+    "size": 12000000000.0,
+    "depth": 4,
+    "category": "measurement_prediction",
+    "prompt": "Start from |10>. Apply the 2-qubit gate sequence Y(0), CZ, Z(1), S(1) in that order. Return the measurement probabilities [p00, p01, p10, p11] as a Python list of 4 decimal numbers only.",
+    "metadata": {
+      "bits": [
+        1,
+        0
+      ],
+      "ops": [
+        "Y(0)",
+        "CZ",
+        "Z(1)",
+        "S(1)"
+      ]
+    },
+    "target": {
+      "kind": "probabilities",
+      "value": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "self_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 3,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 1.077369,
+        "latency_s": 1.0771864999999998,
+        "d_phys": 1.0,
+        "solved": false,
+        "output": "[0.0, 0.0, 0.0, 1.0]"
+      },
+      {
+        "attempt": 2,
+        "elapsed_s": 9.084249667,
+        "latency_s": 8.006765125,
+        "d_phys": 1.0,
+        "solved": false,
+        "output": "I'll work through this step-by-step, applying each gate in sequence.\n\n**Step 1:** Start with |10\u27e9 = |1\u27e9\u2297|0\u27e9 = [0, 0, 1, 0]\n\n**Step 2:** Apply Y(0) (Pauli-Y on qubit 0)\nY|1\u27e9 = -i|0\u27e9, so Y(0)|10\u27e9 = -i|00\u27e9\nState: [0, 0, -i, 0]\n\n**Step 3:** Apply CZ (Controlled-Z gate)\nCZ flips the sign of |11\u27e9 only. Since we have |00\u27e9, no change.\nState: [0, 0, -i, 0]\n\n**Step 4:** Apply Z(1) (Pauli-Z on qubit 1)\nZ|0\u27e9 = |0\u27e9, so no change to |00\u27e9\nState: [0, 0, -i, 0]\n\nWait, let me recalculate more carefully:\n\n**Step 1:** |10\u27e9 in computational basis: [0, 0, 1, 0]\n\n**Step 2:** Y(0) = I\u2297Y where Y = [[0,-i],[i,0]]\nY(0)|10\u27e9 = (I\u2297Y)[0, 0, 1, 0]\u1d40 = [0, 0, -i, 0]\u1d40\n\n**Step 3:** CZ|00\u27e9 = |00\u27e9 (no change)\nState: [0, 0, -i, 0]\n\n**Step 4:** Z(1)|00\u27e9 = |00\u27e9 (no change)\nState: [0, 0, -i, 0]\n\n**Step 5:** S(1) where S = [[1,0],[0,i]]\nS(1)|00\u27e9 = |00\u27e9 (no change)\nFinal state: [0, 0, -i, 0"
+      },
+      {
+        "attempt": 3,
+        "elapsed_s": 13.034183709,
+        "latency_s": 3.9492692080000005,
+        "d_phys": 0.0,
+        "solved": true,
+        "output": "I'll work through this step-by-step, applying each gate in sequence.\n\n**Step 1:** Start with |10\u27e9 = [0, 0, 1, 0]\n\n**Step 2:** Apply Y(0): Y|1\u27e9 = -i|0\u27e9, so Y(0)|10\u27e9 = -i|00\u27e9\nState: [-i, 0, 0, 0]\n\n**Step 3:** Apply CZ: CZ|-i|00\u27e9 = -i|00\u27e9 (no change since |00\u27e9 unaffected)\nState: [-i, 0, 0, 0]\n\n**Step 4:** Apply Z(1) then S(1): Both leave |00\u27e9 unchanged\nFinal state: [-i, 0, 0, 0]\n\nProbabilities: |\u2212i|\u00b2 = 1 for |00\u27e9, 0 for others.\n\n[1.0, 0.0, 0.0, 0.0]"
+      }
+    ],
+    "initial_d_phys": 1.0,
+    "best_d_phys": 0.0,
+    "final_d_phys": 0.0,
+    "solved": true,
+    "solve_time_s": 13.034183709,
+    "total_elapsed_s": 13.034255792,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514",
+    "size": 12000000000.0,
+    "depth": 4,
+    "category": "operator_composition",
+    "prompt": "Compute the 2x2 unitary matrix for the single-qubit gate sequence S, Y applied in that order. Return only a Python 2x2 list of complex numbers using decimal literals.",
+    "metadata": {
+      "ops": [
+        "S",
+        "Y"
+      ]
+    },
+    "target": {
+      "kind": "operator",
+      "value": [
+        [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0
+          ]
+        ],
+        [
+          [
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ]
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "self_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 2,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 1.5031974999999989,
+        "latency_s": 1.5023838749999996,
+        "d_phys": 0.1913417161825449,
+        "solved": false,
+        "output": "```python\n[[0.0+0.0j, 0.0-1.0j], [0.0+1.0j, 0.0+0.0j]]\n```"
+      },
+      {
+        "attempt": 2,
+        "elapsed_s": 8.122772832999999,
+        "latency_s": 6.619050332999999,
+        "d_phys": 0.0,
+        "solved": true,
+        "output": "I need to compute the matrix for the gate sequence S, Y applied in that order.\n\nStep 1: Define the S gate matrix\nS = [[1, 0], [0, i]] where i is the imaginary unit\n\nStep 2: Define the Y gate matrix  \nY = [[0, -i], [i, 0]]\n\nStep 3: Compute the product Y\u00b7S (since gates are applied right to left)\nY\u00b7S = [[0, -i], [i, 0]] \u00b7 [[1, 0], [0, i]]\n\nStep 4: Calculate matrix multiplication\nResult = [[0\u00b71 + (-i)\u00b70, 0\u00b70 + (-i)\u00b7i], [i\u00b71 + 0\u00b70, i\u00b70 + 0\u00b7i]]\n       = [[0, 1], [i, 0]]\n\nLet me verify this is unitary and check the calculation again.\n\nThe S gate: [[1+0j, 0+0j], [0+0j, 0+1j]]\nThe Y gate: [[0+0j, 0-1j], [0+1j, 0+0j]]\n\nComputing Y\u00b7S:\n[[0+0j, 0-1j], [0+1j, 0+0j]] \u00b7 [[1+0j, 0+0j], [0+0j, 0+1j]]\n\n= [[0\u00b71 + (-1j)\u00b70, 0\u00b70 + (-1j)\u00b7(1j)], [1j\u00b71 + 0\u00b70, 1j\u00b70 + 0\u00b7(1j)]]\n= [[0, 1], [1j, 0]]\n\n[[0.0+0.0j, 1.0+0.0j], [0.0+1.0j, 0.0+0.0j]]"
+      }
+    ],
+    "initial_d_phys": 0.1913417161825449,
+    "best_d_phys": 0.0,
+    "final_d_phys": 0.0,
+    "solved": true,
+    "solve_time_s": 8.122772832999999,
+    "total_elapsed_s": 8.122794500000001,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514",
+    "size": 12000000000.0,
+    "depth": 4,
+    "category": "entanglement_classification",
+    "prompt": "Consider the 2-qubit state [0.70710678, 0.00000000, 0.00000000, -0.70710678]. Is it entangled? Return only True or False.",
+    "metadata": {
+      "template": "bell_phi_minus"
+    },
+    "target": {
+      "kind": "boolean",
+      "value": true
+    },
+    "experiment": "time_budget",
+    "repair_mode": "self_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 3,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 0.9615097079999995,
+        "latency_s": 0.9614544169999988,
+        "d_phys": 1.0,
+        "solved": false,
+        "output": "False"
+      },
+      {
+        "attempt": 2,
+        "elapsed_s": 7.392770874999998,
+        "latency_s": 6.431210542000002,
+        "d_phys": 1.0,
+        "solved": false,
+        "output": "Looking at the state [0.70710678, 0.00000000, 0.00000000, -0.70710678]:\n\nStep 1: Identify the state in computational basis\nThis represents |\u03c8\u27e9 = 0.70710678|00\u27e9 + 0|01\u27e9 + 0|10\u27e9 - 0.70710678|11\u27e9 = (1/\u221a2)(|00\u27e9 - |11\u27e9)\n\nStep 2: Check if state can be written as a product\nFor a separable state |\u03c8\u27e9 = (\u03b1|0\u27e9 + \u03b2|1\u27e9) \u2297 (\u03b3|0\u27e9 + \u03b4|1\u27e9), we need:\n- Coefficient of |00\u27e9: \u03b1\u03b3 = 1/\u221a2\n- Coefficient of |01\u27e9: \u03b1\u03b4 = 0  \n- Coefficient of |10\u27e9: \u03b2\u03b3 = 0\n- Coefficient of |11\u27e9: \u03b2\u03b4 = -1/\u221a2\n\nStep 3: Analyze constraints\nFrom \u03b1\u03b4 = 0: either \u03b1 = 0 or \u03b4 = 0\nFrom \u03b2\u03b3 = 0: either \u03b2 = 0 or \u03b3 = 0\nIf \u03b1 = 0, then \u03b1\u03b3 = 0 \u2260 1/\u221a2 (contradiction)\nIf \u03b4 = 0, then \u03b2\u03b4 = 0 \u2260 -1/\u221a2 (contradiction)\nSimilar contradictions arise for other cases.\n\nStep 4: Conclude entanglement status\nSince no product form exists, the state is entangled.\n\nFalse"
+      },
+      {
+        "attempt": 3,
+        "elapsed_s": 12.429264666,
+        "latency_s": 5.035899750000002,
+        "d_phys": 0.0,
+        "solved": true,
+        "output": "Step 1: Verify normalization\n|0.70710678|\u00b2 + |0|\u00b2 + |0|\u00b2 + |-0.70710678|\u00b2 = 0.5 + 0 + 0 + 0.5 = 1 \u2713\n\nStep 2: Express in computational basis\n|\u03c8\u27e9 = 0.70710678|00\u27e9 + 0|01\u27e9 + 0|10\u27e9 - 0.70710678|11\u27e9 = (1/\u221a2)(|00\u27e9 - |11\u27e9)\n\nStep 3: Test separability\nFor separable state |\u03c8\u27e9 = (\u03b1|0\u27e9 + \u03b2|1\u27e9) \u2297 (\u03b3|0\u27e9 + \u03b4|1\u27e9):\n- \u03b1\u03b3 = 1/\u221a2, \u03b1\u03b4 = 0, \u03b2\u03b3 = 0, \u03b2\u03b4 = -1/\u221a2\nFrom \u03b1\u03b4 = 0 and \u03b2\u03b3 = 0: either \u03b1 = 0 or \u03b4 = 0, and either \u03b2 = 0 or \u03b3 = 0\nAll cases lead to contradictions with the non-zero requirements.\n\nStep 4: Apply entanglement criterion\nThe state cannot be factored into a tensor product of single-qubit states.\n\nTrue"
+      }
+    ],
+    "initial_d_phys": 1.0,
+    "best_d_phys": 0.0,
+    "final_d_phys": 0.0,
+    "solved": true,
+    "solve_time_s": 12.429264666,
+    "total_elapsed_s": 12.429294458,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514",
+    "size": 12000000000.0,
+    "depth": 4,
+    "category": "circuit_evolution",
+    "prompt": "Start from |10>. Apply the 2-qubit gate sequence H(1), S(1), CZ in that order. Return the final state vector as a Python list of 4 complex numbers using decimal literals only and no explanation.",
+    "metadata": {
+      "bits": [
+        1,
+        0
+      ],
+      "ops": [
+        "H(1)",
+        "S(1)",
+        "CZ"
+      ]
+    },
+    "target": {
+      "kind": "state_vector",
+      "value": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.7071067811865475,
+          0.0
+        ],
+        [
+          0.0,
+          -0.7071067811865475
+        ]
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "self_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 24,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 1.3640916249999995,
+        "latency_s": 1.3639333330000003,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.5, 0.5, 0.5j, -0.5j]"
+      },
+      {
+        "attempt": 2,
+        "elapsed_s": 2.4009665,
+        "latency_s": 1.0366155419999998,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.5, 0.5, 0.5j, -0.5j]"
+      },
+      {
+        "attempt": 3,
+        "elapsed_s": 3.4371627919999996,
+        "latency_s": 1.036092333,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.5, 0.5, 0.5j, -0.5j]"
+      },
+      {
+        "attempt": 4,
+        "elapsed_s": 4.375902042,
+        "latency_s": 0.9385456249999997,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.5, 0.5, 0.5j, -0.5j]"
+      },
+      {
+        "attempt": 5,
+        "elapsed_s": 5.5378695,
+        "latency_s": 1.1617197079999997,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.5, 0.5, 0.5j, -0.5j]"
+      },
+      {
+        "attempt": 6,
+        "elapsed_s": 6.755075334,
+        "latency_s": 1.216690917000001,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.5, 0.5, 0.5j, -0.5j]"
+      },
+      {
+        "attempt": 7,
+        "elapsed_s": 7.994891374999999,
+        "latency_s": 1.2394401249999998,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.5, 0.5, 0.5j, -0.5j]"
+      },
+      {
+        "attempt": 8,
+        "elapsed_s": 9.083722167000001,
+        "latency_s": 1.088719750000001,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.5, 0.5, 0.5j, -0.5j]"
+      },
+      {
+        "attempt": 9,
+        "elapsed_s": 10.454339042,
+        "latency_s": 1.3704470000000004,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.5, 0.5, 0.5j, -0.5j]"
+      },
+      {
+        "attempt": 10,
+        "elapsed_s": 11.4895335,
+        "latency_s": 1.0347193749999999,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.5, 0.5, 0.5j, -0.5j]"
+      },
+      {
+        "attempt": 11,
+        "elapsed_s": 12.508284249999999,
+        "latency_s": 1.0160754589999996,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.5, 0.5, 0.5j, -0.5j]"
+      },
+      {
+        "attempt": 12,
+        "elapsed_s": 13.550915875000001,
+        "latency_s": 1.041786375000001,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.5, 0.5, 0.5j, -0.5j]"
+      },
+      {
+        "attempt": 13,
+        "elapsed_s": 14.973569292,
+        "latency_s": 1.4222244170000025,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.5, 0.5, 0.5j, -0.5j]"
+      },
+      {
+        "attempt": 14,
+        "elapsed_s": 16.200618875,
+        "latency_s": 1.226684959,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.5, 0.5, 0.5j, -0.5j]"
+      },
+      {
+        "attempt": 15,
+        "elapsed_s": 17.317075834,
+        "latency_s": 1.116035832999998,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.5, 0.5, 0.5j, -0.5j]"
+      },
+      {
+        "attempt": 16,
+        "elapsed_s": 18.260630459,
+        "latency_s": 0.9430059159999971,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.5, 0.5, 0.5j, -0.5j]"
+      },
+      {
+        "attempt": 17,
+        "elapsed_s": 19.2539155,
+        "latency_s": 0.9931336669999986,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.5, 0.5, 0.5j, -0.5j]"
+      },
+      {
+        "attempt": 18,
+        "elapsed_s": 20.320793834,
+        "latency_s": 1.0667695419999994,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.5, 0.5, 0.5j, -0.5j]"
+      },
+      {
+        "attempt": 19,
+        "elapsed_s": 21.582891459000002,
+        "latency_s": 1.2616217499999998,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.5, 0.5, 0.5j, -0.5j]"
+      },
+      {
+        "attempt": 20,
+        "elapsed_s": 22.638345,
+        "latency_s": 1.0550920409999982,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.5, 0.5, 0.5j, -0.5j]"
+      },
+      {
+        "attempt": 21,
+        "elapsed_s": 23.630875,
+        "latency_s": 0.9920942079999975,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.5, 0.5, 0.5j, -0.5j]"
+      },
+      {
+        "attempt": 22,
+        "elapsed_s": 25.302048917,
+        "latency_s": 1.6707719589999996,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.5, 0.5, 0.5j, -0.5j]"
+      },
+      {
+        "attempt": 23,
+        "elapsed_s": 26.507576,
+        "latency_s": 1.205118167000002,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.5, 0.5, 0.5j, -0.5j]"
+      },
+      {
+        "attempt": 24,
+        "elapsed_s": 27.575985,
+        "latency_s": 1.067833125,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.5, 0.5, 0.5j, -0.5j]"
+      }
+    ],
+    "initial_d_phys": 0.75,
+    "best_d_phys": 0.75,
+    "final_d_phys": 0.75,
+    "solved": false,
+    "solve_time_s": null,
+    "total_elapsed_s": 27.575996334,
+    "pass_by_time": {
+      "30s": false,
+      "60s": false,
+      "120s": false,
+      "300s": false
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514",
+    "size": 12000000000.0,
+    "depth": 4,
+    "category": "circuit_evolution",
+    "prompt": "Start from |11>. Apply the 2-qubit gate sequence Y(0), H(1), Z(0), Y(1) in that order. Return the final state vector as a Python list of 4 complex numbers using decimal literals only and no explanation.",
+    "metadata": {
+      "bits": [
+        1,
+        1
+      ],
+      "ops": [
+        "Y(0)",
+        "H(1)",
+        "Z(0)",
+        "Y(1)"
+      ]
+    },
+    "target": {
+      "kind": "state_vector",
+      "value": [
+        [
+          0.7071067811865475,
+          0.0
+        ],
+        [
+          0.7071067811865475,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "self_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 24,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 1.1832382089999998,
+        "latency_s": 1.1822739580000001,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.0, 0.7071067811865476j, 0.0, -0.7071067811865476j]"
+      },
+      {
+        "attempt": 2,
+        "elapsed_s": 2.414440292,
+        "latency_s": 1.2310285419999998,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.0, 0.7071067811865476j, 0.0, -0.7071067811865476j]"
+      },
+      {
+        "attempt": 3,
+        "elapsed_s": 3.4947437920000004,
+        "latency_s": 1.0801616669999996,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.0, 0.7071067811865476j, 0.0, -0.7071067811865476j]"
+      },
+      {
+        "attempt": 4,
+        "elapsed_s": 4.662687417,
+        "latency_s": 1.1672568750000005,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.0, 0.7071067811865476j, 0.0, -0.7071067811865476j]"
+      },
+      {
+        "attempt": 5,
+        "elapsed_s": 6.44357025,
+        "latency_s": 1.7801553750000005,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.0, 0.7071067811865476j, 0.0, -0.7071067811865476j]"
+      },
+      {
+        "attempt": 6,
+        "elapsed_s": 8.167440166999999,
+        "latency_s": 1.7234167500000002,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.0, 0.7071067811865476j, 0.0, -0.7071067811865476j]"
+      },
+      {
+        "attempt": 7,
+        "elapsed_s": 9.254949917000001,
+        "latency_s": 1.087213792,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.0, 0.7071067811865476j, 0.0, -0.7071067811865476j]"
+      },
+      {
+        "attempt": 8,
+        "elapsed_s": 10.355468125000002,
+        "latency_s": 1.1002722079999998,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.0, 0.7071067811865476j, 0.0, -0.7071067811865476j]"
+      },
+      {
+        "attempt": 9,
+        "elapsed_s": 11.450934,
+        "latency_s": 1.095144125000001,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.0, 0.7071067811865476j, 0.0, -0.7071067811865476j]"
+      },
+      {
+        "attempt": 10,
+        "elapsed_s": 12.545878917,
+        "latency_s": 1.0945257500000007,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.0, 0.7071067811865476j, 0.0, -0.7071067811865476j]"
+      },
+      {
+        "attempt": 11,
+        "elapsed_s": 13.932353542000001,
+        "latency_s": 1.3860343339999996,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.0, 0.7071067811865476j, 0.0, -0.7071067811865476j]"
+      },
+      {
+        "attempt": 12,
+        "elapsed_s": 15.1342045,
+        "latency_s": 1.2013675839999998,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.0, 0.7071067811865476j, 0.0, -0.7071067811865476j]"
+      },
+      {
+        "attempt": 13,
+        "elapsed_s": 16.284408209000002,
+        "latency_s": 1.1497660829999994,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.0, 0.7071067811865476j, 0.0, -0.7071067811865476j]"
+      },
+      {
+        "attempt": 14,
+        "elapsed_s": 17.765235625000003,
+        "latency_s": 1.4802153340000004,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.0, 0.7071067811865476j, 0.0, -0.7071067811865476j]"
+      },
+      {
+        "attempt": 15,
+        "elapsed_s": 18.871602667,
+        "latency_s": 1.1055636249999985,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.0, 0.7071067811865476j, 0.0, -0.7071067811865476j]"
+      },
+      {
+        "attempt": 16,
+        "elapsed_s": 20.082114,
+        "latency_s": 1.2103126670000002,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.0, 0.7071067811865476j, 0.0, -0.7071067811865476j]"
+      },
+      {
+        "attempt": 17,
+        "elapsed_s": 21.327656459,
+        "latency_s": 1.244920417000003,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.0, 0.7071067811865476j, 0.0, -0.7071067811865476j]"
+      },
+      {
+        "attempt": 18,
+        "elapsed_s": 22.620476959,
+        "latency_s": 1.2923909159999987,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.0, 0.7071067811865476j, 0.0, -0.7071067811865476j]"
+      },
+      {
+        "attempt": 19,
+        "elapsed_s": 23.997055375000002,
+        "latency_s": 1.3762016670000001,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.0, 0.7071067811865476j, 0.0, -0.7071067811865476j]"
+      },
+      {
+        "attempt": 20,
+        "elapsed_s": 25.313709167000003,
+        "latency_s": 1.316417874999999,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.0, 0.7071067811865476j, 0.0, -0.7071067811865476j]"
+      },
+      {
+        "attempt": 21,
+        "elapsed_s": 26.733259334,
+        "latency_s": 1.4191234580000014,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.0, 0.7071067811865476j, 0.0, -0.7071067811865476j]"
+      },
+      {
+        "attempt": 22,
+        "elapsed_s": 27.876647417,
+        "latency_s": 1.1430108340000018,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.0, 0.7071067811865476j, 0.0, -0.7071067811865476j]"
+      },
+      {
+        "attempt": 23,
+        "elapsed_s": 28.955897667000002,
+        "latency_s": 1.0788236669999982,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.0, 0.7071067811865476j, 0.0, -0.7071067811865476j]"
+      },
+      {
+        "attempt": 24,
+        "elapsed_s": 30.185926249999998,
+        "latency_s": 1.2295905840000039,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "[0.0, 0.7071067811865476j, 0.0, -0.7071067811865476j]"
+      }
+    ],
+    "initial_d_phys": 0.75,
+    "best_d_phys": 0.75,
+    "final_d_phys": 0.75,
+    "solved": false,
+    "solve_time_s": null,
+    "total_elapsed_s": 30.185933625,
+    "pass_by_time": {
+      "30s": false,
+      "60s": false,
+      "120s": false,
+      "300s": false
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-opus-4-1-20250805",
+    "size": 16000000000.0,
+    "depth": 4,
+    "category": "circuit_evolution",
+    "prompt": "Start from |00>. Apply the 2-qubit gate sequence Z(0), Z(1), Z(1), S(1) in that order. Return the final state vector as a Python list of 4 complex numbers using decimal literals only and no explanation.",
+    "metadata": {
+      "bits": [
+        0,
+        0
+      ],
+      "ops": [
+        "Z(0)",
+        "Z(1)",
+        "Z(1)",
+        "S(1)"
+      ]
+    },
+    "target": {
+      "kind": "state_vector",
+      "value": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "self_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 5.600397832999999,
+        "latency_s": 5.600227792000002,
+        "d_phys": 0.0,
+        "solved": true,
+        "output": "I'll trace through the gate sequence step by step.\n\nStep 1: Initial state |00\u27e9 = [1, 0, 0, 0]\n\nStep 2: Apply Z(0) - Z gate on qubit 0\nZ(0)|00\u27e9 = |00\u27e9 = [1, 0, 0, 0]\n\nStep 3: Apply Z(1) - Z gate on qubit 1\nZ(1)|00\u27e9 = |00\u27e9 = [1, 0, 0, 0]\n\nStep 4: Apply Z(1) again and then S(1)\nZ(1)|00\u27e9 = |00\u27e9 = [1, 0, 0, 0]\nS(1)|00\u27e9 = |00\u27e9 = [1, 0, 0, 0]\n\n[1.0, 0.0, 0.0, 0.0]"
+      }
+    ],
+    "initial_d_phys": 0.0,
+    "best_d_phys": 0.0,
+    "final_d_phys": 0.0,
+    "solved": true,
+    "solve_time_s": 5.600397832999999,
+    "total_elapsed_s": 5.600407041999997,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514",
+    "size": 12000000000.0,
+    "depth": 4,
+    "category": "operator_composition",
+    "prompt": "Compute the 2x2 unitary matrix for the single-qubit gate sequence T, S, T applied in that order. Return only a Python 2x2 list of complex numbers using decimal literals.",
+    "metadata": {
+      "ops": [
+        "T",
+        "S",
+        "T"
+      ]
+    },
+    "target": {
+      "kind": "operator",
+      "value": [
+        [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            -1.0,
+            2.220446049250313e-16
+          ]
+        ]
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "self_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 4,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 1.7665036249999986,
+        "latency_s": 1.7662869169999986,
+        "d_phys": 0.43118621784789724,
+        "solved": false,
+        "output": "```python\n[[0.5+0.5j, 0.7071067811865476-0.7071067811865476j], [0.7071067811865476+0.7071067811865476j, -0.5+0.5j]]\n```"
+      },
+      {
+        "attempt": 2,
+        "elapsed_s": 7.357275084000001,
+        "latency_s": 5.5902449999999995,
+        "d_phys": 0.1911201495391553,
+        "solved": false,
+        "output": "I need to compute the matrix for the gate sequence T, S, T applied in that order.\n\nStep 1: Define the individual gate matrices\n- T gate: [[1, 0], [0, e^(i\u03c0/4)]] = [[1, 0], [0, (1+i)/\u221a2]]\n- S gate: [[1, 0], [0, i]]\n\nStep 2: Convert to decimal form\n- T = [[1.0+0.0j, 0.0+0.0j], [0.0+0.0j, 0.7071067811865476+0.7071067811865476j]]\n- S = [[1.0+0.0j, 0.0+0.0j], [0.0+0.0j, 0.0+1.0j]]\n\nStep 3: Compute T\u00d7S first\nT\u00d7S = [[1.0+0.0j, 0.0+0.0j], [0.0+0.0j, -0.7071067811865476+0.7071067811865476j]]\n\nStep 4: Compute (T\u00d7S)\u00d7T = T\u00d7S\u00d7T\nFinal result: [[1.0+0.0j, 0.0+0.0j], [0.0+0.0j, -0.5-0.5j]]\n\nVerification pass: Checking unitarity and normalization...\n\n[[1.0+0.0j, 0.0+0.0j], [0.0+0.0j, -0.5-0.5j]]"
+      },
+      {
+        "attempt": 3,
+        "elapsed_s": 8.589508249999998,
+        "latency_s": 1.2316837090000021,
+        "d_phys": 0.1911201495391553,
+        "solved": false,
+        "output": "[[1.0+0.0j, 0.0+0.0j], [0.0+0.0j, -0.5-0.5j]]"
+      },
+      {
+        "attempt": 4,
+        "elapsed_s": 13.539449041999998,
+        "latency_s": 4.949773458000003,
+        "d_phys": 2.7755575615628914e-17,
+        "solved": true,
+        "output": "Looking at the gate sequence T, S, T applied in that order:\n\nT gate: [[1, 0], [0, e^(i\u03c0/4)]] = [[1, 0], [0, (1+i)/\u221a2]]\nS gate: [[1, 0], [0, i]]\n\nComputing T \u00d7 S \u00d7 T step by step:\n\nFirst, S \u00d7 T:\n[[1, 0], [0, i]] \u00d7 [[1, 0], [0, (1+i)/\u221a2]] = [[1, 0], [0, i(1+i)/\u221a2]] = [[1, 0], [0, (i-1)/\u221a2]]\n\nThen T \u00d7 (S \u00d7 T):\n[[1, 0], [0, (1+i)/\u221a2]] \u00d7 [[1, 0], [0, (i-1)/\u221a2]] = [[1, 0], [0, (1+i)(i-1)/(\u221a2\u00d7\u221a2)]]\n\nComputing (1+i)(i-1) = i - 1 + i\u00b2 - i = i - 1 - 1 - i = -2\n\nSo the result is: [[1, 0], [0, -2/2]] = [[1, 0], [0, -1]]\n\nConverting to decimal format:\n\n[[1.0, 0.0], [0.0, -1.0]]"
+      }
+    ],
+    "initial_d_phys": 0.43118621784789724,
+    "best_d_phys": 2.7755575615628914e-17,
+    "final_d_phys": 2.7755575615628914e-17,
+    "solved": true,
+    "solve_time_s": 13.539449041999998,
+    "total_elapsed_s": 13.539457709,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514",
+    "size": 12000000000.0,
+    "depth": 4,
+    "category": "circuit_evolution",
+    "prompt": "Start from |00>. Apply the 2-qubit gate sequence Y(1), CZ in that order. Return the final state vector as a Python list of 4 complex numbers using decimal literals only and no explanation.",
+    "metadata": {
+      "bits": [
+        0,
+        0
+      ],
+      "ops": [
+        "Y(1)",
+        "CZ"
+      ]
+    },
+    "target": {
+      "kind": "state_vector",
+      "value": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "self_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 24,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 1.149772917,
+        "latency_s": 1.1495837080000006,
+        "d_phys": 1.0,
+        "solved": false,
+        "output": "[0, 0, 0, -1j]"
+      },
+      {
+        "attempt": 2,
+        "elapsed_s": 2.487035833000001,
+        "latency_s": 1.3369374159999996,
+        "d_phys": 1.0,
+        "solved": false,
+        "output": "[0, 0, 0, -1j]"
+      },
+      {
+        "attempt": 3,
+        "elapsed_s": 3.4358242500000005,
+        "latency_s": 0.9484966250000006,
+        "d_phys": 1.0,
+        "solved": false,
+        "output": "[0, 0, 0, -1j]"
+      },
+      {
+        "attempt": 4,
+        "elapsed_s": 4.603919583000001,
+        "latency_s": 1.1678835000000003,
+        "d_phys": 1.0,
+        "solved": false,
+        "output": "[0, 0, 0, -1j]"
+      },
+      {
+        "attempt": 5,
+        "elapsed_s": 6.024916167,
+        "latency_s": 1.4208605419999998,
+        "d_phys": 1.0,
+        "solved": false,
+        "output": "[0, 0, 0, -1j]"
+      },
+      {
+        "attempt": 6,
+        "elapsed_s": 7.326271833000001,
+        "latency_s": 1.3012007909999994,
+        "d_phys": 1.0,
+        "solved": false,
+        "output": "[0, 0, 0, -1j]"
+      },
+      {
+        "attempt": 7,
+        "elapsed_s": 8.813443625000001,
+        "latency_s": 1.4868174169999993,
+        "d_phys": 1.0,
+        "solved": false,
+        "output": "[0, 0, 0, -1j]"
+      },
+      {
+        "attempt": 8,
+        "elapsed_s": 9.844235708,
+        "latency_s": 1.0304571249999999,
+        "d_phys": 1.0,
+        "solved": false,
+        "output": "[0, 0, 0, -1j]"
+      },
+      {
+        "attempt": 9,
+        "elapsed_s": 10.894086292,
+        "latency_s": 1.0494824170000001,
+        "d_phys": 1.0,
+        "solved": false,
+        "output": "[0, 0, 0, -1j]"
+      },
+      {
+        "attempt": 10,
+        "elapsed_s": 11.967122499999999,
+        "latency_s": 1.0727045420000003,
+        "d_phys": 1.0,
+        "solved": false,
+        "output": "[0, 0, 0, -1j]"
+      },
+      {
+        "attempt": 11,
+        "elapsed_s": 13.832802542,
+        "latency_s": 1.8653389170000025,
+        "d_phys": 1.0,
+        "solved": false,
+        "output": "[0, 0, 0, -1j]"
+      },
+      {
+        "attempt": 12,
+        "elapsed_s": 14.91865675,
+        "latency_s": 1.0855284590000025,
+        "d_phys": 1.0,
+        "solved": false,
+        "output": "[0, 0, 0, -1j]"
+      },
+      {
+        "attempt": 13,
+        "elapsed_s": 15.896601458,
+        "latency_s": 0.9776125839999992,
+        "d_phys": 1.0,
+        "solved": false,
+        "output": "[0, 0, 0, -1j]"
+      },
+      {
+        "attempt": 14,
+        "elapsed_s": 16.906648957999998,
+        "latency_s": 1.0099137910000024,
+        "d_phys": 1.0,
+        "solved": false,
+        "output": "[0, 0, 0, -1j]"
+      },
+      {
+        "attempt": 15,
+        "elapsed_s": 17.9249465,
+        "latency_s": 1.0178011249999983,
+        "d_phys": 1.0,
+        "solved": false,
+        "output": "[0, 0, 0, -1j]"
+      },
+      {
+        "attempt": 16,
+        "elapsed_s": 19.050838542,
+        "latency_s": 1.125551041999998,
+        "d_phys": 1.0,
+        "solved": false,
+        "output": "[0, 0, 0, -1j]"
+      },
+      {
+        "attempt": 17,
+        "elapsed_s": 20.068733542,
+        "latency_s": 1.0174769589999997,
+        "d_phys": 1.0,
+        "solved": false,
+        "output": "[0, 0, 0, -1j]"
+      },
+      {
+        "attempt": 18,
+        "elapsed_s": 21.055215957999998,
+        "latency_s": 0.9861493330000002,
+        "d_phys": 1.0,
+        "solved": false,
+        "output": "[0, 0, 0, -1j]"
+      },
+      {
+        "attempt": 19,
+        "elapsed_s": 22.236061792,
+        "latency_s": 1.1803584160000007,
+        "d_phys": 1.0,
+        "solved": false,
+        "output": "[0, 0, 0, -1j]"
+      },
+      {
+        "attempt": 20,
+        "elapsed_s": 23.290372875,
+        "latency_s": 1.0538879160000008,
+        "d_phys": 1.0,
+        "solved": false,
+        "output": "[0, 0, 0, -1j]"
+      },
+      {
+        "attempt": 21,
+        "elapsed_s": 24.37006325,
+        "latency_s": 1.0791585829999981,
+        "d_phys": 1.0,
+        "solved": false,
+        "output": "[0, 0, 0, -1j]"
+      },
+      {
+        "attempt": 22,
+        "elapsed_s": 25.94806625,
+        "latency_s": 1.5778378330000002,
+        "d_phys": 1.0,
+        "solved": false,
+        "output": "[0, 0, 0, -1j]"
+      },
+      {
+        "attempt": 23,
+        "elapsed_s": 28.012970708,
+        "latency_s": 2.0644909170000005,
+        "d_phys": 1.0,
+        "solved": false,
+        "output": "[0, 0, 0, -1j]"
+      },
+      {
+        "attempt": 24,
+        "elapsed_s": 29.225578083,
+        "latency_s": 1.2122523339999987,
+        "d_phys": 1.0,
+        "solved": false,
+        "output": "[0, 0, 0, -1j]"
+      }
+    ],
+    "initial_d_phys": 1.0,
+    "best_d_phys": 1.0,
+    "final_d_phys": 1.0,
+    "solved": false,
+    "solve_time_s": null,
+    "total_elapsed_s": 29.225584792000003,
+    "pass_by_time": {
+      "30s": false,
+      "60s": false,
+      "120s": false,
+      "300s": false
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-opus-4-1-20250805",
+    "size": 16000000000.0,
+    "depth": 4,
+    "category": "circuit_evolution",
+    "prompt": "Start from |10>. Apply the 2-qubit gate sequence H(1), S(1), CZ in that order. Return the final state vector as a Python list of 4 complex numbers using decimal literals only and no explanation.",
+    "metadata": {
+      "bits": [
+        1,
+        0
+      ],
+      "ops": [
+        "H(1)",
+        "S(1)",
+        "CZ"
+      ]
+    },
+    "target": {
+      "kind": "state_vector",
+      "value": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.7071067811865475,
+          0.0
+        ],
+        [
+          0.0,
+          -0.7071067811865475
+        ]
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "self_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 6.568132792,
+        "latency_s": 6.567332291,
+        "d_phys": 0.0,
+        "solved": true,
+        "output": "I'll work through this step by step internally.\n\nStep 1: Start with |10\u27e9 = [0, 0, 1, 0]\n\nStep 2: Apply H(1) to qubit 1:\nH(1)|10\u27e9 = |1\u27e9 \u2297 (|0\u27e9 + |1\u27e9)/\u221a2 = (|10\u27e9 + |11\u27e9)/\u221a2\n\nStep 3: Apply S(1) to qubit 1:\nS(1) applies phase i to |1\u27e9 component of qubit 1\nResult: (|10\u27e9 + i|11\u27e9)/\u221a2\n\nStep 4: Apply CZ gate:\nCZ adds phase -1 when both qubits are |1\u27e9\nResult: (|10\u27e9 - i|11\u27e9)/\u221a2\n\n[0, 0, 0.7071067811865476, -0.7071067811865476j]"
+      }
+    ],
+    "initial_d_phys": 0.0,
+    "best_d_phys": 0.0,
+    "final_d_phys": 0.0,
+    "solved": true,
+    "solve_time_s": 6.568132792,
+    "total_elapsed_s": 6.5681513339999995,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-opus-4-1-20250805",
+    "size": 16000000000.0,
+    "depth": 4,
+    "category": "operator_composition",
+    "prompt": "Compute the 2x2 unitary matrix for the single-qubit gate sequence Y, S applied in that order. Return only a Python 2x2 list of complex numbers using decimal literals.",
+    "metadata": {
+      "ops": [
+        "Y",
+        "S"
+      ]
+    },
+    "target": {
+      "kind": "operator",
+      "value": [
+        [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            -1.0
+          ]
+        ],
+        [
+          [
+            -1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ]
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "self_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 5.910720417,
+        "latency_s": 5.909616333999999,
+        "d_phys": 0.0,
+        "solved": true,
+        "output": "I need to compute the product of Y and S gates applied in sequence, which means S\u00b7Y.\n\nStep 1: Write the Y gate matrix:\nY = [[0, -i], [i, 0]]\n\nStep 2: Write the S gate matrix:\nS = [[1, 0], [0, i]]\n\nStep 3: Compute S\u00b7Y matrix multiplication:\n- Element (0,0): 1\u00b70 + 0\u00b7i = 0\n- Element (0,1): 1\u00b7(-i) + 0\u00b70 = -i\n- Element (1,0): 0\u00b70 + i\u00b7i = -1\n- Element (1,1): 0\u00b7(-i) + i\u00b70 = 0\n\nStep 4: Convert to decimal form:\n- 0 = 0+0j\n- -i = 0-1j\n- -1 = -1+0j\n- 0 = 0+0j\n\n[[0j, -1j], [-1+0j, 0j]]"
+      }
+    ],
+    "initial_d_phys": 0.0,
+    "best_d_phys": 0.0,
+    "final_d_phys": 0.0,
+    "solved": true,
+    "solve_time_s": 5.910720417,
+    "total_elapsed_s": 5.910762333000001,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-opus-4-1-20250805",
+    "size": 16000000000.0,
+    "depth": 4,
+    "category": "entanglement_classification",
+    "prompt": "Consider the 2-qubit state [0.00000000, 0.70710678, 0.00000000, 0.70710678]. Is it entangled? Return only True or False.",
+    "metadata": {
+      "template": "product_plus1"
+    },
+    "target": {
+      "kind": "boolean",
+      "value": false
+    },
+    "experiment": "time_budget",
+    "repair_mode": "self_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 6.203344125000001,
+        "latency_s": 6.203250666999999,
+        "d_phys": 0.0,
+        "solved": true,
+        "output": "I need to determine if the given 2-qubit state is entangled.\n\nStep 1: The state vector is |\u03c8\u27e9 = [0, 1/\u221a2, 0, 1/\u221a2], which in computational basis means |\u03c8\u27e9 = (1/\u221a2)|01\u27e9 + (1/\u221a2)|11\u27e9.\n\nStep 2: Factor out common terms: |\u03c8\u27e9 = (1/\u221a2)(|01\u27e9 + |11\u27e9) = (1/\u221a2)|1\u27e9 \u2297 (|0\u27e9 + |1\u27e9).\n\nStep 3: This can be written as |\u03c8\u27e9 = |1\u27e9 \u2297 (1/\u221a2)(|0\u27e9 + |1\u27e9) = |1\u27e9 \u2297 |+\u27e9.\n\nStep 4: Since the state can be written as a tensor product of two single-qubit states, it is separable (not entangled).\n\nFalse"
+      }
+    ],
+    "initial_d_phys": 0.0,
+    "best_d_phys": 0.0,
+    "final_d_phys": 0.0,
+    "solved": true,
+    "solve_time_s": 6.203344125000001,
+    "total_elapsed_s": 6.203364792000002,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-opus-4-1-20250805",
+    "size": 16000000000.0,
+    "depth": 4,
+    "category": "measurement_prediction",
+    "prompt": "Start from |10>. Apply the 2-qubit gate sequence Y(0), CZ, Z(1), S(1) in that order. Return the measurement probabilities [p00, p01, p10, p11] as a Python list of 4 decimal numbers only.",
+    "metadata": {
+      "bits": [
+        1,
+        0
+      ],
+      "ops": [
+        "Y(0)",
+        "CZ",
+        "Z(1)",
+        "S(1)"
+      ]
+    },
+    "target": {
+      "kind": "probabilities",
+      "value": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "self_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 7.1334881249999995,
+        "latency_s": 7.133313749999999,
+        "d_phys": 0.0,
+        "solved": true,
+        "output": "I'll work through this step by step.\n\nStep 1: Starting with |10\u27e9 = |1\u27e9\u2297|0\u27e9, apply Y(0) (Y gate on qubit 0):\nY|1\u27e9 = -i|0\u27e9, so the state becomes -i|00\u27e9\n\nStep 2: Apply CZ (controlled-Z gate):\nCZ only applies a phase when both qubits are |1\u27e9. Since we have |00\u27e9, CZ leaves it unchanged: -i|00\u27e9\n\nStep 3: Apply Z(1) (Z gate on qubit 1):\nZ|0\u27e9 = |0\u27e9, so the state remains -i|00\u27e9\n\nStep 4: Apply S(1) (S gate on qubit 1):\nS|0\u27e9 = |0\u27e9, so the final state is -i|00\u27e9\nThe measurement probabilities are |\u27e800|-i|00\u27e9|\u00b2 = 1, all others are 0.\n\n[1.0, 0.0, 0.0, 0.0]"
+      }
+    ],
+    "initial_d_phys": 0.0,
+    "best_d_phys": 0.0,
+    "final_d_phys": 0.0,
+    "solved": true,
+    "solve_time_s": 7.1334881249999995,
+    "total_elapsed_s": 7.133495750000002,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514",
+    "size": 12000000000.0,
+    "depth": 4,
+    "category": "operator_composition",
+    "prompt": "Compute the 2x2 unitary matrix for the single-qubit gate sequence Y, S applied in that order. Return only a Python 2x2 list of complex numbers using decimal literals.",
+    "metadata": {
+      "ops": [
+        "Y",
+        "S"
+      ]
+    },
+    "target": {
+      "kind": "operator",
+      "value": [
+        [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            -1.0
+          ]
+        ],
+        [
+          [
+            -1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ]
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "self_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 24,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 1.7437681250000003,
+        "latency_s": 1.7434177089999996,
+        "d_phys": 0.9330127018922192,
+        "solved": false,
+        "output": "```python\n[[0.7071067811865476+0.7071067811865475j, -0.7071067811865476-0.7071067811865475j], [0.7071067811865476-0.7071067811865475j, -0.7071067811865476+0.7071067811865475j]]\n```"
+      },
+      {
+        "attempt": 2,
+        "elapsed_s": 3.4279989170000005,
+        "latency_s": 1.6839787919999996,
+        "d_phys": 0.9330127018922192,
+        "solved": false,
+        "output": "[[0.7071067811865476+0.7071067811865475j, -0.7071067811865476-0.7071067811865475j], [0.7071067811865476-0.7071067811865475j, -0.7071067811865476+0.7071067811865475j]]"
+      },
+      {
+        "attempt": 3,
+        "elapsed_s": 5.091698000000001,
+        "latency_s": 1.6634633330000002,
+        "d_phys": 0.9330127018922192,
+        "solved": false,
+        "output": "[[0.7071067811865476+0.7071067811865475j, -0.7071067811865476-0.7071067811865475j], [0.7071067811865476-0.7071067811865475j, -0.7071067811865476+0.7071067811865475j]]"
+      },
+      {
+        "attempt": 4,
+        "elapsed_s": 6.6722705420000015,
+        "latency_s": 1.5800671669999993,
+        "d_phys": 0.9330127018922192,
+        "solved": false,
+        "output": "[[0.7071067811865476+0.7071067811865475j, -0.7071067811865476-0.7071067811865475j], [0.7071067811865476-0.7071067811865475j, -0.7071067811865476+0.7071067811865475j]]"
+      },
+      {
+        "attempt": 5,
+        "elapsed_s": 8.218670667000001,
+        "latency_s": 1.5455288750000005,
+        "d_phys": 0.9330127018922192,
+        "solved": false,
+        "output": "[[0.7071067811865476+0.7071067811865475j, -0.7071067811865476-0.7071067811865475j], [0.7071067811865476-0.7071067811865475j, -0.7071067811865476+0.7071067811865475j]]"
+      },
+      {
+        "attempt": 6,
+        "elapsed_s": 9.722747583,
+        "latency_s": 1.5034890830000016,
+        "d_phys": 0.9330127018922192,
+        "solved": false,
+        "output": "[[0.7071067811865476+0.7071067811865475j, -0.7071067811865476-0.7071067811865475j], [0.7071067811865476-0.7071067811865475j, -0.7071067811865476+0.7071067811865475j]]"
+      },
+      {
+        "attempt": 7,
+        "elapsed_s": 11.422528167000001,
+        "latency_s": 1.6992865829999992,
+        "d_phys": 0.9330127018922192,
+        "solved": false,
+        "output": "[[0.7071067811865476+0.7071067811865475j, -0.7071067811865476-0.7071067811865475j], [0.7071067811865476-0.7071067811865475j, -0.7071067811865476+0.7071067811865475j]]"
+      },
+      {
+        "attempt": 8,
+        "elapsed_s": 12.922305750000001,
+        "latency_s": 1.499252792,
+        "d_phys": 0.9330127018922192,
+        "solved": false,
+        "output": "[[0.7071067811865476+0.7071067811865475j, -0.7071067811865476-0.7071067811865475j], [0.7071067811865476-0.7071067811865475j, -0.7071067811865476+0.7071067811865475j]]"
+      },
+      {
+        "attempt": 9,
+        "elapsed_s": 14.566085082999999,
+        "latency_s": 1.6430605829999987,
+        "d_phys": 0.9330127018922192,
+        "solved": false,
+        "output": "[[0.7071067811865476+0.7071067811865475j, -0.7071067811865476-0.7071067811865475j], [0.7071067811865476-0.7071067811865475j, -0.7071067811865476+0.7071067811865475j]]"
+      },
+      {
+        "attempt": 10,
+        "elapsed_s": 18.228977333,
+        "latency_s": 3.6623323749999983,
+        "d_phys": 0.9330127018922192,
+        "solved": false,
+        "output": "[[0.7071067811865476+0.7071067811865475j, -0.7071067811865476-0.7071067811865475j], [0.7071067811865476-0.7071067811865475j, -0.7071067811865476+0.7071067811865475j]]"
+      },
+      {
+        "attempt": 11,
+        "elapsed_s": 19.690588166999998,
+        "latency_s": 1.4613855420000021,
+        "d_phys": 0.9330127018922192,
+        "solved": false,
+        "output": "[[0.7071067811865476+0.7071067811865475j, -0.7071067811865476-0.7071067811865475j], [0.7071067811865476-0.7071067811865475j, -0.7071067811865476+0.7071067811865475j]]"
+      },
+      {
+        "attempt": 12,
+        "elapsed_s": 21.2551895,
+        "latency_s": 1.5641053330000005,
+        "d_phys": 0.9330127018922192,
+        "solved": false,
+        "output": "[[0.7071067811865476+0.7071067811865475j, -0.7071067811865476-0.7071067811865475j], [0.7071067811865476-0.7071067811865475j, -0.7071067811865476+0.7071067811865475j]]"
+      },
+      {
+        "attempt": 13,
+        "elapsed_s": 22.80890175,
+        "latency_s": 1.5530157090000003,
+        "d_phys": 0.9330127018922192,
+        "solved": false,
+        "output": "[[0.7071067811865476+0.7071067811865475j, -0.7071067811865476-0.7071067811865475j], [0.7071067811865476-0.7071067811865475j, -0.7071067811865476+0.7071067811865475j]]"
+      },
+      {
+        "attempt": 14,
+        "elapsed_s": 24.301861249999998,
+        "latency_s": 1.4923906670000022,
+        "d_phys": 0.9330127018922192,
+        "solved": false,
+        "output": "[[0.7071067811865476+0.7071067811865475j, -0.7071067811865476-0.7071067811865475j], [0.7071067811865476-0.7071067811865475j, -0.7071067811865476+0.7071067811865475j]]"
+      },
+      {
+        "attempt": 15,
+        "elapsed_s": 27.186398667,
+        "latency_s": 2.8839191669999984,
+        "d_phys": 0.9330127018922192,
+        "solved": false,
+        "output": "[[0.7071067811865476+0.7071067811865475j, -0.7071067811865476-0.7071067811865475j], [0.7071067811865476-0.7071067811865475j, -0.7071067811865476+0.7071067811865475j]]"
+      },
+      {
+        "attempt": 16,
+        "elapsed_s": 28.611420292,
+        "latency_s": 1.424502915999998,
+        "d_phys": 0.9330127018922192,
+        "solved": false,
+        "output": "[[0.7071067811865476+0.7071067811865475j, -0.7071067811865476-0.7071067811865475j], [0.7071067811865476-0.7071067811865475j, -0.7071067811865476+0.7071067811865475j]]"
+      },
+      {
+        "attempt": 17,
+        "elapsed_s": 30.175032958,
+        "latency_s": 1.5633763750000007,
+        "d_phys": 0.9330127018922192,
+        "solved": false,
+        "output": "[[0.7071067811865476+0.7071067811865475j, -0.7071067811865476-0.7071067811865475j], [0.7071067811865476-0.7071067811865475j, -0.7071067811865476+0.7071067811865475j]]"
+      },
+      {
+        "attempt": 18,
+        "elapsed_s": 31.976204917,
+        "latency_s": 1.8009239169999987,
+        "d_phys": 0.9330127018922192,
+        "solved": false,
+        "output": "[[0.7071067811865476+0.7071067811865475j, -0.7071067811865476-0.7071067811865475j], [0.7071067811865476-0.7071067811865475j, -0.7071067811865476+0.7071067811865475j]]"
+      },
+      {
+        "attempt": 19,
+        "elapsed_s": 33.455960625,
+        "latency_s": 1.4792510830000012,
+        "d_phys": 0.9330127018922192,
+        "solved": false,
+        "output": "[[0.7071067811865476+0.7071067811865475j, -0.7071067811865476-0.7071067811865475j], [0.7071067811865476-0.7071067811865475j, -0.7071067811865476+0.7071067811865475j]]"
+      },
+      {
+        "attempt": 20,
+        "elapsed_s": 35.072089250000005,
+        "latency_s": 1.6158617500000005,
+        "d_phys": 0.9330127018922192,
+        "solved": false,
+        "output": "[[0.7071067811865476+0.7071067811865475j, -0.7071067811865476-0.7071067811865475j], [0.7071067811865476-0.7071067811865475j, -0.7071067811865476+0.7071067811865475j]]"
+      },
+      {
+        "attempt": 21,
+        "elapsed_s": 36.582451500000005,
+        "latency_s": 1.5098674170000024,
+        "d_phys": 0.9330127018922192,
+        "solved": false,
+        "output": "[[0.7071067811865476+0.7071067811865475j, -0.7071067811865476-0.7071067811865475j], [0.7071067811865476-0.7071067811865475j, -0.7071067811865476+0.7071067811865475j]]"
+      },
+      {
+        "attempt": 22,
+        "elapsed_s": 38.194319292,
+        "latency_s": 1.6116951669999935,
+        "d_phys": 0.9330127018922192,
+        "solved": false,
+        "output": "[[0.7071067811865476+0.7071067811865475j, -0.7071067811865476-0.7071067811865475j], [0.7071067811865476-0.7071067811865475j, -0.7071067811865476+0.7071067811865475j]]"
+      },
+      {
+        "attempt": 23,
+        "elapsed_s": 39.840855208,
+        "latency_s": 1.6460417080000056,
+        "d_phys": 0.9330127018922192,
+        "solved": false,
+        "output": "[[0.7071067811865476+0.7071067811865475j, -0.7071067811865476-0.7071067811865475j], [0.7071067811865476-0.7071067811865475j, -0.7071067811865476+0.7071067811865475j]]"
+      },
+      {
+        "attempt": 24,
+        "elapsed_s": 41.419447250000005,
+        "latency_s": 1.5779725410000012,
+        "d_phys": 0.9330127018922192,
+        "solved": false,
+        "output": "[[0.7071067811865476+0.7071067811865475j, -0.7071067811865476-0.7071067811865475j], [0.7071067811865476-0.7071067811865475j, -0.7071067811865476+0.7071067811865475j]]"
+      }
+    ],
+    "initial_d_phys": 0.9330127018922192,
+    "best_d_phys": 0.9330127018922192,
+    "final_d_phys": 0.9330127018922192,
+    "solved": false,
+    "solve_time_s": null,
+    "total_elapsed_s": 41.4194545,
+    "pass_by_time": {
+      "30s": false,
+      "60s": false,
+      "120s": false,
+      "300s": false
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514",
+    "size": 12000000000.0,
+    "depth": 4,
+    "category": "operator_composition",
+    "prompt": "Compute the 2x2 unitary matrix for the single-qubit gate sequence T, X, T applied in that order. Return only a Python 2x2 list of complex numbers using decimal literals.",
+    "metadata": {
+      "ops": [
+        "T",
+        "X",
+        "T"
+      ]
+    },
+    "target": {
+      "kind": "operator",
+      "value": [
+        [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.7071067811865476,
+            0.7071067811865475
+          ]
+        ],
+        [
+          [
+            0.7071067811865476,
+            0.7071067811865475
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ]
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "self_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 24,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 2.3779726250000004,
+        "latency_s": 2.377629958,
+        "d_phys": 0.19134171618254484,
+        "solved": false,
+        "output": "```python\n[[0.5+0.5j, 0.5-0.5j], [0.5-0.5j, 0.5+0.5j]]\n```"
+      },
+      {
+        "attempt": 2,
+        "elapsed_s": 9.516115874999999,
+        "latency_s": 7.137886,
+        "d_phys": 0.4696248754883614,
+        "solved": false,
+        "output": "I need to compute the matrix for the gate sequence T, X, T applied in that order.\n\nStep 1: Define the individual gate matrices\n- T gate: [[1, 0], [0, e^(i\u03c0/4)]] = [[1, 0], [0, (1+j)/\u221a2]]\n- X gate: [[0, 1], [1, 0]]\n\nStep 2: Convert T gate to decimal form\n- e^(i\u03c0/4) = cos(\u03c0/4) + i*sin(\u03c0/4) = \u221a2/2 + i*\u221a2/2 \u2248 0.7071067812 + 0.7071067812j\n- T = [[1, 0], [0, 0.7071067812+0.7071067812j]]\n\nStep 3: Compute T*X (rightmost multiplication first)\n- T*X = [[1, 0], [0, 0.7071067812+0.7071067812j]] * [[0, 1], [1, 0]]\n- T*X = [[0, 1], [0.7071067812+0.7071067812j, 0]]\n\nStep 4: Compute T*(T*X) = final result\n- T*(T*X) = [[1, 0], [0, 0.7071067812+0.7071067812j]] * [[0, 1], [0.7071067812+0.7071067812j, 0]]\n- Final result = [[0.7071067812+0.7071067812j, 1], [0.5+0.5j, 0]]\n\nVerification: Checking unitarity and normalization of the previous answer [[0.5+0.5j, 0.5-0.5j], [0.5-0.5j, 0.5+0.5j]] - this matrix has incorrect structure for the T,X,T sequence.\n\n[[0.7071067812+0.7071067812j, 1.0], [0.5+0.5j, 0.0]]"
+      },
+      {
+        "attempt": 3,
+        "elapsed_s": 11.292508708,
+        "latency_s": 1.7758213749999996,
+        "d_phys": 0.4696248754883614,
+        "solved": false,
+        "output": "[[0.7071067812+0.7071067812j, 1.0], [0.5+0.5j, 0.0]]"
+      },
+      {
+        "attempt": 4,
+        "elapsed_s": 12.751492958,
+        "latency_s": 1.4578425,
+        "d_phys": 0.3855026916508428,
+        "solved": false,
+        "output": "[[0.5+0.5j, 0.7071067812+0.7071067812j], [0.7071067812-0.7071067812j, -0.5+0.5j]]"
+      },
+      {
+        "attempt": 5,
+        "elapsed_s": 14.245775791999998,
+        "latency_s": 1.493209750000002,
+        "d_phys": 0.3855026916508428,
+        "solved": false,
+        "output": "[[0.5+0.5j, 0.7071067812+0.7071067812j], [0.7071067812-0.7071067812j, -0.5+0.5j]]"
+      },
+      {
+        "attempt": 6,
+        "elapsed_s": 16.0297035,
+        "latency_s": 1.7829628750000026,
+        "d_phys": 0.3855026916508428,
+        "solved": false,
+        "output": "[[0.5+0.5j, 0.7071067812+0.7071067812j], [0.7071067812-0.7071067812j, -0.5+0.5j]]"
+      },
+      {
+        "attempt": 7,
+        "elapsed_s": 17.368548,
+        "latency_s": 1.337973292000001,
+        "d_phys": 0.3855026916508428,
+        "solved": false,
+        "output": "[[0.5+0.5j, 0.7071067812+0.7071067812j], [0.7071067812-0.7071067812j, -0.5+0.5j]]"
+      },
+      {
+        "attempt": 8,
+        "elapsed_s": 18.648912125000003,
+        "latency_s": 1.2794582500000011,
+        "d_phys": 0.3855026916508428,
+        "solved": false,
+        "output": "[[0.5+0.5j, 0.7071067812+0.7071067812j], [0.7071067812-0.7071067812j, -0.5+0.5j]]"
+      },
+      {
+        "attempt": 9,
+        "elapsed_s": 20.243400208,
+        "latency_s": 1.5943260419999987,
+        "d_phys": 0.3855026916508428,
+        "solved": false,
+        "output": "[[0.5+0.5j, 0.7071067812+0.7071067812j], [0.7071067812-0.7071067812j, -0.5+0.5j]]"
+      },
+      {
+        "attempt": 10,
+        "elapsed_s": 21.537997583000003,
+        "latency_s": 1.2940639590000025,
+        "d_phys": 0.3855026916508428,
+        "solved": false,
+        "output": "[[0.5+0.5j, 0.7071067812+0.7071067812j], [0.7071067812-0.7071067812j, -0.5+0.5j]]"
+      },
+      {
+        "attempt": 11,
+        "elapsed_s": 22.878767333000003,
+        "latency_s": 1.3402014589999993,
+        "d_phys": 0.3855026916508428,
+        "solved": false,
+        "output": "[[0.5+0.5j, 0.7071067812+0.7071067812j], [0.7071067812-0.7071067812j, -0.5+0.5j]]"
+      },
+      {
+        "attempt": 12,
+        "elapsed_s": 25.306151333000003,
+        "latency_s": 2.427141917,
+        "d_phys": 0.3855026916508428,
+        "solved": false,
+        "output": "[[0.5+0.5j, 0.7071067812+0.7071067812j], [0.7071067812-0.7071067812j, -0.5+0.5j]]"
+      },
+      {
+        "attempt": 13,
+        "elapsed_s": 26.796615583,
+        "latency_s": 1.4899847919999978,
+        "d_phys": 0.3855026916508428,
+        "solved": false,
+        "output": "[[0.5+0.5j, 0.7071067812+0.7071067812j], [0.7071067812-0.7071067812j, -0.5+0.5j]]"
+      },
+      {
+        "attempt": 14,
+        "elapsed_s": 28.660481958000002,
+        "latency_s": 1.8634128750000016,
+        "d_phys": 0.3855026916508428,
+        "solved": false,
+        "output": "[[0.5+0.5j, 0.7071067812+0.7071067812j], [0.7071067812-0.7071067812j, -0.5+0.5j]]"
+      },
+      {
+        "attempt": 15,
+        "elapsed_s": 29.973988875,
+        "latency_s": 1.3132567080000044,
+        "d_phys": 0.3855026916508428,
+        "solved": false,
+        "output": "[[0.5+0.5j, 0.7071067812+0.7071067812j], [0.7071067812-0.7071067812j, -0.5+0.5j]]"
+      },
+      {
+        "attempt": 16,
+        "elapsed_s": 31.240401542000004,
+        "latency_s": 1.2659110000000027,
+        "d_phys": 0.3855026916508428,
+        "solved": false,
+        "output": "[[0.5+0.5j, 0.7071067812+0.7071067812j], [0.7071067812-0.7071067812j, -0.5+0.5j]]"
+      },
+      {
+        "attempt": 17,
+        "elapsed_s": 32.839992957999996,
+        "latency_s": 1.5990926249999973,
+        "d_phys": 0.3855026916508428,
+        "solved": false,
+        "output": "[[0.5+0.5j, 0.7071067812+0.7071067812j], [0.7071067812-0.7071067812j, -0.5+0.5j]]"
+      },
+      {
+        "attempt": 18,
+        "elapsed_s": 34.181335042,
+        "latency_s": 1.3407687499999952,
+        "d_phys": 0.3855026916508428,
+        "solved": false,
+        "output": "[[0.5+0.5j, 0.7071067812+0.7071067812j], [0.7071067812-0.7071067812j, -0.5+0.5j]]"
+      },
+      {
+        "attempt": 19,
+        "elapsed_s": 35.594464083,
+        "latency_s": 1.4128882910000016,
+        "d_phys": 0.3855026916508428,
+        "solved": false,
+        "output": "[[0.5+0.5j, 0.7071067812+0.7071067812j], [0.7071067812-0.7071067812j, -0.5+0.5j]]"
+      },
+      {
+        "attempt": 20,
+        "elapsed_s": 36.853739125,
+        "latency_s": 1.2588611250000028,
+        "d_phys": 0.3855026916508428,
+        "solved": false,
+        "output": "[[0.5+0.5j, 0.7071067812+0.7071067812j], [0.7071067812-0.7071067812j, -0.5+0.5j]]"
+      },
+      {
+        "attempt": 21,
+        "elapsed_s": 38.199666,
+        "latency_s": 1.3456160420000032,
+        "d_phys": 0.3855026916508428,
+        "solved": false,
+        "output": "[[0.5+0.5j, 0.7071067812+0.7071067812j], [0.7071067812-0.7071067812j, -0.5+0.5j]]"
+      },
+      {
+        "attempt": 22,
+        "elapsed_s": 39.712529792,
+        "latency_s": 1.512308791999999,
+        "d_phys": 0.3855026916508428,
+        "solved": false,
+        "output": "[[0.5+0.5j, 0.7071067812+0.7071067812j], [0.7071067812-0.7071067812j, -0.5+0.5j]]"
+      },
+      {
+        "attempt": 23,
+        "elapsed_s": 41.175098125,
+        "latency_s": 1.4619856670000004,
+        "d_phys": 0.3855026916508428,
+        "solved": false,
+        "output": "[[0.5+0.5j, 0.7071067812+0.7071067812j], [0.7071067812-0.7071067812j, -0.5+0.5j]]"
+      },
+      {
+        "attempt": 24,
+        "elapsed_s": 43.288435166999996,
+        "latency_s": 2.1127024160000047,
+        "d_phys": 0.3855026916508428,
+        "solved": false,
+        "output": "[[0.5+0.5j, 0.7071067812+0.7071067812j], [0.7071067812-0.7071067812j, -0.5+0.5j]]"
+      }
+    ],
+    "initial_d_phys": 0.19134171618254484,
+    "best_d_phys": 0.19134171618254484,
+    "final_d_phys": 0.3855026916508428,
+    "solved": false,
+    "solve_time_s": null,
+    "total_elapsed_s": 43.288441917,
+    "pass_by_time": {
+      "30s": false,
+      "60s": false,
+      "120s": false,
+      "300s": false
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-opus-4-1-20250805",
+    "size": 16000000000.0,
+    "depth": 4,
+    "category": "operator_composition",
+    "prompt": "Compute the 2x2 unitary matrix for the single-qubit gate sequence T, X, T applied in that order. Return only a Python 2x2 list of complex numbers using decimal literals.",
+    "metadata": {
+      "ops": [
+        "T",
+        "X",
+        "T"
+      ]
+    },
+    "target": {
+      "kind": "operator",
+      "value": [
+        [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.7071067811865476,
+            0.7071067811865475
+          ]
+        ],
+        [
+          [
+            0.7071067811865476,
+            0.7071067811865475
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ]
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "self_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 6.553916333000004,
+        "latency_s": 6.553361250000002,
+        "d_phys": 8.326672684688674e-17,
+        "solved": true,
+        "output": "I need to compute the product of three matrices: T\u00b7X\u00b7T (applied right to left).\n\nStep 1: Define the matrices\n- T = [[1, 0], [0, exp(i\u03c0/4)]] = [[1, 0], [0, (1+i)/\u221a2]]\n- X = [[0, 1], [1, 0]]\n\nStep 2: Compute X\u00b7T first\nX\u00b7T = [[0, 1], [1, 0]] \u00b7 [[1, 0], [0, (1+i)/\u221a2]]\n    = [[0, (1+i)/\u221a2], [1, 0]]\n\nStep 3: Compute T\u00b7(X\u00b7T)\nT\u00b7(X\u00b7T) = [[1, 0], [0, (1+i)/\u221a2]] \u00b7 [[0, (1+i)/\u221a2], [1, 0]]\n        = [[0, (1+i)/\u221a2], [(1+i)/\u221a2, 0]]\n\nStep 4: Convert to decimal form\n(1+i)/\u221a2 = 0.7071067811865476 + 0.7071067811865476j\n\n[[0, 0.7071067811865476+0.7071067811865476j], [0.7071067811865476+0.7071067811865476j, 0]]"
+      }
+    ],
+    "initial_d_phys": 8.326672684688674e-17,
+    "best_d_phys": 8.326672684688674e-17,
+    "final_d_phys": 8.326672684688674e-17,
+    "solved": true,
+    "solve_time_s": 6.553916333000004,
+    "total_elapsed_s": 6.553937957999999,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-opus-4-1-20250805",
+    "size": 16000000000.0,
+    "depth": 4,
+    "category": "measurement_prediction",
+    "prompt": "Start from |10>. Apply the 2-qubit gate sequence X(1), H(0), H(1), CZ in that order. Return the measurement probabilities [p00, p01, p10, p11] as a Python list of 4 decimal numbers only.",
+    "metadata": {
+      "bits": [
+        1,
+        0
+      ],
+      "ops": [
+        "X(1)",
+        "H(0)",
+        "H(1)",
+        "CZ"
+      ]
+    },
+    "target": {
+      "kind": "probabilities",
+      "value": [
+        0.2499999999999999,
+        0.2499999999999999,
+        0.2499999999999999,
+        0.2499999999999999
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "self_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 6.5582122080000005,
+        "latency_s": 6.5578,
+        "d_phys": 2.220446049250313e-16,
+        "solved": true,
+        "output": "I'll work through this step by step.\n\nStarting state: |10\u27e9\n\nStep 1: Apply X(1) to qubit 1\n|10\u27e9 \u2192 |11\u27e9\n\nStep 2: Apply H(0) to qubit 0\n|11\u27e9 \u2192 (1/\u221a2)(|01\u27e9 + |11\u27e9)\n\nStep 3: Apply H(1) to qubit 1\n(1/\u221a2)(|01\u27e9 + |11\u27e9) \u2192 (1/\u221a2)((1/\u221a2)(|00\u27e9 + |01\u27e9) + (1/\u221a2)(|10\u27e9 - |11\u27e9))\n= (1/2)(|00\u27e9 + |01\u27e9 + |10\u27e9 - |11\u27e9)\n\nStep 4: Apply CZ gate\nCZ only adds a phase to |11\u27e9 component\n(1/2)(|00\u27e9 + |01\u27e9 + |10\u27e9 - |11\u27e9) \u2192 (1/2)(|00\u27e9 + |01\u27e9 + |10\u27e9 + |11\u27e9)\n\n[0.25, 0.25, 0.25, 0.25]"
+      }
+    ],
+    "initial_d_phys": 2.220446049250313e-16,
+    "best_d_phys": 2.220446049250313e-16,
+    "final_d_phys": 2.220446049250313e-16,
+    "solved": true,
+    "solve_time_s": 6.5582122080000005,
+    "total_elapsed_s": 6.5582357500000015,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-opus-4-1-20250805",
+    "size": 16000000000.0,
+    "depth": 4,
+    "category": "measurement_prediction",
+    "prompt": "Start from |11>. Apply the 2-qubit gate sequence H(1), X(0), Y(0), Z(1) in that order. Return the measurement probabilities [p00, p01, p10, p11] as a Python list of 4 decimal numbers only.",
+    "metadata": {
+      "bits": [
+        1,
+        1
+      ],
+      "ops": [
+        "H(1)",
+        "X(0)",
+        "Y(0)",
+        "Z(1)"
+      ]
+    },
+    "target": {
+      "kind": "probabilities",
+      "value": [
+        0.0,
+        0.0,
+        0.4999999999999999,
+        0.4999999999999999
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "self_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 6.864849292000002,
+        "latency_s": 6.864434791000001,
+        "d_phys": 1.1102230246251565e-16,
+        "solved": true,
+        "output": "I'll work through this step-by-step.\n\nStep 1: Starting state |11\u27e9 = |1\u27e9\u2297|1\u27e9\n\nStep 2: Apply H(1) to qubit 1:\n|11\u27e9 \u2192 |1\u27e9\u2297H|1\u27e9 = |1\u27e9\u2297(|0\u27e9-|1\u27e9)/\u221a2 = (|10\u27e9-|11\u27e9)/\u221a2\n\nStep 3: Apply X(0) to qubit 0:\n(|10\u27e9-|11\u27e9)/\u221a2 \u2192 (|00\u27e9-|01\u27e9)/\u221a2\n\nStep 4: Apply Y(0) then Z(1):\nY(0): (|00\u27e9-|01\u27e9)/\u221a2 \u2192 (i|10\u27e9-i|11\u27e9)/\u221a2 = i(|10\u27e9-|11\u27e9)/\u221a2\nZ(1): i(|10\u27e9-|11\u27e9)/\u221a2 \u2192 i(|10\u27e9+|11\u27e9)/\u221a2\n\n[0.0, 0.0, 0.5, 0.5]"
+      }
+    ],
+    "initial_d_phys": 1.1102230246251565e-16,
+    "best_d_phys": 1.1102230246251565e-16,
+    "final_d_phys": 1.1102230246251565e-16,
+    "solved": true,
+    "solve_time_s": 6.864849292000002,
+    "total_elapsed_s": 6.864870416999999,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-opus-4-1-20250805",
+    "size": 16000000000.0,
+    "depth": 4,
+    "category": "entanglement_classification",
+    "prompt": "Consider the 2-qubit state [0.70710678, 0.00000000, 0.00000000, -0.70710678]. Is it entangled? Return only True or False.",
+    "metadata": {
+      "template": "bell_phi_minus"
+    },
+    "target": {
+      "kind": "boolean",
+      "value": true
+    },
+    "experiment": "time_budget",
+    "repair_mode": "self_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 8.482907667,
+        "latency_s": 8.482792124999996,
+        "d_phys": 0.0,
+        "solved": true,
+        "output": "I need to determine if the given 2-qubit state is entangled.\n\nStep 1: The state vector is |\u03c8\u27e9 = 0.70710678|00\u27e9 + 0|01\u27e9 + 0|10\u27e9 - 0.70710678|11\u27e9, which can be written as (1/\u221a2)(|00\u27e9 - |11\u27e9).\n\nStep 2: To check for entanglement, I'll try to write this as a product state |\u03c8\u27e9 = |a\u27e9 \u2297 |b\u27e9 where |a\u27e9 = \u03b1|0\u27e9 + \u03b2|1\u27e9 and |b\u27e9 = \u03b3|0\u27e9 + \u03b4|1\u27e9.\n\nStep 3: If it were separable, we'd have: \u03b1\u03b3 = 1/\u221a2, \u03b1\u03b4 = 0, \u03b2\u03b3 = 0, and \u03b2\u03b4 = -1/\u221a2. From equations 2 and 3, either \u03b1=0 or \u03b4=0, and either \u03b2=0 or \u03b3=0.\n\nStep 4: If \u03b1=0, then from equation 1, \u03b1\u03b3 = 0 \u2260 1/\u221a2 (contradiction). If \u03b4=0, then from equation 4, \u03b2\u03b4 = 0 \u2260 -1/\u221a2 (contradiction). No valid solution exists for a product state.\n\nTrue"
+      }
+    ],
+    "initial_d_phys": 0.0,
+    "best_d_phys": 0.0,
+    "final_d_phys": 0.0,
+    "solved": true,
+    "solve_time_s": 8.482907667,
+    "total_elapsed_s": 8.482933792000004,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-opus-4-1-20250805",
+    "size": 16000000000.0,
+    "depth": 4,
+    "category": "circuit_evolution",
+    "prompt": "Start from |00>. Apply the 2-qubit gate sequence Y(1), CZ in that order. Return the final state vector as a Python list of 4 complex numbers using decimal literals only and no explanation.",
+    "metadata": {
+      "bits": [
+        0,
+        0
+      ],
+      "ops": [
+        "Y(1)",
+        "CZ"
+      ]
+    },
+    "target": {
+      "kind": "state_vector",
+      "value": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "self_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 5.6119455000000045,
+        "latency_s": 5.611111125000001,
+        "d_phys": 0.0,
+        "solved": true,
+        "output": "I'll work through this step-by-step internally.\n\nStep 1: Start with |00\u27e9 = [1, 0, 0, 0]\n\nStep 2: Apply Y(1) gate (Y gate on qubit 1):\nY(1) transforms |00\u27e9 \u2192 |01\u27e9\nResult: [0, 1j, 0, 0]\n\nStep 3: Apply CZ gate:\nCZ applies phase -1 when both qubits are |1\u27e9\nSince we have |01\u27e9, CZ doesn't affect it\nResult: [0, 1j, 0, 0]\n\nStep 4: Convert to decimal format:\n[0, 1j, 0, 0]\n\n[0, 1j, 0, 0]"
+      }
+    ],
+    "initial_d_phys": 0.0,
+    "best_d_phys": 0.0,
+    "final_d_phys": 0.0,
+    "solved": true,
+    "solve_time_s": 5.6119455000000045,
+    "total_elapsed_s": 5.611996791000003,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-opus-4-1-20250805",
+    "size": 16000000000.0,
+    "depth": 4,
+    "category": "circuit_evolution",
+    "prompt": "Start from |11>. Apply the 2-qubit gate sequence Y(0), H(1), Z(0), Y(1) in that order. Return the final state vector as a Python list of 4 complex numbers using decimal literals only and no explanation.",
+    "metadata": {
+      "bits": [
+        1,
+        1
+      ],
+      "ops": [
+        "Y(0)",
+        "H(1)",
+        "Z(0)",
+        "Y(1)"
+      ]
+    },
+    "target": {
+      "kind": "state_vector",
+      "value": [
+        [
+          0.7071067811865475,
+          0.0
+        ],
+        [
+          0.7071067811865475,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "self_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 3,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 8.450703041,
+        "latency_s": 8.450255958000003,
+        "d_phys": 0.5000000000000001,
+        "solved": false,
+        "output": "I'll work through this step by step.\n\nStarting state: |11\u27e9 = [0, 0, 0, 1]\n\nStep 1: Apply Y(0) to qubit 0\nY gate on qubit 0 transforms |11\u27e9 to -i|01\u27e9\nState: [0, 0, -1j, 0]\n\nStep 2: Apply H(1) to qubit 1  \nH gate on qubit 1 transforms -i|01\u27e9 to -i/\u221a2(|00\u27e9 - |01\u27e9)\nState: [-0.7071067811865476j, 0.7071067811865476j, 0, 0]\n\nStep 3: Apply Z(0) to qubit 0\nZ gate on qubit 0 multiplies |10\u27e9 and |11\u27e9 components by -1\nState: [-0.7071067811865476j, 0.7071067811865476j, 0, 0]\n\nStep 4: Apply Y(1) to qubit 1\nY gate on qubit 1 swaps and phase-shifts the basis states\nState: [-0.7071067811865476, -0.7071067811865476j, 0, 0]\n\n[-0.7071067811865476, -0.7071067811865476j, 0, 0]"
+      },
+      {
+        "attempt": 2,
+        "elapsed_s": 15.794132457999996,
+        "latency_s": 7.342759708999999,
+        "d_phys": 0.75,
+        "solved": false,
+        "output": "I'll work through the gate sequence step by step.\n\nStarting state: |11\u27e9 = [0, 0, 0, 1]\n\nStep 1: Apply Y(0) to qubit 0\nY gate on qubit 0: |11\u27e9 \u2192 -i|01\u27e9\nState: [0, 0, -1j, 0]\n\nStep 2: Apply H(1) to qubit 1\nH gate on qubit 1: -i|01\u27e9 \u2192 -i/\u221a2(|00\u27e9 - |01\u27e9)\nState: [-0.7071067811865476j, 0.7071067811865476j, 0, 0]\n\nStep 3: Apply Z(0) to qubit 0\nZ gate on qubit 0 has no effect on |00\u27e9 and |01\u27e9 components\nState: [-0.7071067811865476j, 0.7071067811865476j, 0, 0]\n\nStep 4: Apply Y(1) to qubit 1\nY gate maps |0\u27e9 \u2192 i|1\u27e9 and |1\u27e9 \u2192 -i|0\u27e9 on qubit 1\n-i/\u221a2|00\u27e9 + i/\u221a2|01\u27e9 \u2192 -i/\u221a2(i|10\u27e9) + i/\u221a2(-i|00\u27e9) = 1/\u221a2|10\u27e9 + 1/\u221a2|00\u27e9\nState: [0.7071067811865476, 0, 0.7071067811865476, 0]\n\n[0.7071067811865476, 0, 0.7071067811865476, 0]"
+      },
+      {
+        "attempt": 3,
+        "elapsed_s": 22.676412582999998,
+        "latency_s": 6.881725582999998,
+        "d_phys": 0.0,
+        "solved": true,
+        "output": "I'll work through the gate sequence step by step.\n\nStarting state: |11\u27e9 = [0, 0, 0, 1]\n\nStep 1: Apply Y(0) to qubit 0\nY gate on qubit 0: |11\u27e9 \u2192 -i|01\u27e9\nState: [0, 0, -1j, 0]\n\nStep 2: Apply H(1) to qubit 1  \nH gate on qubit 1: -i|01\u27e9 \u2192 -i/\u221a2(|00\u27e9 - |01\u27e9)\nState: [-0.7071067811865476j, 0.7071067811865476j, 0, 0]\n\nStep 3: Apply Z(0) to qubit 0\nZ gate on qubit 0: |00\u27e9 \u2192 |00\u27e9, |01\u27e9 \u2192 |01\u27e9\nState: [-0.7071067811865476j, 0.7071067811865476j, 0, 0]\n\nStep 4: Apply Y(1) to qubit 1\nY gate on qubit 1: |0\u27e9 \u2192 i|1\u27e9, |1\u27e9 \u2192 -i|0\u27e9\n-i/\u221a2|00\u27e9 + i/\u221a2|01\u27e9 \u2192 -i/\u221a2(i|01\u27e9) + i/\u221a2(-i|00\u27e9) = 1/\u221a2|01\u27e9 + 1/\u221a2|00\u27e9\nState: [0.7071067811865476, 0.7071067811865476, 0, 0]\n\n[0.7071067811865476, 0.7071067811865476, 0, 0]"
+      }
+    ],
+    "initial_d_phys": 0.5000000000000001,
+    "best_d_phys": 0.0,
+    "final_d_phys": 0.0,
+    "solved": true,
+    "solve_time_s": 22.676412582999998,
+    "total_elapsed_s": 22.676443791,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-opus-4-1-20250805",
+    "size": 16000000000.0,
+    "depth": 4,
+    "category": "measurement_prediction",
+    "prompt": "Start from |01>. Apply the 2-qubit gate sequence CNOT(1,0), CNOT(1,0), CZ, H(1) in that order. Return the measurement probabilities [p00, p01, p10, p11] as a Python list of 4 decimal numbers only.",
+    "metadata": {
+      "bits": [
+        0,
+        1
+      ],
+      "ops": [
+        "CNOT(1,0)",
+        "CNOT(1,0)",
+        "CZ",
+        "H(1)"
+      ]
+    },
+    "target": {
+      "kind": "probabilities",
+      "value": [
+        0.4999999999999999,
+        0.4999999999999999,
+        0.0,
+        0.0
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "self_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 7.358973124999999,
+        "latency_s": 7.358362540999998,
+        "d_phys": 1.1102230246251565e-16,
+        "solved": true,
+        "output": "I'll trace through the quantum state evolution step by step.\n\nStarting state: |01\u27e9\n\nStep 1: Apply CNOT(1,0) - control on qubit 1, target on qubit 0\nSince qubit 1 is in |1\u27e9, the CNOT flips qubit 0: |01\u27e9 \u2192 |11\u27e9\n\nStep 2: Apply CNOT(1,0) again\nSince qubit 1 is still in |1\u27e9, the CNOT flips qubit 0 again: |11\u27e9 \u2192 |01\u27e9\n\nStep 3: Apply CZ gate\nCZ applies a phase of -1 when both qubits are |1\u27e9. Since we have |01\u27e9, no phase is applied: |01\u27e9 \u2192 |01\u27e9\n\nStep 4: Apply H(1) - Hadamard on qubit 1\nH transforms |1\u27e9 \u2192 (|0\u27e9 - |1\u27e9)/\u221a2\nSo |01\u27e9 \u2192 |0\u27e9 \u2297 (|0\u27e9 - |1\u27e9)/\u221a2 = (|00\u27e9 - |01\u27e9)/\u221a2\n\n[0.5, 0.5, 0.0, 0.0]"
+      }
+    ],
+    "initial_d_phys": 1.1102230246251565e-16,
+    "best_d_phys": 1.1102230246251565e-16,
+    "final_d_phys": 1.1102230246251565e-16,
+    "solved": true,
+    "solve_time_s": 7.358973124999999,
+    "total_elapsed_s": 7.359004208000002,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-opus-4-1-20250805",
+    "size": 16000000000.0,
+    "depth": 4,
+    "category": "operator_composition",
+    "prompt": "Compute the 2x2 unitary matrix for the single-qubit gate sequence S, Y applied in that order. Return only a Python 2x2 list of complex numbers using decimal literals.",
+    "metadata": {
+      "ops": [
+        "S",
+        "Y"
+      ]
+    },
+    "target": {
+      "kind": "operator",
+      "value": [
+        [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0
+          ]
+        ],
+        [
+          [
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ]
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "self_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 6.747900833000003,
+        "latency_s": 6.746789583999998,
+        "d_phys": 0.0,
+        "solved": true,
+        "output": "I need to compute the matrix for the gate sequence S followed by Y.\n\nStep 1: Identify the individual gate matrices.\n- S gate: [[1, 0], [0, 1j]]\n- Y gate: [[0, -1j], [1j, 0]]\n\nStep 2: The combined operation is Y\u00b7S (Y applied after S means Y multiplies S from the left).\n\nStep 3: Perform matrix multiplication Y\u00b7S:\n- Element (0,0): 0\u00b71 + (-1j)\u00b70 = 0\n- Element (0,1): 0\u00b70 + (-1j)\u00b71j = -1j\u00b71j = 1\n- Element (1,0): 1j\u00b71 + 0\u00b70 = 1j\n- Element (1,1): 1j\u00b70 + 0\u00b71j = 0\n\nStep 4: Write the final matrix.\n\n[[0, 1], [1j, 0]]"
+      }
+    ],
+    "initial_d_phys": 0.0,
+    "best_d_phys": 0.0,
+    "final_d_phys": 0.0,
+    "solved": true,
+    "solve_time_s": 6.747900833000003,
+    "total_elapsed_s": 6.7479427920000035,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-opus-4-1-20250805",
+    "size": 16000000000.0,
+    "depth": 4,
+    "category": "entanglement_classification",
+    "prompt": "Consider the 2-qubit state [0.00000000, 0.70710678, 0.70710678, 0.00000000]. Is it entangled? Return only True or False.",
+    "metadata": {
+      "template": "bell_psi_plus"
+    },
+    "target": {
+      "kind": "boolean",
+      "value": true
+    },
+    "experiment": "time_budget",
+    "repair_mode": "self_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 8.9026925,
+        "latency_s": 8.902545625000002,
+        "d_phys": 0.0,
+        "solved": true,
+        "output": "I need to determine if the given 2-qubit state is entangled.\n\nStep 1: The state vector is |\u03c8\u27e9 = [0, 1/\u221a2, 1/\u221a2, 0], which in computational basis means |\u03c8\u27e9 = (1/\u221a2)|01\u27e9 + (1/\u221a2)|10\u27e9.\n\nStep 2: To check entanglement, I'll try to write this as a product state |\u03c8\u27e9 = |a\u27e9 \u2297 |b\u27e9 where |a\u27e9 = \u03b1|0\u27e9 + \u03b2|1\u27e9 and |b\u27e9 = \u03b3|0\u27e9 + \u03b4|1\u27e9.\n\nStep 3: If it were separable, we'd have: \u03b1\u03b3|00\u27e9 + \u03b1\u03b4|01\u27e9 + \u03b2\u03b3|10\u27e9 + \u03b2\u03b4|11\u27e9 = (1/\u221a2)|01\u27e9 + (1/\u221a2)|10\u27e9, giving us \u03b1\u03b3 = 0, \u03b1\u03b4 = 1/\u221a2, \u03b2\u03b3 = 1/\u221a2, \u03b2\u03b4 = 0.\n\nStep 4: From \u03b1\u03b3 = 0 and \u03b2\u03b4 = 0, either \u03b1 = 0 or \u03b3 = 0, and either \u03b2 = 0 or \u03b4 = 0. But if \u03b1 = 0, then \u03b1\u03b4 = 0 \u2260 1/\u221a2. If \u03b3 = 0, then \u03b2\u03b3 = 0 \u2260 1/\u221a2. Similar contradictions arise for all cases, so no valid product state exists.\n\nTrue"
+      }
+    ],
+    "initial_d_phys": 0.0,
+    "best_d_phys": 0.0,
+    "final_d_phys": 0.0,
+    "solved": true,
+    "solve_time_s": 8.9026925,
+    "total_elapsed_s": 8.902724207999995,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-opus-4-1-20250805",
+    "size": 16000000000.0,
+    "depth": 4,
+    "category": "entanglement_classification",
+    "prompt": "Consider the 2-qubit state [0.70710678, 0.00000000, 0.00000000, -0.70710678]. Is it entangled? Return only True or False.",
+    "metadata": {
+      "template": "bell_phi_minus"
+    },
+    "target": {
+      "kind": "boolean",
+      "value": true
+    },
+    "experiment": "time_budget",
+    "repair_mode": "self_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 8.197296209000001,
+        "latency_s": 8.197161207999997,
+        "d_phys": 0.0,
+        "solved": true,
+        "output": "I need to determine if the given 2-qubit state is entangled.\n\nStep 1: The state vector is |\u03c8\u27e9 = 0.70710678|00\u27e9 + 0|01\u27e9 + 0|10\u27e9 - 0.70710678|11\u27e9, which simplifies to (1/\u221a2)|00\u27e9 - (1/\u221a2)|11\u27e9.\n\nStep 2: To check for entanglement, I'll try to write this as a product state |\u03c8\u27e9 = |a\u27e9 \u2297 |b\u27e9 where |a\u27e9 = \u03b1|0\u27e9 + \u03b2|1\u27e9 and |b\u27e9 = \u03b3|0\u27e9 + \u03b4|1\u27e9.\n\nStep 3: If it were separable, we'd have: \u03b1\u03b3 = 1/\u221a2, \u03b1\u03b4 = 0, \u03b2\u03b3 = 0, and \u03b2\u03b4 = -1/\u221a2. From equations 2 and 3, either \u03b1=0 or \u03b4=0, and either \u03b2=0 or \u03b3=0.\n\nStep 4: If \u03b1=0, then from equation 1, \u03b1\u03b3 = 0 \u2260 1/\u221a2 (contradiction). If \u03b4=0, then from equation 4, \u03b2\u03b4 = 0 \u2260 -1/\u221a2 (contradiction). No valid solution exists for a product state.\n\nTrue"
+      }
+    ],
+    "initial_d_phys": 0.0,
+    "best_d_phys": 0.0,
+    "final_d_phys": 0.0,
+    "solved": true,
+    "solve_time_s": 8.197296209000001,
+    "total_elapsed_s": 8.197326084000004,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-opus-4-1-20250805",
+    "size": 16000000000.0,
+    "depth": 4,
+    "category": "operator_composition",
+    "prompt": "Compute the 2x2 unitary matrix for the single-qubit gate sequence T, S, T applied in that order. Return only a Python 2x2 list of complex numbers using decimal literals.",
+    "metadata": {
+      "ops": [
+        "T",
+        "S",
+        "T"
+      ]
+    },
+    "target": {
+      "kind": "operator",
+      "value": [
+        [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            -1.0,
+            2.220446049250313e-16
+          ]
+        ]
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "self_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 1,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 7.6234714169999975,
+        "latency_s": 7.622673542000001,
+        "d_phys": 2.7755575615628914e-17,
+        "solved": true,
+        "output": "I need to compute the product of three gates: T\u00b7S\u00b7T (applied right to left).\n\nStep 1: Define the gate matrices.\nT = [[1, 0], [0, exp(i\u03c0/4)]] = [[1, 0], [0, (1+i)/\u221a2]]\nS = [[1, 0], [0, i]]\n\nStep 2: Compute S\u00b7T first (rightmost product).\nS\u00b7T = [[1, 0], [0, i]] \u00b7 [[1, 0], [0, (1+i)/\u221a2]]\nS\u00b7T = [[1, 0], [0, i(1+i)/\u221a2]] = [[1, 0], [0, (i-1)/\u221a2]]\n\nStep 3: Compute T\u00b7(S\u00b7T).\nT\u00b7(S\u00b7T) = [[1, 0], [0, (1+i)/\u221a2]] \u00b7 [[1, 0], [0, (i-1)/\u221a2]]\nT\u00b7(S\u00b7T) = [[1, 0], [0, (1+i)(i-1)/(2)]]\n\nStep 4: Simplify (1+i)(i-1).\n(1+i)(i-1) = i - 1 + i\u00b2 - i = i - 1 - 1 - i = -2\nFinal result: [[1, 0], [0, -1]]\n\n[[1, 0], [0, -1]]"
+      }
+    ],
+    "initial_d_phys": 2.7755575615628914e-17,
+    "best_d_phys": 2.7755575615628914e-17,
+    "final_d_phys": 2.7755575615628914e-17,
+    "solved": true,
+    "solve_time_s": 7.6234714169999975,
+    "total_elapsed_s": 7.623499834,
+    "pass_by_time": {
+      "30s": true,
+      "60s": true,
+      "120s": true,
+      "300s": true
+    },
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514",
+    "size": 12000000000.0,
+    "depth": 4,
+    "category": "measurement_prediction",
+    "prompt": "Start from |01>. Apply the 2-qubit gate sequence CNOT(1,0), CNOT(1,0), CZ, H(1) in that order. Return the measurement probabilities [p00, p01, p10, p11] as a Python list of 4 decimal numbers only.",
+    "metadata": {
+      "bits": [
+        0,
+        1
+      ],
+      "ops": [
+        "CNOT(1,0)",
+        "CNOT(1,0)",
+        "CZ",
+        "H(1)"
+      ]
+    },
+    "target": {
+      "kind": "probabilities",
+      "value": [
+        0.4999999999999999,
+        0.4999999999999999,
+        0.0,
+        0.0
+      ]
+    },
+    "experiment": "time_budget",
+    "repair_mode": "self_retry",
+    "time_budget_s": 300.0,
+    "attempt_count": 24,
+    "attempts": [
+      {
+        "attempt": 1,
+        "elapsed_s": 1.3887478340000001,
+        "latency_s": 1.3883943750000007,
+        "d_phys": 0.5,
+        "solved": false,
+        "output": "[0.0, 0.5, 0.0, 0.5]"
+      },
+      {
+        "attempt": 2,
+        "elapsed_s": 7.9658837500000015,
+        "latency_s": 6.576721459,
+        "d_phys": 0.5,
+        "solved": false,
+        "output": "I'll work through this step-by-step, applying each gate to the initial state |01\u27e9.\n\nStep 1: Initial state |01\u27e9 = [0, 1, 0, 0]\n\nStep 2: Apply CNOT(1,0) twice\n- CNOT(1,0) flips qubit 0 when qubit 1 is |1\u27e9\n- First CNOT(1,0): |01\u27e9 \u2192 |11\u27e9 = [0, 0, 0, 1]\n- Second CNOT(1,0): |11\u27e9 \u2192 |01\u27e9 = [0, 1, 0, 0]\n\nStep 3: Apply CZ gate\n- CZ adds phase -1 to |11\u27e9 state only\n- Since we have |01\u27e9, CZ has no effect: [0, 1, 0, 0]\n\nStep 4: Apply H(1) (Hadamard on qubit 1)\n- H(1) creates superposition: |01\u27e9 \u2192 (1/\u221a2)(|00\u27e9 + |10\u27e9)\n- Final state: [1/\u221a2, 0, 1/\u221a2, 0]\n- Probabilities: [0.5, 0.0, 0.5, 0.0]\n\nVerification: Normalization check: 0.5 + 0.0 + 0.5 + 0.0 = 1.0 \u2713\n\n[0.5, 0.0, 0.5, 0.0]"
+      },
+      {
+        "attempt": 3,
+        "elapsed_s": 11.326152542,
+        "latency_s": 3.3598197499999998,
+        "d_phys": 0.5,
+        "solved": false,
+        "output": "I'll work through this step-by-step, applying each gate to the initial state |01\u27e9.\n\nStep 1: Initial state |01\u27e9 = [0, 1, 0, 0]\n\nStep 2: Apply CNOT(1,0) twice\n- CNOT(1,0) flips qubit 0 when qubit 1 is |1\u27e9\n- First CNOT(1,0): |01\u27e9 \u2192 |11\u27e9 = [0, 0, 0, 1]\n- Second CNOT(1,0): |11\u27e9 \u2192 |01\u27e9 = [0, 1, 0, 0]\n\nStep 3: Apply CZ gate\n- CZ adds phase -1 to |11\u27e9 state only\n- Since we have |01\u27e9, CZ has no effect: [0, 1, 0, 0]\n\nStep 4: Apply H(1) (Hadamard on qubit 1)\n- H(1) creates superposition: |01\u27e9 \u2192 (1/\u221a2)(|00\u27e9 + |10\u27e9)\n- Final state: [1/\u221a2, 0, 1/\u221a2, 0]\n- Probabilities: [0.5, 0.0, 0.5, 0.0]\n\n[0.5, 0.0, 0.5, 0.0]"
+      },
+      {
+        "attempt": 4,
+        "elapsed_s": 14.879039833999999,
+        "latency_s": 3.5525084579999984,
+        "d_phys": 0.5,
+        "solved": false,
+        "output": "I'll work through this step-by-step, applying each gate to the initial state |01\u27e9.\n\nStep 1: Initial state |01\u27e9 = [0, 1, 0, 0]\n\nStep 2: Apply CNOT(1,0) twice\n- CNOT(1,0) flips qubit 0 when qubit 1 is |1\u27e9\n- First CNOT(1,0): |01\u27e9 \u2192 |11\u27e9 = [0, 0, 0, 1]\n- Second CNOT(1,0): |11\u27e9 \u2192 |01\u27e9 = [0, 1, 0, 0]\n\nStep 3: Apply CZ gate\n- CZ adds phase -1 to |11\u27e9 state only\n- Since we have |01\u27e9, CZ has no effect: [0, 1, 0, 0]\n\nStep 4: Apply H(1) (Hadamard on qubit 1)\n- H(1) creates superposition: |01\u27e9 \u2192 (1/\u221a2)(|00\u27e9 + |10\u27e9)\n- Final state: [1/\u221a2, 0, 1/\u221a2, 0]\n- Probabilities: [0.5, 0.0, 0.5, 0.0]\n\n[0.5, 0.0, 0.5, 0.0]"
+      },
+      {
+        "attempt": 5,
+        "elapsed_s": 18.452301583999997,
+        "latency_s": 3.5728462909999976,
+        "d_phys": 0.5,
+        "solved": false,
+        "output": "I'll work through this step-by-step, applying each gate to the initial state |01\u27e9.\n\nStep 1: Initial state |01\u27e9 = [0, 1, 0, 0]\n\nStep 2: Apply CNOT(1,0) twice\n- CNOT(1,0) flips qubit 0 when qubit 1 is |1\u27e9\n- First CNOT(1,0): |01\u27e9 \u2192 |11\u27e9 = [0, 0, 0, 1]\n- Second CNOT(1,0): |11\u27e9 \u2192 |01\u27e9 = [0, 1, 0, 0]\n\nStep 3: Apply CZ gate\n- CZ adds phase -1 to |11\u27e9 state only\n- Since we have |01\u27e9, CZ has no effect: [0, 1, 0, 0]\n\nStep 4: Apply H(1) (Hadamard on qubit 1)\n- H(1) creates superposition: |01\u27e9 \u2192 (1/\u221a2)(|00\u27e9 + |10\u27e9)\n- Final state: [1/\u221a2, 0, 1/\u221a2, 0]\n- Probabilities: [0.5, 0.0, 0.5, 0.0]\n\n[0.5, 0.0, 0.5, 0.0]"
+      },
+      {
+        "attempt": 6,
+        "elapsed_s": 21.994200209,
+        "latency_s": 3.5416749170000017,
+        "d_phys": 0.5,
+        "solved": false,
+        "output": "I'll work through this step-by-step, applying each gate to the initial state |01\u27e9.\n\nStep 1: Initial state |01\u27e9 = [0, 1, 0, 0]\n\nStep 2: Apply CNOT(1,0) twice\n- CNOT(1,0) flips qubit 0 when qubit 1 is |1\u27e9\n- First CNOT(1,0): |01\u27e9 \u2192 |11\u27e9 = [0, 0, 0, 1]\n- Second CNOT(1,0): |11\u27e9 \u2192 |01\u27e9 = [0, 1, 0, 0]\n\nStep 3: Apply CZ gate\n- CZ adds phase -1 to |11\u27e9 state only\n- Since we have |01\u27e9, CZ has no effect: [0, 1, 0, 0]\n\nStep 4: Apply H(1) (Hadamard on qubit 1)\n- H(1) creates superposition: |01\u27e9 \u2192 (1/\u221a2)(|00\u27e9 + |10\u27e9)\n- Final state: [1/\u221a2, 0, 1/\u221a2, 0]\n- Probabilities: [0.5, 0.0, 0.5, 0.0]\n\n[0.5, 0.0, 0.5, 0.0]"
+      },
+      {
+        "attempt": 7,
+        "elapsed_s": 25.369316209000004,
+        "latency_s": 3.3745820839999965,
+        "d_phys": 0.5,
+        "solved": false,
+        "output": "I'll work through this step-by-step, applying each gate to the initial state |01\u27e9.\n\nStep 1: Initial state |01\u27e9 = [0, 1, 0, 0]\n\nStep 2: Apply CNOT(1,0) twice\n- CNOT(1,0) flips qubit 0 when qubit 1 is |1\u27e9\n- First CNOT(1,0): |01\u27e9 \u2192 |11\u27e9 = [0, 0, 0, 1]\n- Second CNOT(1,0): |11\u27e9 \u2192 |01\u27e9 = [0, 1, 0, 0]\n\nStep 3: Apply CZ gate\n- CZ adds phase -1 to |11\u27e9 state only\n- Since we have |01\u27e9, CZ has no effect: [0, 1, 0, 0]\n\nStep 4: Apply H(1) (Hadamard on qubit 1)\n- H(1) creates superposition: |01\u27e9 \u2192 (1/\u221a2)(|00\u27e9 + |10\u27e9)\n- Final state: [1/\u221a2, 0, 1/\u221a2, 0]\n- Probabilities: [0.5, 0.0, 0.5, 0.0]\n\n[0.5, 0.0, 0.5, 0.0]"
+      },
+      {
+        "attempt": 8,
+        "elapsed_s": 28.969482667,
+        "latency_s": 3.599939791000004,
+        "d_phys": 0.5,
+        "solved": false,
+        "output": "I'll work through this step-by-step, applying each gate to the initial state |01\u27e9.\n\nStep 1: Initial state |01\u27e9 = [0, 1, 0, 0]\n\nStep 2: Apply CNOT(1,0) twice\n- CNOT(1,0) flips qubit 0 when qubit 1 is |1\u27e9\n- First CNOT(1,0): |01\u27e9 \u2192 |11\u27e9 = [0, 0, 0, 1]\n- Second CNOT(1,0): |11\u27e9 \u2192 |01\u27e9 = [0, 1, 0, 0]\n\nStep 3: Apply CZ gate\n- CZ adds phase -1 to |11\u27e9 state only\n- Since we have |01\u27e9, CZ has no effect: [0, 1, 0, 0]\n\nStep 4: Apply H(1) (Hadamard on qubit 1)\n- H(1) creates superposition: |01\u27e9 \u2192 (1/\u221a2)(|00\u27e9 + |10\u27e9)\n- Final state: [1/\u221a2, 0, 1/\u221a2, 0]\n- Probabilities: [0.5, 0.0, 0.5, 0.0]\n\n[0.5, 0.0, 0.5, 0.0]"
+      },
+      {
+        "attempt": 9,
+        "elapsed_s": 32.456316125,
+        "latency_s": 3.4864795000000015,
+        "d_phys": 0.5,
+        "solved": false,
+        "output": "I'll work through this step-by-step, applying each gate to the initial state |01\u27e9.\n\nStep 1: Initial state |01\u27e9 = [0, 1, 0, 0]\n\nStep 2: Apply CNOT(1,0) twice\n- CNOT(1,0) flips qubit 0 when qubit 1 is |1\u27e9\n- First CNOT(1,0): |01\u27e9 \u2192 |11\u27e9 = [0, 0, 0, 1]\n- Second CNOT(1,0): |11\u27e9 \u2192 |01\u27e9 = [0, 1, 0, 0]\n\nStep 3: Apply CZ gate\n- CZ adds phase -1 to |11\u27e9 state only\n- Since we have |01\u27e9, CZ has no effect: [0, 1, 0, 0]\n\nStep 4: Apply H(1) (Hadamard on qubit 1)\n- H(1) creates superposition: |01\u27e9 \u2192 (1/\u221a2)(|00\u27e9 + |10\u27e9)\n- Final state: [1/\u221a2, 0, 1/\u221a2, 0]\n- Probabilities: [0.5, 0.0, 0.5, 0.0]\n\n[0.5, 0.0, 0.5, 0.0]"
+      },
+      {
+        "attempt": 10,
+        "elapsed_s": 35.956502459,
+        "latency_s": 3.499721542000003,
+        "d_phys": 0.5,
+        "solved": false,
+        "output": "I'll work through this step-by-step, applying each gate to the initial state |01\u27e9.\n\nStep 1: Initial state |01\u27e9 = [0, 1, 0, 0]\n\nStep 2: Apply CNOT(1,0) twice\n- CNOT(1,0) flips qubit 0 when qubit 1 is |1\u27e9\n- First CNOT(1,0): |01\u27e9 \u2192 |11\u27e9 = [0, 0, 0, 1]\n- Second CNOT(1,0): |11\u27e9 \u2192 |01\u27e9 = [0, 1, 0, 0]\n\nStep 3: Apply CZ gate\n- CZ adds phase -1 to |11\u27e9 state only\n- Since we have |01\u27e9, CZ has no effect: [0, 1, 0, 0]\n\nStep 4: Apply H(1) (Hadamard on qubit 1)\n- H(1) creates superposition: |01\u27e9 \u2192 (1/\u221a2)(|00\u27e9 + |10\u27e9)\n- Final state: [1/\u221a2, 0, 1/\u221a2, 0]\n- Probabilities: [0.5, 0.0, 0.5, 0.0]\n\n[0.5, 0.0, 0.5, 0.0]"
+      },
+      {
+        "attempt": 11,
+        "elapsed_s": 39.60733625,
+        "latency_s": 3.6504091659999958,
+        "d_phys": 0.5,
+        "solved": false,
+        "output": "I'll work through this step-by-step, applying each gate to the initial state |01\u27e9.\n\nStep 1: Initial state |01\u27e9 = [0, 1, 0, 0]\n\nStep 2: Apply CNOT(1,0) twice\n- CNOT(1,0) flips qubit 0 when qubit 1 is |1\u27e9\n- First CNOT(1,0): |01\u27e9 \u2192 |11\u27e9 = [0, 0, 0, 1]\n- Second CNOT(1,0): |11\u27e9 \u2192 |01\u27e9 = [0, 1, 0, 0]\n\nStep 3: Apply CZ gate\n- CZ adds phase -1 to |11\u27e9 state only\n- Since we have |01\u27e9, CZ has no effect: [0, 1, 0, 0]\n\nStep 4: Apply H(1) (Hadamard on qubit 1)\n- H(1) creates superposition: |01\u27e9 \u2192 (1/\u221a2)(|00\u27e9 + |10\u27e9)\n- Final state: [1/\u221a2, 0, 1/\u221a2, 0]\n- Probabilities: [0.5, 0.0, 0.5, 0.0]\n\n[0.5, 0.0, 0.5, 0.0]"
+      },
+      {
+        "attempt": 12,
+        "elapsed_s": 43.013268917000005,
+        "latency_s": 3.404920375000003,
+        "d_phys": 0.5,
+        "solved": false,
+        "output": "I'll work through this step-by-step, applying each gate to the initial state |01\u27e9.\n\nStep 1: Initial state |01\u27e9 = [0, 1, 0, 0]\n\nStep 2: Apply CNOT(1,0) twice\n- CNOT(1,0) flips qubit 0 when qubit 1 is |1\u27e9\n- First CNOT(1,0): |01\u27e9 \u2192 |11\u27e9 = [0, 0, 0, 1]\n- Second CNOT(1,0): |11\u27e9 \u2192 |01\u27e9 = [0, 1, 0, 0]\n\nStep 3: Apply CZ gate\n- CZ adds phase -1 to |11\u27e9 state only\n- Since we have |01\u27e9, CZ has no effect: [0, 1, 0, 0]\n\nStep 4: Apply H(1) (Hadamard on qubit 1)\n- H(1) creates superposition: |01\u27e9 \u2192 (1/\u221a2)(|00\u27e9 + |10\u27e9)\n- Final state: [1/\u221a2, 0, 1/\u221a2, 0]\n- Probabilities: [0.5, 0.0, 0.5, 0.0]\n\n[0.5, 0.0, 0.5, 0.0]"
+      },
+      {
+        "attempt": 13,
+        "elapsed_s": 46.467434125000004,
+        "latency_s": 3.453785874999994,
+        "d_phys": 0.5,
+        "solved": false,
+        "output": "I'll work through this step-by-step, applying each gate to the initial state |01\u27e9.\n\nStep 1: Initial state |01\u27e9 = [0, 1, 0, 0]\n\nStep 2: Apply CNOT(1,0) twice\n- CNOT(1,0) flips qubit 0 when qubit 1 is |1\u27e9\n- First CNOT(1,0): |01\u27e9 \u2192 |11\u27e9 = [0, 0, 0, 1]\n- Second CNOT(1,0): |11\u27e9 \u2192 |01\u27e9 = [0, 1, 0, 0]\n\nStep 3: Apply CZ gate\n- CZ adds phase -1 to |11\u27e9 state only\n- Since we have |01\u27e9, CZ has no effect: [0, 1, 0, 0]\n\nStep 4: Apply H(1) (Hadamard on qubit 1)\n- H(1) creates superposition: |01\u27e9 \u2192 (1/\u221a2)(|00\u27e9 + |10\u27e9)\n- Final state: [1/\u221a2, 0, 1/\u221a2, 0]\n- Probabilities: [0.5, 0.0, 0.5, 0.0]\n\n[0.5, 0.0, 0.5, 0.0]"
+      },
+      {
+        "attempt": 14,
+        "elapsed_s": 50.052148792000004,
+        "latency_s": 3.5836093749999947,
+        "d_phys": 0.5,
+        "solved": false,
+        "output": "I'll work through this step-by-step, applying each gate to the initial state |01\u27e9.\n\nStep 1: Initial state |01\u27e9 = [0, 1, 0, 0]\n\nStep 2: Apply CNOT(1,0) twice\n- CNOT(1,0) flips qubit 0 when qubit 1 is |1\u27e9\n- First CNOT(1,0): |01\u27e9 \u2192 |11\u27e9 = [0, 0, 0, 1]\n- Second CNOT(1,0): |11\u27e9 \u2192 |01\u27e9 = [0, 1, 0, 0]\n\nStep 3: Apply CZ gate\n- CZ adds phase -1 to |11\u27e9 state only\n- Since we have |01\u27e9, CZ has no effect: [0, 1, 0, 0]\n\nStep 4: Apply H(1) (Hadamard on qubit 1)\n- H(1) creates superposition: |01\u27e9 \u2192 (1/\u221a2)(|00\u27e9 + |10\u27e9)\n- Final state: [1/\u221a2, 0, 1/\u221a2, 0]\n- Probabilities: [0.5, 0.0, 0.5, 0.0]\n\n[0.5, 0.0, 0.5, 0.0]"
+      },
+      {
+        "attempt": 15,
+        "elapsed_s": 54.13005158400001,
+        "latency_s": 4.077524916999998,
+        "d_phys": 0.5,
+        "solved": false,
+        "output": "I'll work through this step-by-step, applying each gate to the initial state |01\u27e9.\n\nStep 1: Initial state |01\u27e9 = [0, 1, 0, 0]\n\nStep 2: Apply CNOT(1,0) twice\n- CNOT(1,0) flips qubit 0 when qubit 1 is |1\u27e9\n- First CNOT(1,0): |01\u27e9 \u2192 |11\u27e9 = [0, 0, 0, 1]\n- Second CNOT(1,0): |11\u27e9 \u2192 |01\u27e9 = [0, 1, 0, 0]\n\nStep 3: Apply CZ gate\n- CZ adds phase -1 to |11\u27e9 state only\n- Since we have |01\u27e9, CZ has no effect: [0, 1, 0, 0]\n\nStep 4: Apply H(1) (Hadamard on qubit 1)\n- H(1) creates superposition: |01\u27e9 \u2192 (1/\u221a2)(|00\u27e9 + |10\u27e9)\n- Final state: [1/\u221a2, 0, 1/\u221a2, 0]\n- Probabilities: [0.5, 0.0, 0.5, 0.0]\n\n[0.5, 0.0, 0.5, 0.0]"
+      },
+      {
+        "attempt": 16,
+        "elapsed_s": 57.623007167000004,
+        "latency_s": 3.492539167000004,
+        "d_phys": 0.5,
+        "solved": false,
+        "output": "I'll work through this step-by-step, applying each gate to the initial state |01\u27e9.\n\nStep 1: Initial state |01\u27e9 = [0, 1, 0, 0]\n\nStep 2: Apply CNOT(1,0) twice\n- CNOT(1,0) flips qubit 0 when qubit 1 is |1\u27e9\n- First CNOT(1,0): |01\u27e9 \u2192 |11\u27e9 = [0, 0, 0, 1]\n- Second CNOT(1,0): |11\u27e9 \u2192 |01\u27e9 = [0, 1, 0, 0]\n\nStep 3: Apply CZ gate\n- CZ adds phase -1 to |11\u27e9 state only\n- Since we have |01\u27e9, CZ has no effect: [0, 1, 0, 0]\n\nStep 4: Apply H(1) (Hadamard on qubit 1)\n- H(1) creates superposition: |01\u27e9 \u2192 (1/\u221a2)(|00\u27e9 + |10\u27e9)\n- Final state: [1/\u221a2, 0, 1/\u221a2, 0]\n- Probabilities: [0.5, 0.0, 0.5, 0.0]\n\n[0.5, 0.0, 0.5, 0.0]"
+      },
+      {
+        "attempt": 17,
+        "elapsed_s": 62.07061358400001,
+        "latency_s": 4.4470004159999945,
+        "d_phys": 0.5,
+        "solved": false,
+        "output": "I'll work through this step-by-step, applying each gate to the initial state |01\u27e9.\n\nStep 1: Initial state |01\u27e9 = [0, 1, 0, 0]\n\nStep 2: Apply CNOT(1,0) twice\n- CNOT(1,0) flips qubit 0 when qubit 1 is |1\u27e9\n- First CNOT(1,0): |01\u27e9 \u2192 |11\u27e9 = [0, 0, 0, 1]\n- Second CNOT(1,0): |11\u27e9 \u2192 |01\u27e9 = [0, 1, 0, 0]\n\nStep 3: Apply CZ gate\n- CZ adds phase -1 to |11\u27e9 state only\n- Since we have |01\u27e9, CZ has no effect: [0, 1, 0, 0]\n\nStep 4: Apply H(1) (Hadamard on qubit 1)\n- H(1) creates superposition: |01\u27e9 \u2192 (1/\u221a2)(|00\u27e9 + |10\u27e9)\n- Final state: [1/\u221a2, 0, 1/\u221a2, 0]\n- Probabilities: [0.5, 0.0, 0.5, 0.0]\n\n[0.5, 0.0, 0.5, 0.0]"
+      },
+      {
+        "attempt": 18,
+        "elapsed_s": 65.737712542,
+        "latency_s": 3.666681333999989,
+        "d_phys": 0.5,
+        "solved": false,
+        "output": "I'll work through this step-by-step, applying each gate to the initial state |01\u27e9.\n\nStep 1: Initial state |01\u27e9 = [0, 1, 0, 0]\n\nStep 2: Apply CNOT(1,0) twice\n- CNOT(1,0) flips qubit 0 when qubit 1 is |1\u27e9\n- First CNOT(1,0): |01\u27e9 \u2192 |11\u27e9 = [0, 0, 0, 1]\n- Second CNOT(1,0): |11\u27e9 \u2192 |01\u27e9 = [0, 1, 0, 0]\n\nStep 3: Apply CZ gate\n- CZ adds phase -1 to |11\u27e9 state only\n- Since we have |01\u27e9, CZ has no effect: [0, 1, 0, 0]\n\nStep 4: Apply H(1) (Hadamard on qubit 1)\n- H(1) creates superposition: |01\u27e9 \u2192 (1/\u221a2)(|00\u27e9 + |10\u27e9)\n- Final state: [1/\u221a2, 0, 1/\u221a2, 0]\n- Probabilities: [0.5, 0.0, 0.5, 0.0]\n\n[0.5, 0.0, 0.5, 0.0]"
+      },
+      {
+        "attempt": 19,
+        "elapsed_s": 69.30937216699999,
+        "latency_s": 3.571235125000001,
+        "d_phys": 0.5,
+        "solved": false,
+        "output": "I'll work through this step-by-step, applying each gate to the initial state |01\u27e9.\n\nStep 1: Initial state |01\u27e9 = [0, 1, 0, 0]\n\nStep 2: Apply CNOT(1,0) twice\n- CNOT(1,0) flips qubit 0 when qubit 1 is |1\u27e9\n- First CNOT(1,0): |01\u27e9 \u2192 |11\u27e9 = [0, 0, 0, 1]\n- Second CNOT(1,0): |11\u27e9 \u2192 |01\u27e9 = [0, 1, 0, 0]\n\nStep 3: Apply CZ gate\n- CZ adds phase -1 to |11\u27e9 state only\n- Since we have |01\u27e9, CZ has no effect: [0, 1, 0, 0]\n\nStep 4: Apply H(1) (Hadamard on qubit 1)\n- H(1) creates superposition: |01\u27e9 \u2192 (1/\u221a2)(|00\u27e9 + |10\u27e9)\n- Final state: [1/\u221a2, 0, 1/\u221a2, 0]\n- Probabilities: [0.5, 0.0, 0.5, 0.0]\n\n[0.5, 0.0, 0.5, 0.0]"
+      },
+      {
+        "attempt": 20,
+        "elapsed_s": 72.826581292,
+        "latency_s": 3.516487041000005,
+        "d_phys": 0.5,
+        "solved": false,
+        "output": "I'll work through this step-by-step, applying each gate to the initial state |01\u27e9.\n\nStep 1: Initial state |01\u27e9 = [0, 1, 0, 0]\n\nStep 2: Apply CNOT(1,0) twice\n- CNOT(1,0) flips qubit 0 when qubit 1 is |1\u27e9\n- First CNOT(1,0): |01\u27e9 \u2192 |11\u27e9 = [0, 0, 0, 1]\n- Second CNOT(1,0): |11\u27e9 \u2192 |01\u27e9 = [0, 1, 0, 0]\n\nStep 3: Apply CZ gate\n- CZ adds phase -1 to |11\u27e9 state only\n- Since we have |01\u27e9, CZ has no effect: [0, 1, 0, 0]\n\nStep 4: Apply H(1) (Hadamard on qubit 1)\n- H(1) creates superposition: |01\u27e9 \u2192 (1/\u221a2)(|00\u27e9 + |10\u27e9)\n- Final state: [1/\u221a2, 0, 1/\u221a2, 0]\n- Probabilities: [0.5, 0.0, 0.5, 0.0]\n\n[0.5, 0.0, 0.5, 0.0]"
+      },
+      {
+        "attempt": 21,
+        "elapsed_s": 76.382754542,
+        "latency_s": 3.555603833999996,
+        "d_phys": 0.5,
+        "solved": false,
+        "output": "I'll work through this step-by-step, applying each gate to the initial state |01\u27e9.\n\nStep 1: Initial state |01\u27e9 = [0, 1, 0, 0]\n\nStep 2: Apply CNOT(1,0) twice\n- CNOT(1,0) flips qubit 0 when qubit 1 is |1\u27e9\n- First CNOT(1,0): |01\u27e9 \u2192 |11\u27e9 = [0, 0, 0, 1]\n- Second CNOT(1,0): |11\u27e9 \u2192 |01\u27e9 = [0, 1, 0, 0]\n\nStep 3: Apply CZ gate\n- CZ adds phase -1 to |11\u27e9 state only\n- Since we have |01\u27e9, CZ has no effect: [0, 1, 0, 0]\n\nStep 4: Apply H(1) (Hadamard on qubit 1)\n- H(1) creates superposition: |01\u27e9 \u2192 (1/\u221a2)(|00\u27e9 + |10\u27e9)\n- Final state: [1/\u221a2, 0, 1/\u221a2, 0]\n- Probabilities: [0.5, 0.0, 0.5, 0.0]\n\n[0.5, 0.0, 0.5, 0.0]"
+      },
+      {
+        "attempt": 22,
+        "elapsed_s": 79.96837325,
+        "latency_s": 3.585206333000002,
+        "d_phys": 0.5,
+        "solved": false,
+        "output": "I'll work through this step-by-step, applying each gate to the initial state |01\u27e9.\n\nStep 1: Initial state |01\u27e9 = [0, 1, 0, 0]\n\nStep 2: Apply CNOT(1,0) twice\n- CNOT(1,0) flips qubit 0 when qubit 1 is |1\u27e9\n- First CNOT(1,0): |01\u27e9 \u2192 |11\u27e9 = [0, 0, 0, 1]\n- Second CNOT(1,0): |11\u27e9 \u2192 |01\u27e9 = [0, 1, 0, 0]\n\nStep 3: Apply CZ gate\n- CZ adds phase -1 to |11\u27e9 state only\n- Since we have |01\u27e9, CZ has no effect: [0, 1, 0, 0]\n\nStep 4: Apply H(1) (Hadamard on qubit 1)\n- H(1) creates superposition: |01\u27e9 \u2192 (1/\u221a2)(|00\u27e9 + |10\u27e9)\n- Final state: [1/\u221a2, 0, 1/\u221a2, 0]\n- Probabilities: [0.5, 0.0, 0.5, 0.0]\n\n[0.5, 0.0, 0.5, 0.0]"
+      },
+      {
+        "attempt": 23,
+        "elapsed_s": 83.657346167,
+        "latency_s": 3.6883490000000023,
+        "d_phys": 0.5,
+        "solved": false,
+        "output": "I'll work through this step-by-step, applying each gate to the initial state |01\u27e9.\n\nStep 1: Initial state |01\u27e9 = [0, 1, 0, 0]\n\nStep 2: Apply CNOT(1,0) twice\n- CNOT(1,0) flips qubit 0 when qubit 1 is |1\u27e9\n- First CNOT(1,0): |01\u27e9 \u2192 |11\u27e9 = [0, 0, 0, 1]\n- Second CNOT(1,0): |11\u27e9 \u2192 |01\u27e9 = [0, 1, 0, 0]\n\nStep 3: Apply CZ gate\n- CZ adds phase -1 to |11\u27e9 state only\n- Since we have |01\u27e9, CZ has no effect: [0, 1, 0, 0]\n\nStep 4: Apply H(1) (Hadamard on qubit 1)\n- H(1) creates superposition: |01\u27e9 \u2192 (1/\u221a2)(|00\u27e9 + |10\u27e9)\n- Final state: [1/\u221a2, 0, 1/\u221a2, 0]\n- Probabilities: [0.5, 0.0, 0.5, 0.0]\n\n[0.5, 0.0, 0.5, 0.0]"
+      },
+      {
+        "attempt": 24,
+        "elapsed_s": 87.276055667,
+        "latency_s": 3.6182551249999904,
+        "d_phys": 0.5,
+        "solved": false,
+        "output": "I'll work through this step-by-step, applying each gate to the initial state |01\u27e9.\n\nStep 1: Initial state |01\u27e9 = [0, 1, 0, 0]\n\nStep 2: Apply CNOT(1,0) twice\n- CNOT(1,0) flips qubit 0 when qubit 1 is |1\u27e9\n- First CNOT(1,0): |01\u27e9 \u2192 |11\u27e9 = [0, 0, 0, 1]\n- Second CNOT(1,0): |11\u27e9 \u2192 |01\u27e9 = [0, 1, 0, 0]\n\nStep 3: Apply CZ gate\n- CZ adds phase -1 to |11\u27e9 state only\n- Since we have |01\u27e9, CZ has no effect: [0, 1, 0, 0]\n\nStep 4: Apply H(1) (Hadamard on qubit 1)\n- H(1) transforms |01\u27e9 \u2192 (1/\u221a2)(|00\u27e9 - |10\u27e9)\n- Final state: [1/\u221a2, 0, -1/\u221a2, 0]\n- Probabilities: [0.5, 0.0, 0.5, 0.0]\n\n[0.5, 0.0, 0.5, 0.0]"
+      }
+    ],
+    "initial_d_phys": 0.5,
+    "best_d_phys": 0.5,
+    "final_d_phys": 0.5,
+    "solved": false,
+    "solve_time_s": null,
+    "total_elapsed_s": 87.27606220899999,
+    "pass_by_time": {
+      "30s": false,
+      "60s": false,
+      "120s": false,
+      "300s": false
+    },
+    "api_error": null
+  }
+]

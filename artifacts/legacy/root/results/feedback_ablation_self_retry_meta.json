@@ -1,0 +1,21 @@
+{
+  "experiment": "time_budget",
+  "time_budget_s": 300.0,
+  "repair_mode": "self_retry",
+  "checkpoint_seconds": [
+    30.0,
+    60.0,
+    120.0,
+    300.0
+  ],
+  "solve_rate": 0.609375,
+  "mean_solve_time_s": 2.6501588226666666,
+  "median_solve_time_s": 1.287718,
+  "overall_pass_by_time": {
+    "30s": 0.609375,
+    "60s": 0.609375,
+    "120s": 0.609375,
+    "300s": 0.609375
+  },
+  "is_partial": false
+}

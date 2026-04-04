@@ -1,0 +1,35 @@
+{
+  "families": [
+    {
+      "family": "GPT",
+      "baseline_mean_d_phys": 0.44026291024591935,
+      "variant_mean_d_phys": 0.5607972210107286,
+      "delta_variant_minus_baseline": 0.12053431076480925,
+      "baseline_mean_d_phys_varying_categories": 0.4941978863174914,
+      "variant_mean_d_phys_varying_categories": 0.6600246251308793,
+      "delta_variant_minus_baseline_varying_categories": 0.16582673881338794
+    },
+    {
+      "family": "Anthropic",
+      "baseline_mean_d_phys": 0.2940328596790083,
+      "variant_mean_d_phys": 0.4368943355682242,
+      "delta_variant_minus_baseline": 0.14286147588921594,
+      "baseline_mean_d_phys_varying_categories": 0.3296813309191089,
+      "variant_mean_d_phys_varying_categories": 0.5220201386965483,
+      "delta_variant_minus_baseline_varying_categories": 0.1923388077774394
+    }
+  ],
+  "combined": {
+    "baseline_mean_d_phys": 0.4077673434532724,
+    "variant_mean_d_phys": 0.5332632464679498,
+    "delta_variant_minus_baseline": 0.12549590301467733,
+    "baseline_count": 6912,
+    "variant_count": 6912
+  },
+  "category_deltas": {
+    "circuit_evolution": 0.1850161675419271,
+    "measurement_prediction": 0.18777765042982641,
+    "operator_composition": -0.013171317024155227,
+    "entanglement_classification": 0.1423611111111111
+  }
+}

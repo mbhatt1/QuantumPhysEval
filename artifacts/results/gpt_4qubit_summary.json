@@ -1,0 +1,763 @@
+{
+  "num_rows": 5376,
+  "num_usable_rows": 5376,
+  "num_api_errors": 0,
+  "rows": [
+    {
+      "model": "gpt-4.1",
+      "depth": 1,
+      "category": "circuit_evolution",
+      "count": 64,
+      "mean_d_phys": 0.9313342690439602,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.025812791194721
+    },
+    {
+      "model": "gpt-4.1",
+      "depth": 1,
+      "category": "entanglement_classification",
+      "count": 64,
+      "mean_d_phys": 0.265625,
+      "median_d_phys": 0.0,
+      "stderr_d_phys": 0.05564461487585784
+    },
+    {
+      "model": "gpt-4.1",
+      "depth": 1,
+      "category": "measurement_prediction",
+      "count": 64,
+      "mean_d_phys": 0.76791322827198,
+      "median_d_phys": 0.9999999999999999,
+      "stderr_d_phys": 0.043930297806268
+    },
+    {
+      "model": "gpt-4.1",
+      "depth": 1,
+      "category": "operator_composition",
+      "count": 64,
+      "mean_d_phys": 0.2884035065958257,
+      "median_d_phys": 0.32877786667705244,
+      "stderr_d_phys": 0.020675676451462573
+    },
+    {
+      "model": "gpt-4.1",
+      "depth": 2,
+      "category": "circuit_evolution",
+      "count": 64,
+      "mean_d_phys": 0.967875335811281,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.01688408570222168
+    },
+    {
+      "model": "gpt-4.1",
+      "depth": 2,
+      "category": "entanglement_classification",
+      "count": 64,
+      "mean_d_phys": 0.21875,
+      "median_d_phys": 0.0,
+      "stderr_d_phys": 0.052083333333333336
+    },
+    {
+      "model": "gpt-4.1",
+      "depth": 2,
+      "category": "measurement_prediction",
+      "count": 64,
+      "mean_d_phys": 0.7421875,
+      "median_d_phys": 0.9999999999999999,
+      "stderr_d_phys": 0.047235305070877746
+    },
+    {
+      "model": "gpt-4.1",
+      "depth": 2,
+      "category": "operator_composition",
+      "count": 64,
+      "mean_d_phys": 0.2998075759455083,
+      "median_d_phys": 0.35355339059327373,
+      "stderr_d_phys": 0.01889330695536862
+    },
+    {
+      "model": "gpt-4.1",
+      "depth": 4,
+      "category": "circuit_evolution",
+      "count": 64,
+      "mean_d_phys": 0.9501953125,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.023548006987508887
+    },
+    {
+      "model": "gpt-4.1",
+      "depth": 4,
+      "category": "entanglement_classification",
+      "count": 64,
+      "mean_d_phys": 0.21875,
+      "median_d_phys": 0.0,
+      "stderr_d_phys": 0.052083333333333336
+    },
+    {
+      "model": "gpt-4.1",
+      "depth": 4,
+      "category": "measurement_prediction",
+      "count": 64,
+      "mean_d_phys": 0.7109375,
+      "median_d_phys": 0.9999999999999999,
+      "stderr_d_phys": 0.049557425579417703
+    },
+    {
+      "model": "gpt-4.1",
+      "depth": 4,
+      "category": "operator_composition",
+      "count": 64,
+      "mean_d_phys": 0.2973173717348872,
+      "median_d_phys": 0.35355339059327373,
+      "stderr_d_phys": 0.020289015876961806
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "depth": 1,
+      "category": "circuit_evolution",
+      "count": 64,
+      "mean_d_phys": 0.9599609375,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.019456313958790685
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "depth": 1,
+      "category": "entanglement_classification",
+      "count": 64,
+      "mean_d_phys": 0.375,
+      "median_d_phys": 0.0,
+      "stderr_d_phys": 0.060993754559283325
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "depth": 1,
+      "category": "measurement_prediction",
+      "count": 64,
+      "mean_d_phys": 0.7890625,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.044270833333333336
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "depth": 1,
+      "category": "operator_composition",
+      "count": 64,
+      "mean_d_phys": 0.29228909048511853,
+      "median_d_phys": 0.32191869165045844,
+      "stderr_d_phys": 0.020535665696339876
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "depth": 2,
+      "category": "circuit_evolution",
+      "count": 64,
+      "mean_d_phys": 0.947265625,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.02098248090796995
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "depth": 2,
+      "category": "entanglement_classification",
+      "count": 64,
+      "mean_d_phys": 0.375,
+      "median_d_phys": 0.0,
+      "stderr_d_phys": 0.060993754559283325
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "depth": 2,
+      "category": "measurement_prediction",
+      "count": 64,
+      "mean_d_phys": 0.7578125,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.04590387901507837
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "depth": 2,
+      "category": "operator_composition",
+      "count": 64,
+      "mean_d_phys": 0.3093999814290955,
+      "median_d_phys": 0.3171966420818227,
+      "stderr_d_phys": 0.024610754594865284
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "depth": 4,
+      "category": "circuit_evolution",
+      "count": 64,
+      "mean_d_phys": 0.947265625,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.020982480907969947
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "depth": 4,
+      "category": "entanglement_classification",
+      "count": 64,
+      "mean_d_phys": 0.375,
+      "median_d_phys": 0.0,
+      "stderr_d_phys": 0.060993754559283325
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "depth": 4,
+      "category": "measurement_prediction",
+      "count": 64,
+      "mean_d_phys": 0.7890625,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.044270833333333336
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "depth": 4,
+      "category": "operator_composition",
+      "count": 64,
+      "mean_d_phys": 0.3054699975420776,
+      "median_d_phys": 0.31720167654859155,
+      "stderr_d_phys": 0.022320866532393385
+    },
+    {
+      "model": "gpt-4o-mini",
+      "depth": 1,
+      "category": "circuit_evolution",
+      "count": 64,
+      "mean_d_phys": 0.9423828125,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.02455995595035081
+    },
+    {
+      "model": "gpt-4o-mini",
+      "depth": 1,
+      "category": "entanglement_classification",
+      "count": 64,
+      "mean_d_phys": 0.390625,
+      "median_d_phys": 0.0,
+      "stderr_d_phys": 0.06146842128667525
+    },
+    {
+      "model": "gpt-4o-mini",
+      "depth": 1,
+      "category": "measurement_prediction",
+      "count": 64,
+      "mean_d_phys": 0.8837890625,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.03023741376271254
+    },
+    {
+      "model": "gpt-4o-mini",
+      "depth": 1,
+      "category": "operator_composition",
+      "count": 64,
+      "mean_d_phys": 0.33534033488635806,
+      "median_d_phys": 0.35355339059327373,
+      "stderr_d_phys": 0.019652762940827347
+    },
+    {
+      "model": "gpt-4o-mini",
+      "depth": 2,
+      "category": "circuit_evolution",
+      "count": 64,
+      "mean_d_phys": 0.9482421875,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.02437186333142121
+    },
+    {
+      "model": "gpt-4o-mini",
+      "depth": 2,
+      "category": "entanglement_classification",
+      "count": 64,
+      "mean_d_phys": 0.46875,
+      "median_d_phys": 0.0,
+      "stderr_d_phys": 0.06287092313773097
+    },
+    {
+      "model": "gpt-4o-mini",
+      "depth": 2,
+      "category": "measurement_prediction",
+      "count": 64,
+      "mean_d_phys": 0.880859375,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.0321280039759386
+    },
+    {
+      "model": "gpt-4o-mini",
+      "depth": 2,
+      "category": "operator_composition",
+      "count": 64,
+      "mean_d_phys": 0.3329634185425622,
+      "median_d_phys": 0.35355339059327373,
+      "stderr_d_phys": 0.019144616058426114
+    },
+    {
+      "model": "gpt-4o-mini",
+      "depth": 4,
+      "category": "circuit_evolution",
+      "count": 64,
+      "mean_d_phys": 0.9599609375,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.02241776280923165
+    },
+    {
+      "model": "gpt-4o-mini",
+      "depth": 4,
+      "category": "entanglement_classification",
+      "count": 64,
+      "mean_d_phys": 0.375,
+      "median_d_phys": 0.0,
+      "stderr_d_phys": 0.060993754559283325
+    },
+    {
+      "model": "gpt-4o-mini",
+      "depth": 4,
+      "category": "measurement_prediction",
+      "count": 64,
+      "mean_d_phys": 0.8642578125,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.0310807260495839
+    },
+    {
+      "model": "gpt-4o-mini",
+      "depth": 4,
+      "category": "operator_composition",
+      "count": 64,
+      "mean_d_phys": 0.33360903445714934,
+      "median_d_phys": 0.35355339059327373,
+      "stderr_d_phys": 0.0245693918566807
+    },
+    {
+      "model": "gpt-5.1",
+      "depth": 1,
+      "category": "circuit_evolution",
+      "count": 64,
+      "mean_d_phys": 0.927734375,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.025788154062940574
+    },
+    {
+      "model": "gpt-5.1",
+      "depth": 1,
+      "category": "entanglement_classification",
+      "count": 64,
+      "mean_d_phys": 0.203125,
+      "median_d_phys": 0.0,
+      "stderr_d_phys": 0.050688158720985414
+    },
+    {
+      "model": "gpt-5.1",
+      "depth": 1,
+      "category": "measurement_prediction",
+      "count": 64,
+      "mean_d_phys": 0.734375,
+      "median_d_phys": 0.9999999999999999,
+      "stderr_d_phys": 0.050688158720985414
+    },
+    {
+      "model": "gpt-5.1",
+      "depth": 1,
+      "category": "operator_composition",
+      "count": 64,
+      "mean_d_phys": 0.25601152374341385,
+      "median_d_phys": 0.27778511650980103,
+      "stderr_d_phys": 0.019381357019331084
+    },
+    {
+      "model": "gpt-5.1",
+      "depth": 2,
+      "category": "circuit_evolution",
+      "count": 64,
+      "mean_d_phys": 0.8942270935742171,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.03269562454814403
+    },
+    {
+      "model": "gpt-5.1",
+      "depth": 2,
+      "category": "entanglement_classification",
+      "count": 64,
+      "mean_d_phys": 0.21875,
+      "median_d_phys": 0.0,
+      "stderr_d_phys": 0.052083333333333336
+    },
+    {
+      "model": "gpt-5.1",
+      "depth": 2,
+      "category": "measurement_prediction",
+      "count": 64,
+      "mean_d_phys": 0.7421875,
+      "median_d_phys": 0.9999999999999999,
+      "stderr_d_phys": 0.05102154304470513
+    },
+    {
+      "model": "gpt-5.1",
+      "depth": 2,
+      "category": "operator_composition",
+      "count": 64,
+      "mean_d_phys": 0.2588529117819224,
+      "median_d_phys": 0.2777851165098011,
+      "stderr_d_phys": 0.020836249802885582
+    },
+    {
+      "model": "gpt-5.1",
+      "depth": 4,
+      "category": "circuit_evolution",
+      "count": 64,
+      "mean_d_phys": 0.904296875,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.03207518974946271
+    },
+    {
+      "model": "gpt-5.1",
+      "depth": 4,
+      "category": "entanglement_classification",
+      "count": 64,
+      "mean_d_phys": 0.21875,
+      "median_d_phys": 0.0,
+      "stderr_d_phys": 0.052083333333333336
+    },
+    {
+      "model": "gpt-5.1",
+      "depth": 4,
+      "category": "measurement_prediction",
+      "count": 64,
+      "mean_d_phys": 0.75,
+      "median_d_phys": 0.9999999999999999,
+      "stderr_d_phys": 0.049801192055599734
+    },
+    {
+      "model": "gpt-5.1",
+      "depth": 4,
+      "category": "operator_composition",
+      "count": 64,
+      "mean_d_phys": 0.2725869635640886,
+      "median_d_phys": 0.27778511651587845,
+      "stderr_d_phys": 0.01981375463740008
+    },
+    {
+      "model": "gpt-5.2",
+      "depth": 1,
+      "category": "circuit_evolution",
+      "count": 64,
+      "mean_d_phys": 0.88671875,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.03562164401311962
+    },
+    {
+      "model": "gpt-5.2",
+      "depth": 1,
+      "category": "entanglement_classification",
+      "count": 64,
+      "mean_d_phys": 0.234375,
+      "median_d_phys": 0.0,
+      "stderr_d_phys": 0.053369535239372906
+    },
+    {
+      "model": "gpt-5.2",
+      "depth": 1,
+      "category": "measurement_prediction",
+      "count": 64,
+      "mean_d_phys": 0.66015625,
+      "median_d_phys": 0.9999999999999999,
+      "stderr_d_phys": 0.052043790792891384
+    },
+    {
+      "model": "gpt-5.2",
+      "depth": 1,
+      "category": "operator_composition",
+      "count": 64,
+      "mean_d_phys": 0.20313003992258696,
+      "median_d_phys": 0.1913417161825449,
+      "stderr_d_phys": 0.021568976877044944
+    },
+    {
+      "model": "gpt-5.2",
+      "depth": 2,
+      "category": "circuit_evolution",
+      "count": 64,
+      "mean_d_phys": 0.87109375,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.04014798838799003
+    },
+    {
+      "model": "gpt-5.2",
+      "depth": 2,
+      "category": "entanglement_classification",
+      "count": 64,
+      "mean_d_phys": 0.21875,
+      "median_d_phys": 0.0,
+      "stderr_d_phys": 0.052083333333333336
+    },
+    {
+      "model": "gpt-5.2",
+      "depth": 2,
+      "category": "measurement_prediction",
+      "count": 64,
+      "mean_d_phys": 0.703125,
+      "median_d_phys": 0.9999999999999999,
+      "stderr_d_phys": 0.04944978764378946
+    },
+    {
+      "model": "gpt-5.2",
+      "depth": 2,
+      "category": "operator_composition",
+      "count": 64,
+      "mean_d_phys": 0.18359201406473408,
+      "median_d_phys": 0.1913417161825449,
+      "stderr_d_phys": 0.020638376066856538
+    },
+    {
+      "model": "gpt-5.2",
+      "depth": 4,
+      "category": "circuit_evolution",
+      "count": 64,
+      "mean_d_phys": 0.875,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.03776362363229024
+    },
+    {
+      "model": "gpt-5.2",
+      "depth": 4,
+      "category": "entanglement_classification",
+      "count": 64,
+      "mean_d_phys": 0.21875,
+      "median_d_phys": 0.0,
+      "stderr_d_phys": 0.052083333333333336
+    },
+    {
+      "model": "gpt-5.2",
+      "depth": 4,
+      "category": "measurement_prediction",
+      "count": 64,
+      "mean_d_phys": 0.70703125,
+      "median_d_phys": 0.9999999999999999,
+      "stderr_d_phys": 0.04934927735008081
+    },
+    {
+      "model": "gpt-5.2",
+      "depth": 4,
+      "category": "operator_composition",
+      "count": 64,
+      "mean_d_phys": 0.19861646618872683,
+      "median_d_phys": 0.22067085809127246,
+      "stderr_d_phys": 0.019872665393003513
+    },
+    {
+      "model": "gpt-5.4",
+      "depth": 1,
+      "category": "circuit_evolution",
+      "count": 64,
+      "mean_d_phys": 0.833984375,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.04558022369141767
+    },
+    {
+      "model": "gpt-5.4",
+      "depth": 1,
+      "category": "entanglement_classification",
+      "count": 64,
+      "mean_d_phys": 0.296875,
+      "median_d_phys": 0.0,
+      "stderr_d_phys": 0.05756159356351619
+    },
+    {
+      "model": "gpt-5.4",
+      "depth": 1,
+      "category": "measurement_prediction",
+      "count": 64,
+      "mean_d_phys": 0.765625,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.04850026335634602
+    },
+    {
+      "model": "gpt-5.4",
+      "depth": 1,
+      "category": "operator_composition",
+      "count": 64,
+      "mean_d_phys": 0.20639614821162816,
+      "median_d_phys": 0.19478251044295397,
+      "stderr_d_phys": 0.02218611179622266
+    },
+    {
+      "model": "gpt-5.4",
+      "depth": 2,
+      "category": "circuit_evolution",
+      "count": 64,
+      "mean_d_phys": 0.8346545815439602,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.043831600049843954
+    },
+    {
+      "model": "gpt-5.4",
+      "depth": 2,
+      "category": "entanglement_classification",
+      "count": 64,
+      "mean_d_phys": 0.3125,
+      "median_d_phys": 0.0,
+      "stderr_d_phys": 0.058397074018894594
+    },
+    {
+      "model": "gpt-5.4",
+      "depth": 2,
+      "category": "measurement_prediction",
+      "count": 64,
+      "mean_d_phys": 0.7734375,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.04845029912823118
+    },
+    {
+      "model": "gpt-5.4",
+      "depth": 2,
+      "category": "operator_composition",
+      "count": 64,
+      "mean_d_phys": 0.18048581640576253,
+      "median_d_phys": 0.1913417161825449,
+      "stderr_d_phys": 0.020368764144445488
+    },
+    {
+      "model": "gpt-5.4",
+      "depth": 4,
+      "category": "circuit_evolution",
+      "count": 64,
+      "mean_d_phys": 0.822265625,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.045728767311346015
+    },
+    {
+      "model": "gpt-5.4",
+      "depth": 4,
+      "category": "entanglement_classification",
+      "count": 64,
+      "mean_d_phys": 0.34375,
+      "median_d_phys": 0.0,
+      "stderr_d_phys": 0.05983919423477113
+    },
+    {
+      "model": "gpt-5.4",
+      "depth": 4,
+      "category": "measurement_prediction",
+      "count": 64,
+      "mean_d_phys": 0.75,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.04980119205559973
+    },
+    {
+      "model": "gpt-5.4",
+      "depth": 4,
+      "category": "operator_composition",
+      "count": 64,
+      "mean_d_phys": 0.1844239505857868,
+      "median_d_phys": 0.1913417161825449,
+      "stderr_d_phys": 0.020173253502385538
+    },
+    {
+      "model": "gpt-5.4-mini",
+      "depth": 1,
+      "category": "circuit_evolution",
+      "count": 64,
+      "mean_d_phys": 0.9677734375,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.018041776399395137
+    },
+    {
+      "model": "gpt-5.4-mini",
+      "depth": 1,
+      "category": "entanglement_classification",
+      "count": 64,
+      "mean_d_phys": 0.296875,
+      "median_d_phys": 0.0,
+      "stderr_d_phys": 0.05756159356351619
+    },
+    {
+      "model": "gpt-5.4-mini",
+      "depth": 1,
+      "category": "measurement_prediction",
+      "count": 64,
+      "mean_d_phys": 0.73046875,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.04958429855378047
+    },
+    {
+      "model": "gpt-5.4-mini",
+      "depth": 1,
+      "category": "operator_composition",
+      "count": 64,
+      "mean_d_phys": 0.2726137967203597,
+      "median_d_phys": 0.2898687515279317,
+      "stderr_d_phys": 0.025951598375034232
+    },
+    {
+      "model": "gpt-5.4-mini",
+      "depth": 2,
+      "category": "circuit_evolution",
+      "count": 64,
+      "mean_d_phys": 0.978515625,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.011664370356229761
+    },
+    {
+      "model": "gpt-5.4-mini",
+      "depth": 2,
+      "category": "entanglement_classification",
+      "count": 64,
+      "mean_d_phys": 0.3125,
+      "median_d_phys": 0.0,
+      "stderr_d_phys": 0.058397074018894594
+    },
+    {
+      "model": "gpt-5.4-mini",
+      "depth": 2,
+      "category": "measurement_prediction",
+      "count": 64,
+      "mean_d_phys": 0.78125,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.0429490169335173
+    },
+    {
+      "model": "gpt-5.4-mini",
+      "depth": 2,
+      "category": "operator_composition",
+      "count": 64,
+      "mean_d_phys": 0.25811329653397674,
+      "median_d_phys": 0.3019523865460623,
+      "stderr_d_phys": 0.020018552816556217
+    },
+    {
+      "model": "gpt-5.4-mini",
+      "depth": 4,
+      "category": "circuit_evolution",
+      "count": 64,
+      "mean_d_phys": 0.947265625,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.024398246365020665
+    },
+    {
+      "model": "gpt-5.4-mini",
+      "depth": 4,
+      "category": "entanglement_classification",
+      "count": 64,
+      "mean_d_phys": 0.3125,
+      "median_d_phys": 0.0,
+      "stderr_d_phys": 0.058397074018894594
+    },
+    {
+      "model": "gpt-5.4-mini",
+      "depth": 4,
+      "category": "measurement_prediction",
+      "count": 64,
+      "mean_d_phys": 0.75,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.04591443041827831
+    },
+    {
+      "model": "gpt-5.4-mini",
+      "depth": 4,
+      "category": "operator_composition",
+      "count": 64,
+      "mean_d_phys": 0.2559919423142294,
+      "median_d_phys": 0.3018645409213496,
+      "stderr_d_phys": 0.02058923417535209
+    }
+  ]
+}

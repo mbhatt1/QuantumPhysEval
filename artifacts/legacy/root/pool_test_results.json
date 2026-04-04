@@ -1,0 +1,133 @@
+[
+  {
+    "model": "m1",
+    "size": 1.0,
+    "depth": 1,
+    "category": "measurement_prediction",
+    "prompt": "Start from |01>. Apply the 2-qubit gate sequence H(0), Z(1), H(1) in that order. Return the measurement probabilities [p00, p01, p10, p11] as a Python list of 4 decimal numbers only.",
+    "metadata": {
+      "bits": [
+        0,
+        1
+      ],
+      "ops": [
+        "H(0)",
+        "Z(1)",
+        "H(1)"
+      ]
+    },
+    "target": {
+      "kind": "probabilities",
+      "value": [
+        0.2499999999999999,
+        0.2499999999999999,
+        0.2499999999999999,
+        0.2499999999999999
+      ]
+    },
+    "output": "fake",
+    "d_phys": 0.1,
+    "api_error": null
+  },
+  {
+    "model": "m1",
+    "size": 1.0,
+    "depth": 1,
+    "category": "entanglement_classification",
+    "prompt": "Consider the 2-qubit state [0.70710678, 0.00000000, 0.70710678, 0.00000000]. Is it entangled? Return only True or False.",
+    "metadata": {
+      "template": "product_plus0"
+    },
+    "target": {
+      "kind": "boolean",
+      "value": false
+    },
+    "output": "fake",
+    "d_phys": 0.1,
+    "api_error": null
+  },
+  {
+    "model": "m1",
+    "size": 1.0,
+    "depth": 1,
+    "category": "operator_composition",
+    "prompt": "Compute the 2x2 unitary matrix for the single-qubit gate sequence Y, H applied in that order. Return only a Python 2x2 list of complex numbers using decimal literals.",
+    "metadata": {
+      "ops": [
+        "Y",
+        "H"
+      ]
+    },
+    "target": {
+      "kind": "operator",
+      "value": [
+        [
+          [
+            0.0,
+            0.7071067811865475
+          ],
+          [
+            0.0,
+            -0.7071067811865475
+          ]
+        ],
+        [
+          [
+            0.0,
+            -0.7071067811865475
+          ],
+          [
+            0.0,
+            -0.7071067811865475
+          ]
+        ]
+      ]
+    },
+    "output": "fake",
+    "d_phys": 0.1,
+    "api_error": null
+  },
+  {
+    "model": "m1",
+    "size": 1.0,
+    "depth": 1,
+    "category": "circuit_evolution",
+    "prompt": "Start from |00>. Apply the 2-qubit gate sequence Z(0), Z(1), Z(1), S(1) in that order. Return the final state vector as a Python list of 4 complex numbers using decimal literals only and no explanation.",
+    "metadata": {
+      "bits": [
+        0,
+        0
+      ],
+      "ops": [
+        "Z(0)",
+        "Z(1)",
+        "Z(1)",
+        "S(1)"
+      ]
+    },
+    "target": {
+      "kind": "state_vector",
+      "value": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    "output": "fake",
+    "d_phys": 0.1,
+    "api_error": null
+  }
+]

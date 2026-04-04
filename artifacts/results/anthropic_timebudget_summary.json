@@ -1,0 +1,131 @@
+{
+  "experiment": "time_budget",
+  "num_rows": 32,
+  "num_api_errors": 0,
+  "repair_modes": [
+    "verifier_feedback"
+  ],
+  "solve_rate": 0.9375,
+  "mean_solve_time_s": 11.257791736,
+  "median_solve_time_s": 7.1142224999999994,
+  "overall_pass_by_time": {
+    "30s": 0.84375,
+    "60s": 0.9375,
+    "120s": 0.9375,
+    "300s": 0.9375
+  },
+  "rows": [
+    {
+      "model": "claude-opus-4-1-20250805",
+      "category": "circuit_evolution",
+      "count": 4,
+      "solve_rate": 1.0,
+      "mean_attempts": 1.0,
+      "mean_best_d_phys": 0.0,
+      "mean_solve_time_s": 7.294590520749998,
+      "median_solve_time_s": 6.868060582999998,
+      "pass_30s": 1.0,
+      "pass_60s": 1.0,
+      "pass_120s": 1.0,
+      "pass_300s": 1.0
+    },
+    {
+      "model": "claude-opus-4-1-20250805",
+      "category": "entanglement_classification",
+      "count": 4,
+      "solve_rate": 1.0,
+      "mean_attempts": 1.0,
+      "mean_best_d_phys": 0.0,
+      "mean_solve_time_s": 7.953992624749999,
+      "median_solve_time_s": 8.040333061999998,
+      "pass_30s": 1.0,
+      "pass_60s": 1.0,
+      "pass_120s": 1.0,
+      "pass_300s": 1.0
+    },
+    {
+      "model": "claude-opus-4-1-20250805",
+      "category": "measurement_prediction",
+      "count": 4,
+      "solve_rate": 1.0,
+      "mean_attempts": 1.0,
+      "mean_best_d_phys": 1.1102230246251565e-16,
+      "mean_solve_time_s": 6.780405875000001,
+      "median_solve_time_s": 6.736694833500003,
+      "pass_30s": 1.0,
+      "pass_60s": 1.0,
+      "pass_120s": 1.0,
+      "pass_300s": 1.0
+    },
+    {
+      "model": "claude-opus-4-1-20250805",
+      "category": "operator_composition",
+      "count": 4,
+      "solve_rate": 1.0,
+      "mean_attempts": 1.0,
+      "mean_best_d_phys": 2.7755575615628914e-17,
+      "mean_solve_time_s": 6.678889812500001,
+      "median_solve_time_s": 6.860949458499999,
+      "pass_30s": 1.0,
+      "pass_60s": 1.0,
+      "pass_120s": 1.0,
+      "pass_300s": 1.0
+    },
+    {
+      "model": "claude-sonnet-4-20250514",
+      "category": "circuit_evolution",
+      "count": 4,
+      "solve_rate": 0.75,
+      "mean_attempts": 10.5,
+      "mean_best_d_phys": 0.12500000000000003,
+      "mean_solve_time_s": 21.968774791666664,
+      "median_solve_time_s": 10.718408665999998,
+      "pass_30s": 0.5,
+      "pass_60s": 0.75,
+      "pass_120s": 0.75,
+      "pass_300s": 0.75
+    },
+    {
+      "model": "claude-sonnet-4-20250514",
+      "category": "entanglement_classification",
+      "count": 4,
+      "solve_rate": 1.0,
+      "mean_attempts": 1.75,
+      "mean_best_d_phys": 0.0,
+      "mean_solve_time_s": 4.84359447875,
+      "median_solve_time_s": 5.005771145499999,
+      "pass_30s": 1.0,
+      "pass_60s": 1.0,
+      "pass_120s": 1.0,
+      "pass_300s": 1.0
+    },
+    {
+      "model": "claude-sonnet-4-20250514",
+      "category": "measurement_prediction",
+      "count": 4,
+      "solve_rate": 0.75,
+      "mean_attempts": 8.25,
+      "mean_best_d_phys": 0.12500000000000008,
+      "mean_solve_time_s": 12.583274805333332,
+      "median_solve_time_s": 13.252963916,
+      "pass_30s": 0.75,
+      "pass_60s": 0.75,
+      "pass_120s": 0.75,
+      "pass_300s": 0.75
+    },
+    {
+      "model": "claude-sonnet-4-20250514",
+      "category": "operator_composition",
+      "count": 4,
+      "solve_rate": 1.0,
+      "mean_attempts": 6.0,
+      "mean_best_d_phys": 2.7755575615628914e-17,
+      "mean_solve_time_s": 24.9679275105,
+      "median_solve_time_s": 21.847228417,
+      "pass_30s": 0.5,
+      "pass_60s": 1.0,
+      "pass_120s": 1.0,
+      "pass_300s": 1.0
+    }
+  ]
+}

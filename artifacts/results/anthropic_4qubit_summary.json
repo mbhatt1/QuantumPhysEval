@@ -1,0 +1,223 @@
+{
+  "num_rows": 1536,
+  "num_usable_rows": 1536,
+  "num_api_errors": 0,
+  "rows": [
+    {
+      "model": "claude-opus-4-1-20250805",
+      "depth": 1,
+      "category": "circuit_evolution",
+      "count": 64,
+      "mean_d_phys": 0.4322533369120796,
+      "median_d_phys": 0.0,
+      "stderr_d_phys": 0.060360889302606115
+    },
+    {
+      "model": "claude-opus-4-1-20250805",
+      "depth": 1,
+      "category": "entanglement_classification",
+      "count": 64,
+      "mean_d_phys": 0.484375,
+      "median_d_phys": 0.0,
+      "stderr_d_phys": 0.06296331249416676
+    },
+    {
+      "model": "claude-opus-4-1-20250805",
+      "depth": 1,
+      "category": "measurement_prediction",
+      "count": 64,
+      "mean_d_phys": 0.25,
+      "median_d_phys": 1.1102230246251565e-16,
+      "stderr_d_phys": 0.05103103630798288
+    },
+    {
+      "model": "claude-opus-4-1-20250805",
+      "depth": 1,
+      "category": "operator_composition",
+      "count": 64,
+      "mean_d_phys": 0.12543910439905895,
+      "median_d_phys": 6.119502064569875e-17,
+      "stderr_d_phys": 0.027668571686734714
+    },
+    {
+      "model": "claude-opus-4-1-20250805",
+      "depth": 2,
+      "category": "circuit_evolution",
+      "count": 64,
+      "mean_d_phys": 0.4128813256038808,
+      "median_d_phys": 0.0,
+      "stderr_d_phys": 0.058044661625660084
+    },
+    {
+      "model": "claude-opus-4-1-20250805",
+      "depth": 2,
+      "category": "entanglement_classification",
+      "count": 64,
+      "mean_d_phys": 0.421875,
+      "median_d_phys": 0.0,
+      "stderr_d_phys": 0.06222035653913551
+    },
+    {
+      "model": "claude-opus-4-1-20250805",
+      "depth": 2,
+      "category": "measurement_prediction",
+      "count": 64,
+      "mean_d_phys": 0.3125,
+      "median_d_phys": 1.1102230246251565e-16,
+      "stderr_d_phys": 0.055119818980512304
+    },
+    {
+      "model": "claude-opus-4-1-20250805",
+      "depth": 2,
+      "category": "operator_composition",
+      "count": 64,
+      "mean_d_phys": 0.10069087702461724,
+      "median_d_phys": 6.821593217274726e-17,
+      "stderr_d_phys": 0.020477088972241365
+    },
+    {
+      "model": "claude-opus-4-1-20250805",
+      "depth": 4,
+      "category": "circuit_evolution",
+      "count": 64,
+      "mean_d_phys": 0.3306908369120796,
+      "median_d_phys": 0.0,
+      "stderr_d_phys": 0.05818321445204927
+    },
+    {
+      "model": "claude-opus-4-1-20250805",
+      "depth": 4,
+      "category": "entanglement_classification",
+      "count": 64,
+      "mean_d_phys": 0.28125,
+      "median_d_phys": 0.0,
+      "stderr_d_phys": 0.05664543544843536
+    },
+    {
+      "model": "claude-opus-4-1-20250805",
+      "depth": 4,
+      "category": "measurement_prediction",
+      "count": 64,
+      "mean_d_phys": 0.30078125,
+      "median_d_phys": 1.1102230246251565e-16,
+      "stderr_d_phys": 0.05345795739368796
+    },
+    {
+      "model": "claude-opus-4-1-20250805",
+      "depth": 4,
+      "category": "operator_composition",
+      "count": 64,
+      "mean_d_phys": 0.11759517225668899,
+      "median_d_phys": 6.22946623052564e-17,
+      "stderr_d_phys": 0.025947579665450356
+    },
+    {
+      "model": "claude-sonnet-4-20250514",
+      "depth": 1,
+      "category": "circuit_evolution",
+      "count": 64,
+      "mean_d_phys": 0.6162109375,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.05802872724009287
+    },
+    {
+      "model": "claude-sonnet-4-20250514",
+      "depth": 1,
+      "category": "entanglement_classification",
+      "count": 64,
+      "mean_d_phys": 0.5625,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.0625
+    },
+    {
+      "model": "claude-sonnet-4-20250514",
+      "depth": 1,
+      "category": "measurement_prediction",
+      "count": 64,
+      "mean_d_phys": 0.61328125,
+      "median_d_phys": 0.7499999999999999,
+      "stderr_d_phys": 0.052507111521132625
+    },
+    {
+      "model": "claude-sonnet-4-20250514",
+      "depth": 1,
+      "category": "operator_composition",
+      "count": 64,
+      "mean_d_phys": 0.1750183611773631,
+      "median_d_phys": 0.11642209302230669,
+      "stderr_d_phys": 0.02518915950616168
+    },
+    {
+      "model": "claude-sonnet-4-20250514",
+      "depth": 2,
+      "category": "circuit_evolution",
+      "count": 64,
+      "mean_d_phys": 0.7566506447325348,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.050303786336739535
+    },
+    {
+      "model": "claude-sonnet-4-20250514",
+      "depth": 2,
+      "category": "entanglement_classification",
+      "count": 64,
+      "mean_d_phys": 0.53125,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.06287092313773097
+    },
+    {
+      "model": "claude-sonnet-4-20250514",
+      "depth": 2,
+      "category": "measurement_prediction",
+      "count": 64,
+      "mean_d_phys": 0.7981770833333333,
+      "median_d_phys": 0.9999999999999999,
+      "stderr_d_phys": 0.03687776905630866
+    },
+    {
+      "model": "claude-sonnet-4-20250514",
+      "depth": 2,
+      "category": "operator_composition",
+      "count": 64,
+      "mean_d_phys": 0.2838304145491325,
+      "median_d_phys": 0.30195238654606243,
+      "stderr_d_phys": 0.021656886037916875
+    },
+    {
+      "model": "claude-sonnet-4-20250514",
+      "depth": 4,
+      "category": "circuit_evolution",
+      "count": 64,
+      "mean_d_phys": 0.8893420815439602,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.03463717489853027
+    },
+    {
+      "model": "claude-sonnet-4-20250514",
+      "depth": 4,
+      "category": "entanglement_classification",
+      "count": 64,
+      "mean_d_phys": 0.59375,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.061876853828249374
+    },
+    {
+      "model": "claude-sonnet-4-20250514",
+      "depth": 4,
+      "category": "measurement_prediction",
+      "count": 64,
+      "mean_d_phys": 0.80859375,
+      "median_d_phys": 0.9999999999999999,
+      "stderr_d_phys": 0.03847210078826603
+    },
+    {
+      "model": "claude-sonnet-4-20250514",
+      "depth": 4,
+      "category": "operator_composition",
+      "count": 64,
+      "mean_d_phys": 0.28652762769265105,
+      "median_d_phys": 0.30195238654606243,
+      "stderr_d_phys": 0.023962306889468998
+    }
+  ]
+}

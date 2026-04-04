@@ -1,0 +1,542 @@
+[
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-0",
+    "size": 12000000000.0,
+    "depth": 1,
+    "category": "entanglement_classification",
+    "prompt": "Consider the 2-qubit state [0.70710678, 0.00000000, 0.70710678, 0.00000000]. Is it entangled? Return only True or False.",
+    "metadata": {
+      "template": "product_plus0"
+    },
+    "target": {
+      "kind": "boolean",
+      "value": false
+    },
+    "output": "False",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-0",
+    "size": 12000000000.0,
+    "depth": 1,
+    "category": "operator_composition",
+    "prompt": "Compute the 2x2 unitary matrix for the single-qubit gate sequence Y, H applied in that order. Return only a Python 2x2 list of complex numbers using decimal literals.",
+    "metadata": {
+      "ops": [
+        "Y",
+        "H"
+      ]
+    },
+    "target": {
+      "kind": "operator",
+      "value": [
+        [
+          [
+            0.0,
+            0.7071067811865475
+          ],
+          [
+            0.0,
+            -0.7071067811865475
+          ]
+        ],
+        [
+          [
+            0.0,
+            -0.7071067811865475
+          ],
+          [
+            0.0,
+            -0.7071067811865475
+          ]
+        ]
+      ]
+    },
+    "output": "```python\n[[(0.7071067811865476+0j), (0.7071067811865476+0j)], [(0.7071067811865476+0j), (-0.7071067811865476+0j)]]\n```",
+    "d_phys": 1.0,
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514",
+    "size": 12000000000.0,
+    "depth": 1,
+    "category": "entanglement_classification",
+    "prompt": "Consider the 2-qubit state [0.70710678, 0.00000000, 0.70710678, 0.00000000]. Is it entangled? Return only True or False.",
+    "metadata": {
+      "template": "product_plus0"
+    },
+    "target": {
+      "kind": "boolean",
+      "value": false
+    },
+    "output": "False",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-0",
+    "size": 12000000000.0,
+    "depth": 1,
+    "category": "circuit_evolution",
+    "prompt": "Start from |00>. Apply the 2-qubit gate sequence Z(0), Z(1), Z(1), S(1) in that order. Return the final state vector as a Python list of 4 complex numbers using decimal literals only and no explanation.",
+    "metadata": {
+      "bits": [
+        0,
+        0
+      ],
+      "ops": [
+        "Z(0)",
+        "Z(1)",
+        "Z(1)",
+        "S(1)"
+      ]
+    },
+    "target": {
+      "kind": "state_vector",
+      "value": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    "output": "I need to apply the gate sequence Z(0), Z(1), Z(1), S(1) to the initial state |00\u27e9.\n\nStarting with |00\u27e9 = [1, 0, 0, 0]:\n- Z(0): applies Z to qubit 0, gives [1, 0, 0, 0]\n- Z(1): applies Z to qubit 1, gives [1, 0, 0, 0] \n- Z(1): applies Z to qubit 1 again, gives [1, 0, 0, 0]\n- S(1): applies S gate to qubit 1, which adds phase i to |1\u27e9 states of qubit 1, gives [1, 0, 0, 0]\n\n[1.0, 0.0, 0.0, 0.0]",
+    "d_phys": 1.0,
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-0",
+    "size": 12000000000.0,
+    "depth": 1,
+    "category": "measurement_prediction",
+    "prompt": "Start from |01>. Apply the 2-qubit gate sequence H(0), Z(1), H(1) in that order. Return the measurement probabilities [p00, p01, p10, p11] as a Python list of 4 decimal numbers only.",
+    "metadata": {
+      "bits": [
+        0,
+        1
+      ],
+      "ops": [
+        "H(0)",
+        "Z(1)",
+        "H(1)"
+      ]
+    },
+    "target": {
+      "kind": "probabilities",
+      "value": [
+        0.2499999999999999,
+        0.2499999999999999,
+        0.2499999999999999,
+        0.2499999999999999
+      ]
+    },
+    "output": "I need to apply the gate sequence H(0), Z(1), H(1) to the initial state |01\u27e9 and calculate measurement probabilities.\n\nStarting with |01\u27e9:\n- H(0): Creates superposition on qubit 0: (|00\u27e9 + |10\u27e9)/\u221a2\n- Z(1): Applies phase flip to qubit 1, but since qubit 1 is in |0\u27e9 state, Z|0\u27e9 = |0\u27e9, so no change\n- H(1): Creates superposition on qubit 1: (|00\u27e9 + |01\u27e9 + |10\u27e9 + |11\u27e9)/2\n\nFinal state: (|00\u27e9 + |01\u27e9 + |10\u27e9 + |11\u27e9)/2\n\n[0.25, 0.25, 0.25, 0.25]",
+    "d_phys": 1.0,
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514",
+    "size": 12000000000.0,
+    "depth": 1,
+    "category": "measurement_prediction",
+    "prompt": "Start from |01>. Apply the 2-qubit gate sequence H(0), Z(1), H(1) in that order. Return the measurement probabilities [p00, p01, p10, p11] as a Python list of 4 decimal numbers only.",
+    "metadata": {
+      "bits": [
+        0,
+        1
+      ],
+      "ops": [
+        "H(0)",
+        "Z(1)",
+        "H(1)"
+      ]
+    },
+    "target": {
+      "kind": "probabilities",
+      "value": [
+        0.2499999999999999,
+        0.2499999999999999,
+        0.2499999999999999,
+        0.2499999999999999
+      ]
+    },
+    "output": "I need to apply the gate sequence H(0), Z(1), H(1) to the initial state |01\u27e9 and calculate measurement probabilities.\n\nStarting with |01\u27e9:\n- H(0): Creates superposition on qubit 0: (|00\u27e9 + |10\u27e9)/\u221a2\n- Z(1): Applies phase flip to qubit 1, but since qubit 1 is in |0\u27e9 state, Z|0\u27e9 = |0\u27e9, so no change\n- H(1): Creates superposition on qubit 1: (|00\u27e9 + |01\u27e9 + |10\u27e9 + |11\u27e9)/2\n\nFinal state: (|00\u27e9 + |01\u27e9 + |10\u27e9 + |11\u27e9)/2\n\n[0.25, 0.25, 0.25, 0.25]",
+    "d_phys": 1.0,
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514",
+    "size": 12000000000.0,
+    "depth": 1,
+    "category": "operator_composition",
+    "prompt": "Compute the 2x2 unitary matrix for the single-qubit gate sequence Y, H applied in that order. Return only a Python 2x2 list of complex numbers using decimal literals.",
+    "metadata": {
+      "ops": [
+        "Y",
+        "H"
+      ]
+    },
+    "target": {
+      "kind": "operator",
+      "value": [
+        [
+          [
+            0.0,
+            0.7071067811865475
+          ],
+          [
+            0.0,
+            -0.7071067811865475
+          ]
+        ],
+        [
+          [
+            0.0,
+            -0.7071067811865475
+          ],
+          [
+            0.0,
+            -0.7071067811865475
+          ]
+        ]
+      ]
+    },
+    "output": "```python\n[[-0.7071067811865476+0j, -0.7071067811865475j], [0.7071067811865475j, -0.7071067811865476+0j]]\n```",
+    "d_phys": 1.0,
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514",
+    "size": 12000000000.0,
+    "depth": 1,
+    "category": "circuit_evolution",
+    "prompt": "Start from |00>. Apply the 2-qubit gate sequence Z(0), Z(1), Z(1), S(1) in that order. Return the final state vector as a Python list of 4 complex numbers using decimal literals only and no explanation.",
+    "metadata": {
+      "bits": [
+        0,
+        0
+      ],
+      "ops": [
+        "Z(0)",
+        "Z(1)",
+        "Z(1)",
+        "S(1)"
+      ]
+    },
+    "target": {
+      "kind": "state_vector",
+      "value": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    "output": "I need to apply the gate sequence Z(0), Z(1), Z(1), S(1) to the initial state |00\u27e9.\n\nStarting with |00\u27e9 = [1, 0, 0, 0]:\n- Z(0): applies Z to qubit 0, gives [1, 0, 0, 0]\n- Z(1): applies Z to qubit 1, gives [1, 0, 0, 0] \n- Z(1): applies Z to qubit 1 again, gives [1, 0, 0, 0]\n- S(1): applies S gate to qubit 1, which adds phase i to |1\u27e9 states of qubit 1, gives [1, 0, 0, 0]\n\n[1.0, 0.0, 0.0, 0.0]",
+    "d_phys": 1.0,
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-opus-4-1",
+    "size": 16000000000.0,
+    "depth": 1,
+    "category": "entanglement_classification",
+    "prompt": "Consider the 2-qubit state [0.70710678, 0.00000000, 0.70710678, 0.00000000]. Is it entangled? Return only True or False.",
+    "metadata": {
+      "template": "product_plus0"
+    },
+    "target": {
+      "kind": "boolean",
+      "value": false
+    },
+    "output": "Looking at the state [0.70710678, 0.00000000, 0.70710678, 0.00000000], this can be written as (1/\u221a2)|00\u27e9 + (1/\u221a2)|10\u27e9 = (1/\u221a2)(|0\u27e9 + |1\u27e9) \u2297 |0\u27e9, which is a product state.\n\nFalse",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-opus-4-1",
+    "size": 16000000000.0,
+    "depth": 1,
+    "category": "measurement_prediction",
+    "prompt": "Start from |01>. Apply the 2-qubit gate sequence H(0), Z(1), H(1) in that order. Return the measurement probabilities [p00, p01, p10, p11] as a Python list of 4 decimal numbers only.",
+    "metadata": {
+      "bits": [
+        0,
+        1
+      ],
+      "ops": [
+        "H(0)",
+        "Z(1)",
+        "H(1)"
+      ]
+    },
+    "target": {
+      "kind": "probabilities",
+      "value": [
+        0.2499999999999999,
+        0.2499999999999999,
+        0.2499999999999999,
+        0.2499999999999999
+      ]
+    },
+    "output": "I'll trace through the gate sequence starting from |01\u27e9.\n\nStarting state: |01\u27e9 = |0\u27e9\u2297|1\u27e9\n\nAfter H(0): (|0\u27e9+|1\u27e9)/\u221a2 \u2297 |1\u27e9 = (|01\u27e9+|11\u27e9)/\u221a2\n\nAfter Z(1): (|01\u27e9-|11\u27e9)/\u221a2 (Z gate on |1\u27e9 gives -|1\u27e9)\n\nAfter H(1): (|0\u27e9\u2297(|0\u27e9-|1\u27e9) - |1\u27e9\u2297(|0\u27e9-|1\u27e9))/2 = (|00\u27e9-|01\u27e9-|10\u27e9+|11\u27e9)/2\n\nProbabilities: |1/2|\u00b2 = 0.25 for each basis state.\n\n[0.25, 0.25, 0.25, 0.25]",
+    "d_phys": 1.0,
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-opus-4-1",
+    "size": 16000000000.0,
+    "depth": 1,
+    "category": "operator_composition",
+    "prompt": "Compute the 2x2 unitary matrix for the single-qubit gate sequence Y, H applied in that order. Return only a Python 2x2 list of complex numbers using decimal literals.",
+    "metadata": {
+      "ops": [
+        "Y",
+        "H"
+      ]
+    },
+    "target": {
+      "kind": "operator",
+      "value": [
+        [
+          [
+            0.0,
+            0.7071067811865475
+          ],
+          [
+            0.0,
+            -0.7071067811865475
+          ]
+        ],
+        [
+          [
+            0.0,
+            -0.7071067811865475
+          ],
+          [
+            0.0,
+            -0.7071067811865475
+          ]
+        ]
+      ]
+    },
+    "output": "I need to compute the matrix product H\u00b7Y where Y is applied first, then H.\n\nY = [[0, -i], [i, 0]]\nH = [[1/\u221a2, 1/\u221a2], [1/\u221a2, -1/\u221a2]]\n\nComputing H\u00b7Y:\n- Element (0,0): (1/\u221a2)\u00b70 + (1/\u221a2)\u00b7i = i/\u221a2\n- Element (0,1): (1/\u221a2)\u00b7(-i) + (1/\u221a2)\u00b70 = -i/\u221a2\n- Element (1,0): (1/\u221a2)\u00b70 + (-1/\u221a2)\u00b7i = -i/\u221a2\n- Element (1,1): (1/\u221a2)\u00b7(-i) + (-1/\u221a2)\u00b70 = -i/\u221a2\n\n[[0.7071067811865476j, -0.7071067811865476j], [-0.7071067811865476j, -0.7071067811865476j]]",
+    "d_phys": 1.0,
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-opus-4-1",
+    "size": 16000000000.0,
+    "depth": 1,
+    "category": "circuit_evolution",
+    "prompt": "Start from |00>. Apply the 2-qubit gate sequence Z(0), Z(1), Z(1), S(1) in that order. Return the final state vector as a Python list of 4 complex numbers using decimal literals only and no explanation.",
+    "metadata": {
+      "bits": [
+        0,
+        0
+      ],
+      "ops": [
+        "Z(0)",
+        "Z(1)",
+        "Z(1)",
+        "S(1)"
+      ]
+    },
+    "target": {
+      "kind": "state_vector",
+      "value": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    "output": "I'll trace through the gate sequence starting from |00\u27e9 = [1, 0, 0, 0].\n\nStarting with |00\u27e9 = [1, 0, 0, 0]:\n- Z(0): applies Z to qubit 0, |00\u27e9 \u2192 |00\u27e9 (no change since qubit 0 is in |0\u27e9)\n- Z(1): applies Z to qubit 1, |00\u27e9 \u2192 |00\u27e9 (no change since qubit 1 is in |0\u27e9)  \n- Z(1): applies Z to qubit 1 again, |00\u27e9 \u2192 |00\u27e9 (still no change)\n- S(1): applies S to qubit 1, |00\u27e9 \u2192 |00\u27e9 (no change since qubit 1 is in |0\u27e9)\n\n[1.0, 0.0, 0.0, 0.0]",
+    "d_phys": 1.0,
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-opus-4-1-20250805",
+    "size": 16000000000.0,
+    "depth": 1,
+    "category": "entanglement_classification",
+    "prompt": "Consider the 2-qubit state [0.70710678, 0.00000000, 0.70710678, 0.00000000]. Is it entangled? Return only True or False.",
+    "metadata": {
+      "template": "product_plus0"
+    },
+    "target": {
+      "kind": "boolean",
+      "value": false
+    },
+    "output": "Looking at the state [0.70710678, 0.00000000, 0.70710678, 0.00000000], this can be written as (1/\u221a2)|00\u27e9 + (1/\u221a2)|10\u27e9 = (1/\u221a2)(|0\u27e9 + |1\u27e9) \u2297 |0\u27e9, which is a product state.\n\nFalse",
+    "d_phys": 0.0,
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-opus-4-1-20250805",
+    "size": 16000000000.0,
+    "depth": 1,
+    "category": "measurement_prediction",
+    "prompt": "Start from |01>. Apply the 2-qubit gate sequence H(0), Z(1), H(1) in that order. Return the measurement probabilities [p00, p01, p10, p11] as a Python list of 4 decimal numbers only.",
+    "metadata": {
+      "bits": [
+        0,
+        1
+      ],
+      "ops": [
+        "H(0)",
+        "Z(1)",
+        "H(1)"
+      ]
+    },
+    "target": {
+      "kind": "probabilities",
+      "value": [
+        0.2499999999999999,
+        0.2499999999999999,
+        0.2499999999999999,
+        0.2499999999999999
+      ]
+    },
+    "output": "I'll trace through the gate sequence starting from |01\u27e9.\n\nStarting state: |01\u27e9 = |0\u27e9\u2297|1\u27e9\n\nAfter H(0): (|0\u27e9+|1\u27e9)/\u221a2 \u2297 |1\u27e9 = (|01\u27e9+|11\u27e9)/\u221a2\n\nAfter Z(1): (|01\u27e9-|11\u27e9)/\u221a2 (Z gate on |1\u27e9 gives -|1\u27e9)\n\nAfter H(1): (|0\u27e9\u2297(|0\u27e9-|1\u27e9) - |1\u27e9\u2297(|0\u27e9-|1\u27e9))/2 = (|00\u27e9-|01\u27e9-|10\u27e9+|11\u27e9)/2\n\nProbabilities: |1/2|\u00b2 = 0.25 for each basis state.\n\n[0.25, 0.25, 0.25, 0.25]",
+    "d_phys": 1.0,
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-opus-4-1-20250805",
+    "size": 16000000000.0,
+    "depth": 1,
+    "category": "operator_composition",
+    "prompt": "Compute the 2x2 unitary matrix for the single-qubit gate sequence Y, H applied in that order. Return only a Python 2x2 list of complex numbers using decimal literals.",
+    "metadata": {
+      "ops": [
+        "Y",
+        "H"
+      ]
+    },
+    "target": {
+      "kind": "operator",
+      "value": [
+        [
+          [
+            0.0,
+            0.7071067811865475
+          ],
+          [
+            0.0,
+            -0.7071067811865475
+          ]
+        ],
+        [
+          [
+            0.0,
+            -0.7071067811865475
+          ],
+          [
+            0.0,
+            -0.7071067811865475
+          ]
+        ]
+      ]
+    },
+    "output": "I need to compute the matrix product H\u00b7Y where Y is applied first, then H.\n\nY = [[0, -i], [i, 0]]\nH = [[1/\u221a2, 1/\u221a2], [1/\u221a2, -1/\u221a2]]\n\nComputing H\u00b7Y:\n- Element (0,0): (1/\u221a2)\u00b70 + (1/\u221a2)\u00b7i = i/\u221a2\n- Element (0,1): (1/\u221a2)\u00b7(-i) + (1/\u221a2)\u00b70 = -i/\u221a2\n- Element (1,0): (1/\u221a2)\u00b70 + (-1/\u221a2)\u00b7i = -i/\u221a2\n- Element (1,1): (1/\u221a2)\u00b7(-i) + (-1/\u221a2)\u00b70 = -i/\u221a2\n\n[[0.7071067811865476j, -0.7071067811865476j], [-0.7071067811865476j, -0.7071067811865476j]]",
+    "d_phys": 1.0,
+    "api_error": null
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-opus-4-1-20250805",
+    "size": 16000000000.0,
+    "depth": 1,
+    "category": "circuit_evolution",
+    "prompt": "Start from |00>. Apply the 2-qubit gate sequence Z(0), Z(1), Z(1), S(1) in that order. Return the final state vector as a Python list of 4 complex numbers using decimal literals only and no explanation.",
+    "metadata": {
+      "bits": [
+        0,
+        0
+      ],
+      "ops": [
+        "Z(0)",
+        "Z(1)",
+        "Z(1)",
+        "S(1)"
+      ]
+    },
+    "target": {
+      "kind": "state_vector",
+      "value": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    "output": "I'll trace through the gate sequence starting from |00\u27e9 = [1, 0, 0, 0].\n\nStarting with |00\u27e9 = [1, 0, 0, 0]:\n- Z(0): applies Z to qubit 0, |00\u27e9 \u2192 |00\u27e9 (no change since qubit 0 is in |0\u27e9)\n- Z(1): applies Z to qubit 1, |00\u27e9 \u2192 |00\u27e9 (no change since qubit 1 is in |0\u27e9)  \n- Z(1): applies Z to qubit 1 again, |00\u27e9 \u2192 |00\u27e9 (still no change)\n- S(1): applies S to qubit 1, |00\u27e9 \u2192 |00\u27e9 (no change since qubit 1 is in |0\u27e9)\n\n[1.0, 0.0, 0.0, 0.0]",
+    "d_phys": 1.0,
+    "api_error": null
+  }
+]
