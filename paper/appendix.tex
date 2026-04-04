@@ -1,0 +1,120 @@
+% Auto-generated paper appendix fragment.
+\subsection*{Appendix Snapshot}
+This appendix summarizes the pooled OpenAI GPT and Anthropic Claude benchmark over 6912 scored responses. The full machine-generated statistics remain available separately in \texttt{appendix\_snapshot\_full.tex}.
+The pooled fit yields $\alpha=3.262$ with 95\% interval $[2.959, 3.558]$ and $\beta=0.092$ with interval $[-0.279, 0.460]$.
+
+\subsubsection*{Top-Line Summary}
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+Metric & Value \\
+\midrule
+Usable evaluations & 6912 \\
+Mean $d_{phys}$ & 0.408 \\
+Median $d_{phys}$ & 0.302 \\
+Exact-correct rate & 0.345 \\
+$d_{phys} \ge 0.5$ rate & 0.403 \\
+Full-error rate & 0.274 \\
+Best model & Claude Opus 4.1 \\
+Weakest model & GPT-4o mini \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsubsection*{Model Ranking}
+\begin{center}
+\begin{tabular}{lrrrr}
+\toprule
+Model & Mean & 95\% CI & Exact & Full \\
+\midrule
+Claude Opus 4.1 & 0.138 & [0.116, 0.160] & 0.582 & 0.082 \\
+GPT-5.4 & 0.329 & [0.301, 0.357] & 0.430 & 0.195 \\
+GPT-5.2 & 0.368 & [0.338, 0.397] & 0.380 & 0.249 \\
+GPT-5.4 mini & 0.394 & [0.364, 0.424] & 0.372 & 0.267 \\
+GPT-4.1 & 0.442 & [0.412, 0.471] & 0.311 & 0.293 \\
+Claude Sonnet 4 & 0.450 & [0.419, 0.481] & 0.305 & 0.332 \\
+GPT-4.1 mini & 0.478 & [0.449, 0.507] & 0.285 & 0.311 \\
+GPT-5.1 & 0.501 & [0.472, 0.531] & 0.260 & 0.355 \\
+GPT-4o mini & 0.570 & [0.543, 0.598] & 0.177 & 0.378 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsubsection*{Depth and Category Breakdown}
+\noindent\begin{minipage}[t]{0.42\linewidth}
+\centering
+\textbf{By depth}\\[0.25em]
+\begin{tabular}{rrrr}
+\toprule
+Depth & Mean & Exact & Full \\
+\midrule
+1 & 0.403 & 0.349 & 0.275 \\
+2 & 0.415 & 0.340 & 0.275 \\
+4 & 0.405 & 0.345 & 0.271 \\
+\bottomrule
+\end{tabular}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.54\linewidth}
+\centering
+\textbf{By category}\\[0.25em]
+\begin{tabular}{lrrr}
+\toprule
+Category & Mean & Exact & Full \\
+\midrule
+Circuit & 0.657 & 0.213 & 0.476 \\
+Measurement & 0.520 & 0.284 & 0.417 \\
+Operator & 0.258 & 0.078 & 0.006 \\
+Entanglement & 0.196 & 0.804 & 0.196 \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+
+\subsubsection*{Model-by-Category Means}
+\begin{center}
+\begin{tabular}{lrrrr}
+\toprule
+Model & Circuit & Measurement & Operator & Entanglement \\
+\midrule
+Claude Opus 4.1 & 0.367 & 0.068 & 0.117 & 0.000 \\
+GPT-5.4 & 0.592 & 0.509 & 0.215 & 0.000 \\
+GPT-5.2 & 0.659 & 0.587 & 0.224 & 0.000 \\
+GPT-5.4 mini & 0.721 & 0.586 & 0.270 & 0.000 \\
+GPT-4.1 & 0.697 & 0.552 & 0.283 & 0.234 \\
+Claude Sonnet 4 & 0.658 & 0.432 & 0.258 & 0.453 \\
+GPT-4.1 mini & 0.728 & 0.635 & 0.308 & 0.240 \\
+GPT-5.1 & 0.707 & 0.602 & 0.302 & 0.396 \\
+GPT-4o mini & 0.786 & 0.711 & 0.347 & 0.438 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsubsection*{Anthropic Repair Ablation}
+After fixing output extraction to score the final machine-readable literal even when it is preceded by explanatory text, we ran a separate 32-task Claude repair ablation using Claude Sonnet 4 and Claude Opus 4.1 at depth 4 with a five-minute per-prompt budget.
+
+\begin{center}
+\begin{tabular}{lrrr}
+\toprule
+Mode & Solve rate & Mean solve time & Median solve time \\
+\midrule
+One-shot & 0.594 & 6.114 s & 6.383 s \\
+Self-retry & 0.812 & 7.506 s & 6.806 s \\
+Verifier feedback & 0.938 & 11.258 s & 7.114 s \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent Category solve rates under the same Claude repair ablation were:
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+Category & One-shot & Self-retry & Verifier feedback \\
+\midrule
+Circuit & 0.625 & 0.625 & 0.875 \\
+Measurement & 0.625 & 0.875 & 0.875 \\
+Operator & 0.500 & 0.750 & 1.000 \\
+Entanglement & 0.625 & 1.000 & 1.000 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent By model, Claude Opus 4.1 solved all 32 subset prompts in every repair mode, while Claude Sonnet 4 improved from 0.188 one-shot solve rate to 0.625 with self-retry and 0.875 with verifier feedback.

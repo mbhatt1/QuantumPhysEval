@@ -1,0 +1,14 @@
+{
+  "description": "Main GPT-5-family benchmark slice used in the paper.",
+  "experiment": "scaling",
+  "n_per_category": 64,
+  "reasoning_depths": [1, 2, 4],
+  "temperature": 0.0,
+  "models": {
+    "gpt-5.1": 11000000000.0,
+    "gpt-5.2": 12000000000.0,
+    "gpt-5.4-mini": 7000000000.0,
+    "gpt-5.4": 14000000000.0
+  }
+}
+

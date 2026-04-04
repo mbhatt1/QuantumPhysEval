@@ -1,0 +1,17 @@
+{
+  "description": "Strong-model time-budget repair ablation.",
+  "experiment": "time_budget",
+  "repair_mode": "verifier_feedback",
+  "n_per_category": 4,
+  "reasoning_depths": [4],
+  "temperature": 0.2,
+  "time_budget_seconds": 300.0,
+  "checkpoint_seconds": [30.0, 60.0, 120.0, 300.0],
+  "max_attempts": 24,
+  "models": {
+    "gpt-4.1": 10000000000.0,
+    "gpt-5.2": 12000000000.0,
+    "gpt-5.4-mini": 7000000000.0,
+    "gpt-5.4": 14000000000.0
+  }
+}

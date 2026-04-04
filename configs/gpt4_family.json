@@ -1,0 +1,13 @@
+{
+  "description": "Main GPT-4-family benchmark slice used in the paper.",
+  "experiment": "scaling",
+  "n_per_category": 64,
+  "reasoning_depths": [1, 2, 4],
+  "temperature": 0.0,
+  "models": {
+    "gpt-4o-mini": 2000000000.0,
+    "gpt-4.1-mini": 5000000000.0,
+    "gpt-4.1": 10000000000.0
+  }
+}
+
