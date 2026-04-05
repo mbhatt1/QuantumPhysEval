@@ -1,0 +1,59 @@
+{
+  "2q": {
+    "overall_mean_d_phys": 0.4402629102459206,
+    "per_model": {
+      "gpt-4o-mini": 0.5703239064790137,
+      "gpt-4.1-mini": 0.4777338294513888,
+      "gpt-4.1": 0.4415716463207047,
+      "gpt-5.1": 0.5014367499631021,
+      "gpt-5.2": 0.36757896452254474,
+      "gpt-5.4": 0.32909266081256416,
+      "gpt-5.4-mini": 0.3941026141721171
+    },
+    "per_category": {
+      "entanglement_classification": 0.18675595238095238,
+      "measurement_prediction": 0.5974702380952381,
+      "circuit_evolution": 0.6983674684762838,
+      "operator_composition": 0.27845798203120226
+    },
+    "count": 5376
+  },
+  "4q": {
+    "overall_mean_d_phys": 0.5607972210107315,
+    "per_model": {
+      "gpt-4o-mini": 0.642981664615506,
+      "gpt-4.1-mini": 0.6018823964130242,
+      "gpt-4.1": 0.5549247166586201,
+      "gpt-5.1": 0.5317414368886365,
+      "gpt-5.2": 0.4966948766813371,
+      "gpt-5.4-mini": 0.5719889560890468,
+      "gpt-5.4": 0.5253664997289281
+    },
+    "per_category": {
+      "entanglement_classification": 0.2976190476190476,
+      "operator_composition": 0.26311500865027493,
+      "measurement_prediction": 0.7635018203939038,
+      "circuit_evolution": 0.9189530073796868
+    },
+    "count": 5376
+  },
+  "8q": {
+    "overall_mean_d_phys": 0.6816178442754889,
+    "per_model": {
+      "gpt-4o-mini": 0.7019540671160683,
+      "gpt-4.1-mini": 0.6839639541209532,
+      "gpt-4.1": 0.6535287111833432,
+      "gpt-5.1": 0.6488183059018809,
+      "gpt-5.2": 0.691476895734367,
+      "gpt-5.4-mini": 0.7058314858909233,
+      "gpt-5.4": 0.6857622827895016
+    },
+    "per_category": {
+      "entanglement_classification": 0.45089285714285715,
+      "operator_composition": 0.27679635054796514,
+      "circuit_evolution": 1.0,
+      "measurement_prediction": 0.9992559523809523
+    },
+    "count": 5374
+  }
+}

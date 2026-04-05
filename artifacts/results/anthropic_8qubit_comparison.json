@@ -1,0 +1,105 @@
+{
+  "models": [
+    "claude-sonnet-4-20250514",
+    "claude-opus-4-1-20250805"
+  ],
+  "categories": [
+    "circuit_evolution",
+    "operator_composition",
+    "measurement_prediction",
+    "entanglement_classification"
+  ],
+  "varying_categories": [
+    "circuit_evolution",
+    "measurement_prediction",
+    "entanglement_classification"
+  ],
+  "baseline_count": 1536,
+  "variant_count": 1536,
+  "overall": {
+    "baseline_mean_d_phys": 0.2940328596790083,
+    "variant_mean_d_phys": 0.5423685843219276,
+    "delta_variant_minus_baseline": 0.2483357246429193,
+    "baseline_mean_d_phys_varying_categories": 0.3296813309191089,
+    "variant_mean_d_phys_varying_categories": 0.6603732638888888,
+    "delta_variant_minus_baseline_varying_categories": 0.33069193296977994
+  },
+  "per_model": [
+    {
+      "model": "claude-sonnet-4-20250514",
+      "baseline_mean_d_phys": 0.45012754063810995,
+      "variant_mean_d_phys": 0.6396708586046993,
+      "delta_variant_minus_baseline": 0.18954331796658935,
+      "baseline_mean_d_phys_varying_categories": 0.5143229166666666,
+      "variant_mean_d_phys_varying_categories": 0.7682291666666666,
+      "delta_variant_minus_baseline_varying_categories": 0.25390625
+    },
+    {
+      "model": "claude-opus-4-1-20250805",
+      "baseline_mean_d_phys": 0.13793817871990657,
+      "variant_mean_d_phys": 0.44506631003915587,
+      "delta_variant_minus_baseline": 0.3071281313192493,
+      "baseline_mean_d_phys_varying_categories": 0.14503974517155113,
+      "variant_mean_d_phys_varying_categories": 0.5525173611111112,
+      "delta_variant_minus_baseline_varying_categories": 0.40747761593956
+    }
+  ],
+  "per_model_category": [
+    {
+      "model": "claude-sonnet-4-20250514",
+      "category": "circuit_evolution",
+      "baseline_mean_d_phys": 0.6575520833333334,
+      "variant_mean_d_phys": 0.9505208333333334,
+      "delta_variant_minus_baseline": 0.29296875
+    },
+    {
+      "model": "claude-sonnet-4-20250514",
+      "category": "operator_composition",
+      "baseline_mean_d_phys": 0.2575414125524396,
+      "variant_mean_d_phys": 0.25399593441879736,
+      "delta_variant_minus_baseline": -0.0035454781336422547
+    },
+    {
+      "model": "claude-sonnet-4-20250514",
+      "category": "measurement_prediction",
+      "baseline_mean_d_phys": 0.4322916666666667,
+      "variant_mean_d_phys": 0.9010416666666666,
+      "delta_variant_minus_baseline": 0.46874999999999994
+    },
+    {
+      "model": "claude-sonnet-4-20250514",
+      "category": "entanglement_classification",
+      "baseline_mean_d_phys": 0.453125,
+      "variant_mean_d_phys": 0.453125,
+      "delta_variant_minus_baseline": 0.0
+    },
+    {
+      "model": "claude-opus-4-1-20250805",
+      "category": "circuit_evolution",
+      "baseline_mean_d_phys": 0.36741090218132005,
+      "variant_mean_d_phys": 0.8502604166666666,
+      "delta_variant_minus_baseline": 0.4828495144853466
+    },
+    {
+      "model": "claude-opus-4-1-20250805",
+      "category": "operator_composition",
+      "baseline_mean_d_phys": 0.11663347936497281,
+      "variant_mean_d_phys": 0.12271315682329022,
+      "delta_variant_minus_baseline": 0.0060796774583174035
+    },
+    {
+      "model": "claude-opus-4-1-20250805",
+      "category": "measurement_prediction",
+      "baseline_mean_d_phys": 0.06770833333333336,
+      "variant_mean_d_phys": 0.6197916666666666,
+      "delta_variant_minus_baseline": 0.5520833333333333
+    },
+    {
+      "model": "claude-opus-4-1-20250805",
+      "category": "entanglement_classification",
+      "baseline_mean_d_phys": 0.0,
+      "variant_mean_d_phys": 0.1875,
+      "delta_variant_minus_baseline": 0.1875
+    }
+  ]
+}

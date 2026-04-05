@@ -1,0 +1,16 @@
+# Fdb version 4
+["pdflatex"] 1775366546.90737 "overleaf_neurips/main.tex" "main.pdf" "main" 1775366547.00048 2
+  "/Users/mbhatt/Library/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmr10.tfm" 1136768653 1296 45809c5a464d5f32c8f98ba97c1bb47f ""
+  "/Users/mbhatt/Library/TinyTeX/texmf-dist/tex/latex/base/article.cls" 1748806692 20144 b966087dda3b194755eb460d32e2ef75 ""
+  "/Users/mbhatt/Library/TinyTeX/texmf-dist/tex/latex/base/size11.clo" 1748806692 8464 f339f4d5391fbe0425b2d94c90e6819e ""
+  "/Users/mbhatt/Library/TinyTeX/texmf-dist/web2c/texmf.cnf" 1770478701 43630 e9fa012910491fe5ae08a72c3c2997a7 ""
+  "/Users/mbhatt/Library/TinyTeX/texmf-var/web2c/pdftex/pdflatex.fmt" 1773547534 2236212 5793d87274dcd843126362d6b5b8f231 ""
+  "/Users/mbhatt/Library/TinyTeX/texmf.cnf" 1773547501 637 edd806fb06a89761a6034e1968af9017 ""
+  "main.aux" 1775366538.90643 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "neurips_2025.sty" 0 -1 0 ""
+  "overleaf_neurips/main.tex" 1775366434.08394 30186 83a5bf8d92b040986e7a9394cf106317 ""
+  (generated)
+  "main.aux"
+  "main.log"
+  "main.pdf"
+  (rewritten before read)

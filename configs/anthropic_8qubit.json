@@ -1,0 +1,13 @@
+{
+  "description": "Matched 8-qubit stress test over the Claude model slice used in the paper.",
+  "provider": "anthropic",
+  "experiment": "scaling",
+  "n_per_category": 64,
+  "num_qubits": 8,
+  "reasoning_depths": [1, 2, 4],
+  "temperature": 0.0,
+  "models": {
+    "claude-sonnet-4-20250514": 12000000000.0,
+    "claude-opus-4-1-20250805": 16000000000.0
+  }
+}

@@ -466,6 +466,24 @@ def entangled_state_from_template(template: str, num_qubits: int) -> Tuple[np.nd
             "product_plus0plus1": (kron_all([plus, zero, plus, one]), False),
         }
         return states[template]
+    if num_qubits == 8:
+        ghz8 = np.zeros(256, dtype=complex)
+        ghz8[0] = inv_sqrt2
+        ghz8[-1] = inv_sqrt2
+        bell_pair = bell_phi_plus
+        states = {
+            "ghz8": (ghz8, True),
+            "bellpair_000000": (np.kron(bell_pair, product_state_for_bits((0, 0, 0, 0, 0, 0))), True),
+            "0000_bellpair_00": (np.kron(product_state_for_bits((0, 0, 0, 0)), np.kron(bell_pair, product_state_for_bits((0, 0)))), True),
+            "double_bell_0000": (np.kron(np.kron(bell_pair, bell_psi_plus), product_state_for_bits((0, 0, 0, 0))), True),
+            "triple_bell_00": (np.kron(np.kron(np.kron(bell_pair, bell_phi_plus), bell_psi_plus), product_state_for_bits((0, 0))), True),
+            "product_00000000": (product_state_for_bits((0, 0, 0, 0, 0, 0, 0, 0)), False),
+            "product_plus0000000": (kron_all([plus, zero, zero, zero, zero, zero, zero, zero]), False),
+            "product_plusplus000000": (kron_all([plus, plus, zero, zero, zero, zero, zero, zero]), False),
+            "product_plus0plus10000": (kron_all([plus, zero, plus, one, zero, zero, zero, zero]), False),
+            "product_alt_basis": (kron_all([plus, one, plus, zero, plus, zero, one, zero]), False),
+        }
+        return states[template]
     raise ValueError(f"Unsupported entanglement template size: {num_qubits}")
 
 
@@ -559,8 +577,21 @@ def generate_prompts(n_per_category: int, seed: int, num_qubits: int = 2) -> Lis
             "product_plusplus00",
             "product_plus0plus1",
         ]
+    elif num_qubits == 8:
+        entanglement_templates = [
+            "ghz8",
+            "bellpair_000000",
+            "0000_bellpair_00",
+            "double_bell_0000",
+            "triple_bell_00",
+            "product_00000000",
+            "product_plus0000000",
+            "product_plusplus000000",
+            "product_plus0plus10000",
+            "product_alt_basis",
+        ]
     else:
-        raise ValueError("Entanglement templates are currently implemented for 2-qubit and 4-qubit runs only.")
+        raise ValueError("Entanglement templates are currently implemented for 2-qubit, 4-qubit, and 8-qubit runs only.")
     for _ in range(n_per_category):
         template = str(rng.choice(entanglement_templates))
         state, is_entangled = entangled_state_from_template(template, num_qubits)
@@ -805,10 +836,17 @@ def evaluate_output(category: str, target_kind: str, target_obj: object, output:
     raise ValueError(f"Unsupported target kind: {target_kind}")
 
 
-def query_openai(client: OpenAI, model: str, prompt: str, temperature: float) -> str:
+def query_openai(
+    client: OpenAI,
+    model: str,
+    prompt: str,
+    temperature: float,
+    max_completion_tokens: int,
+) -> str:
     response = client.chat.completions.create(
         model=model,
         temperature=temperature,
+        max_completion_tokens=int(max_completion_tokens),
         messages=[
             {
                 "role": "system",
@@ -823,13 +861,19 @@ def query_openai(client: OpenAI, model: str, prompt: str, temperature: float) ->
     return (response.choices[0].message.content or "").strip()
 
 
-def query_anthropic(model: str, prompt: str, temperature: float, request_timeout: float) -> str:
+def query_anthropic(
+    model: str,
+    prompt: str,
+    temperature: float,
+    request_timeout: float,
+    max_tokens: int,
+) -> str:
     api_key = os.getenv("ANTHROPIC_API_KEY")
     if not api_key:
         raise RuntimeError("ANTHROPIC_API_KEY is not set.")
     payload = {
         "model": model,
-        "max_tokens": 512,
+        "max_tokens": int(max_tokens),
         "temperature": temperature,
         "system": "Return machine-readable answers only. Do not explain, justify, or add markdown.",
         "messages": [{"role": "user", "content": prompt}],
@@ -866,6 +910,7 @@ def query_model(
     prompt: str,
     temperature: float,
     request_timeout: float,
+    max_output_tokens: int = 512,
 ):
     if provider == "openai":
         return query_openai(
@@ -873,6 +918,7 @@ def query_model(
             model=model,
             prompt=prompt,
             temperature=temperature,
+            max_completion_tokens=max_output_tokens,
         )
     if provider == "anthropic":
         return query_anthropic(
@@ -880,8 +926,39 @@ def query_model(
             prompt=prompt,
             temperature=temperature,
             request_timeout=request_timeout,
+            max_tokens=max_output_tokens,
         )
     raise ValueError(f"Unsupported provider: {provider}")
+
+
+def response_token_budget(prompt_spec: BenchmarkPrompt) -> int:
+    category = prompt_spec.category
+    num_qubits = int(prompt_spec.metadata.get("num_qubits", 2))
+    if category == "boolean":
+        return 32
+    if category == "operator_composition":
+        return 512
+    if num_qubits >= 8 and category in {"circuit_evolution", "measurement_prediction"}:
+        return 4096
+    if num_qubits >= 8 and category == "entanglement_classification":
+        return 1024
+    if num_qubits >= 4 and category in {"circuit_evolution", "measurement_prediction"}:
+        return 1536
+    if num_qubits >= 4 and category == "entanglement_classification":
+        return 768
+    return 512
+
+
+def request_timeout_budget(prompt_spec: BenchmarkPrompt, base_timeout: float) -> float:
+    category = prompt_spec.category
+    num_qubits = int(prompt_spec.metadata.get("num_qubits", 2))
+    if num_qubits >= 8 and category in {"circuit_evolution", "measurement_prediction"}:
+        return max(float(base_timeout), 180.0)
+    if num_qubits >= 8 and category == "entanglement_classification":
+        return max(float(base_timeout), 90.0)
+    if num_qubits >= 4 and category in {"circuit_evolution", "measurement_prediction"}:
+        return max(float(base_timeout), 75.0)
+    return float(base_timeout)
 
 
 def validate_models(
@@ -903,6 +980,7 @@ def validate_models(
                 prompt="Return only OK.",
                 temperature=temperature,
                 request_timeout=request_timeout,
+                max_output_tokens=32,
             )
             available[model_name] = size
         except Exception as exc:
@@ -940,12 +1018,15 @@ def evaluate_task(
         "but return only the final answer."
     )
     try:
+        max_output_tokens = response_token_budget(prompt_spec)
+        effective_timeout = request_timeout_budget(prompt_spec, request_timeout)
         output = query_model(
             provider=provider,
             model=model_name,
             prompt=full_prompt,
             temperature=temperature,
-            request_timeout=request_timeout,
+            request_timeout=effective_timeout,
+            max_output_tokens=max_output_tokens,
         )
         error_text = None
         d_phys = evaluate_output(
@@ -1049,13 +1130,16 @@ def evaluate_time_budget_task(
         latency_s = 0.0
         output = ""
         try:
+            max_output_tokens = response_token_budget(prompt_spec)
+            effective_timeout = request_timeout_budget(prompt_spec, request_timeout)
             call_started = time.monotonic()
             output = query_model(
                 provider=provider,
                 model=model_name,
                 prompt=prompt,
                 temperature=temperature,
-                request_timeout=min(request_timeout, max(remaining_budget, 1.0)),
+                request_timeout=min(effective_timeout, max(remaining_budget, 1.0)),
+                max_output_tokens=max_output_tokens,
             )
             latency_s = time.monotonic() - call_started
             d_phys = evaluate_output(
@@ -1586,102 +1670,165 @@ def ensure_parent_dir(path: str) -> None:
 
 def save_overview_plot(path: str) -> None:
     ensure_parent_dir(path)
-    fig, ax = plt.subplots(figsize=(12.6, 4.1), facecolor="white")
+    fig, ax = plt.subplots(figsize=(13.2, 5.2), facecolor="white")
     ax.set_xlim(0, 1)
     ax.set_ylim(0, 1)
     ax.axis("off")
 
-    boxes = [
-        (
-            (0.03, 0.20),
-            (0.15, 0.56),
-            "1. Generate tasks",
-            [
-                "Exact 2-qubit prompts",
-                "Circuit evolution",
-                "Operator composition",
-                "Measurement and entanglement",
-            ],
-            "#eef6ff",
-        ),
-        (
-            (0.22, 0.20),
-            (0.17, 0.56),
-            "2. Build ground truth",
-            [
-                "Analytic state vectors",
-                "Exact unitaries",
-                "Born-rule probabilities",
-                "Known entanglement labels",
-            ],
-            "#f6f7fb",
-        ),
-        (
-            (0.43, 0.20),
-            (0.18, 0.56),
-            "3. Query models",
-            [
-                "GPT-4 and GPT-5 families",
-                "Depth settings 1, 2, 4",
-                "Machine-readable answers only",
-            ],
-            "#fff6eb",
-        ),
-        (
-            (0.65, 0.20),
-            (0.14, 0.56),
-            "4. Score error",
-            [
-                "Physics-grounded metric",
-                "$d_{phys} \\in [0,1]$",
-                "0 = correct",
-                "1 = maximally wrong",
-            ],
-            "#eef9f2",
-        ),
-        (
-            (0.82, 0.20),
-            (0.14, 0.56),
-            "5. Read results",
-            [
-                "Model ranking",
-                "Depth effect",
-                "Hardest task families",
-                "Pooled trend fit",
-            ],
-            "#f7f0ff",
-        ),
-    ]
-    for xy, wh, title, body, facecolor in boxes:
-        add_box(ax, xy, wh, title, body, facecolor)
-
-    arrow_y = 0.50
-    for x0, x1 in [(0.18, 0.22), (0.39, 0.43), (0.61, 0.65), (0.79, 0.82)]:
-        arrow = FancyArrowPatch(
-            (x0, arrow_y),
-            (x1, arrow_y),
-            arrowstyle="-|>",
-            mutation_scale=12,
-            linewidth=1.4,
-            color="#8091a7",
-        )
-        ax.add_patch(arrow)
-
+    # Title block
+    ax.text(0.03, 0.93, "QuantumPhysEval pipeline", fontsize=16.0, fontweight="bold", color="#122033")
     ax.text(
         0.03,
-        0.90,
-        "QuantumPhysEval pipeline",
-        fontsize=14.5,
-        fontweight="bold",
-        color="#122033",
-    )
-    ax.text(
-        0.03,
-        0.84,
+        0.875,
         "The benchmark is self-labeled: every prompt has exact quantum ground truth, so model error is measured directly rather than judged heuristically.",
-        fontsize=9.2,
+        fontsize=9.6,
         color="#475569",
     )
+
+    # Main stage boxes
+    stages = [
+        (
+            (0.03, 0.33),
+            (0.20, 0.40),
+            "1. Construct tasks",
+            [
+                "Exact circuit, operator,",
+                "measurement, and",
+                "entanglement prompts",
+            ],
+            "#eef6ff",
+            "#4f8fba",
+        ),
+        (
+            (0.28, 0.33),
+            (0.20, 0.40),
+            "2. Compute targets",
+            [
+                "Analytic state vectors",
+                "Exact unitaries and",
+                "Born-rule probabilities",
+            ],
+            "#f5f7fb",
+            "#7b8da3",
+        ),
+        (
+            (0.53, 0.33),
+            (0.20, 0.40),
+            "3. Evaluate models",
+            [
+                "GPT and Claude families",
+                "Depth settings 1, 2, 4",
+                "Machine-readable outputs",
+            ],
+            "#fff5e9",
+            "#d0874b",
+        ),
+        (
+            (0.78, 0.33),
+            (0.19, 0.40),
+            "4. Score + analyze",
+            [
+                "$d_{phys}\\in[0,1]$",
+                "Scaling fits, rankings,",
+                "stress tests, repairs",
+            ],
+            "#eef9f2",
+            "#6a9c78",
+        ),
+    ]
+
+    for (x, y), (w, h), title, body, facecolor, accent in stages:
+        patch = FancyBboxPatch(
+            (x, y),
+            w,
+            h,
+            boxstyle="round,pad=0.012,rounding_size=0.025",
+            linewidth=1.0,
+            edgecolor="#d4dce5",
+            facecolor=facecolor,
+        )
+        ax.add_patch(patch)
+        ax.add_patch(
+            FancyBboxPatch(
+                (x + 0.016, y + h - 0.10),
+                0.085,
+                0.055,
+                boxstyle="round,pad=0.01,rounding_size=0.025",
+                linewidth=0,
+                facecolor=accent,
+                alpha=0.95,
+            )
+        )
+        ax.text(x + 0.0585, y + h - 0.072, title.split(".")[0], fontsize=8.2, fontweight="bold", color="white", ha="center", va="center")
+        ax.text(x + 0.018, y + h - 0.135, title, fontsize=10.8, fontweight="bold", va="top", color="#15212b")
+        ax.text(
+            x + 0.018,
+            y + h - 0.235,
+            "\n".join(body),
+            fontsize=8.8,
+            va="top",
+            color="#334155",
+            linespacing=1.42,
+        )
+
+    # Flow arrows
+    arrow_y = 0.53
+    for x0, x1 in [(0.235, 0.28), (0.485, 0.53), (0.735, 0.78)]:
+        ax.add_patch(
+            FancyArrowPatch(
+                (x0, arrow_y),
+                (x1, arrow_y),
+                arrowstyle="-|>",
+                mutation_scale=14,
+                linewidth=1.6,
+                color="#8a97a8",
+            )
+        )
+
+    # Bottom synthesis strip
+    strip = FancyBboxPatch(
+        (0.03, 0.08),
+        0.94,
+        0.16,
+        boxstyle="round,pad=0.012,rounding_size=0.025",
+        linewidth=1.0,
+        edgecolor="#d4dce5",
+        facecolor="#fbfcfe",
+    )
+    ax.add_patch(strip)
+    ax.text(0.05, 0.205, "Outputs used in the paper", fontsize=10.6, fontweight="bold", color="#15212b", va="center")
+    chips = [
+        ("Pooled 2q benchmark", "#4f8fba"),
+        ("Matched 4q stress test", "#d0874b"),
+        ("Anthropic 8q complexity ladder", "#6e78b8"),
+        ("Verifier-feedback ablations", "#6a9c78"),
+    ]
+    chip_x = 0.24
+    for label, color in chips:
+        width = 0.095 + 0.00285 * len(label)
+        ax.add_patch(
+            FancyBboxPatch(
+                (chip_x, 0.155),
+                width,
+                0.055,
+                boxstyle="round,pad=0.01,rounding_size=0.022",
+                linewidth=0,
+                facecolor=color,
+                alpha=0.92,
+            )
+        )
+        ax.text(
+            chip_x + width / 2,
+            0.1825,
+            label,
+            fontsize=7.7,
+            color="white",
+            ha="center",
+            va="center",
+            fontweight="bold",
+        )
+        chip_x += width + 0.018
+
     fig.savefig(path, dpi=240, bbox_inches="tight")
     plt.close(fig)
 

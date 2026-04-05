@@ -1,0 +1,223 @@
+{
+  "num_rows": 1536,
+  "num_usable_rows": 1536,
+  "num_api_errors": 0,
+  "rows": [
+    {
+      "model": "claude-opus-4-1-20250805",
+      "depth": 1,
+      "category": "circuit_evolution",
+      "count": 64,
+      "mean_d_phys": 0.890625,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.039322054350368486
+    },
+    {
+      "model": "claude-opus-4-1-20250805",
+      "depth": 1,
+      "category": "entanglement_classification",
+      "count": 64,
+      "mean_d_phys": 0.453125,
+      "median_d_phys": 0.0,
+      "stderr_d_phys": 0.06271663843120986
+    },
+    {
+      "model": "claude-opus-4-1-20250805",
+      "depth": 1,
+      "category": "measurement_prediction",
+      "count": 64,
+      "mean_d_phys": 0.6875,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.052822140920532286
+    },
+    {
+      "model": "claude-opus-4-1-20250805",
+      "depth": 1,
+      "category": "operator_composition",
+      "count": 64,
+      "mean_d_phys": 0.12574411765247576,
+      "median_d_phys": 6.410145386421102e-17,
+      "stderr_d_phys": 0.021495837160164493
+    },
+    {
+      "model": "claude-opus-4-1-20250805",
+      "depth": 2,
+      "category": "circuit_evolution",
+      "count": 64,
+      "mean_d_phys": 0.83984375,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.04570028968786263
+    },
+    {
+      "model": "claude-opus-4-1-20250805",
+      "depth": 2,
+      "category": "entanglement_classification",
+      "count": 64,
+      "mean_d_phys": 0.03125,
+      "median_d_phys": 0.0,
+      "stderr_d_phys": 0.021921011700381302
+    },
+    {
+      "model": "claude-opus-4-1-20250805",
+      "depth": 2,
+      "category": "measurement_prediction",
+      "count": 64,
+      "mean_d_phys": 0.6796875,
+      "median_d_phys": 0.9999999999999999,
+      "stderr_d_phys": 0.05266601150040803
+    },
+    {
+      "model": "claude-opus-4-1-20250805",
+      "depth": 2,
+      "category": "operator_composition",
+      "count": 64,
+      "mean_d_phys": 0.13967333582346794,
+      "median_d_phys": 9.47634626983522e-17,
+      "stderr_d_phys": 0.025169192599693246
+    },
+    {
+      "model": "claude-opus-4-1-20250805",
+      "depth": 4,
+      "category": "circuit_evolution",
+      "count": 64,
+      "mean_d_phys": 0.8203125,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.04772501462890677
+    },
+    {
+      "model": "claude-opus-4-1-20250805",
+      "depth": 4,
+      "category": "entanglement_classification",
+      "count": 64,
+      "mean_d_phys": 0.078125,
+      "median_d_phys": 0.0,
+      "stderr_d_phys": 0.033811213593755246
+    },
+    {
+      "model": "claude-opus-4-1-20250805",
+      "depth": 4,
+      "category": "measurement_prediction",
+      "count": 64,
+      "mean_d_phys": 0.4921875,
+      "median_d_phys": 0.5,
+      "stderr_d_phys": 0.05838877839075146
+    },
+    {
+      "model": "claude-opus-4-1-20250805",
+      "depth": 4,
+      "category": "operator_composition",
+      "count": 64,
+      "mean_d_phys": 0.102722016993927,
+      "median_d_phys": 6.119502064569875e-17,
+      "stderr_d_phys": 0.019453950291873252
+    },
+    {
+      "model": "claude-sonnet-4-20250514",
+      "depth": 1,
+      "category": "circuit_evolution",
+      "count": 64,
+      "mean_d_phys": 0.93359375,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.030619729209127207
+    },
+    {
+      "model": "claude-sonnet-4-20250514",
+      "depth": 1,
+      "category": "entanglement_classification",
+      "count": 64,
+      "mean_d_phys": 0.453125,
+      "median_d_phys": 0.0,
+      "stderr_d_phys": 0.06271663843120986
+    },
+    {
+      "model": "claude-sonnet-4-20250514",
+      "depth": 1,
+      "category": "measurement_prediction",
+      "count": 64,
+      "mean_d_phys": 0.8828125,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.03975087896477539
+    },
+    {
+      "model": "claude-sonnet-4-20250514",
+      "depth": 1,
+      "category": "operator_composition",
+      "count": 64,
+      "mean_d_phys": 0.197181486595019,
+      "median_d_phys": 0.19134171618254486,
+      "stderr_d_phys": 0.024617091767481013
+    },
+    {
+      "model": "claude-sonnet-4-20250514",
+      "depth": 2,
+      "category": "circuit_evolution",
+      "count": 64,
+      "mean_d_phys": 0.9375,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.030496877279641663
+    },
+    {
+      "model": "claude-sonnet-4-20250514",
+      "depth": 2,
+      "category": "entanglement_classification",
+      "count": 64,
+      "mean_d_phys": 0.453125,
+      "median_d_phys": 0.0,
+      "stderr_d_phys": 0.06271663843120986
+    },
+    {
+      "model": "claude-sonnet-4-20250514",
+      "depth": 2,
+      "category": "measurement_prediction",
+      "count": 64,
+      "mean_d_phys": 0.890625,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.03771227945676841
+    },
+    {
+      "model": "claude-sonnet-4-20250514",
+      "depth": 2,
+      "category": "operator_composition",
+      "count": 64,
+      "mean_d_phys": 0.2773527994869598,
+      "median_d_phys": 0.3535533905932737,
+      "stderr_d_phys": 0.02426864451830279
+    },
+    {
+      "model": "claude-sonnet-4-20250514",
+      "depth": 4,
+      "category": "circuit_evolution",
+      "count": 64,
+      "mean_d_phys": 0.98046875,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.016045615913842744
+    },
+    {
+      "model": "claude-sonnet-4-20250514",
+      "depth": 4,
+      "category": "entanglement_classification",
+      "count": 64,
+      "mean_d_phys": 0.453125,
+      "median_d_phys": 0.0,
+      "stderr_d_phys": 0.06271663843120986
+    },
+    {
+      "model": "claude-sonnet-4-20250514",
+      "depth": 4,
+      "category": "measurement_prediction",
+      "count": 64,
+      "mean_d_phys": 0.9296875,
+      "median_d_phys": 1.0,
+      "stderr_d_phys": 0.031234495161536254
+    },
+    {
+      "model": "claude-sonnet-4-20250514",
+      "depth": 4,
+      "category": "operator_composition",
+      "count": 64,
+      "mean_d_phys": 0.28745351717441314,
+      "median_d_phys": 0.32775288856966805,
+      "stderr_d_phys": 0.02497684077198125
+    }
+  ]
+}

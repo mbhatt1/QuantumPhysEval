@@ -14,9 +14,9 @@ from quantumphyseval import benchmark as qpe
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Compare 2-qubit and 4-qubit benchmark runs.")
+    parser = argparse.ArgumentParser(description="Compare QuantumPhysEval runs with different qubit counts.")
     parser.add_argument("--baseline-results", required=True, help="Baseline results JSON, usually the 2-qubit run.")
-    parser.add_argument("--variant-results", required=True, help="Variant results JSON, usually the 4-qubit run.")
+    parser.add_argument("--variant-results", required=True, help="Variant results JSON, usually the larger-qubit run.")
     parser.add_argument("--summary-json", required=True, help="Output path for the comparison summary JSON.")
     parser.add_argument("--plot", required=True, help="Output path for the comparison plot.")
     parser.add_argument("--baseline-label", default="2 qubits")
@@ -196,7 +196,13 @@ def save_plot(
     ax_delta.set_xticklabels([qpe.SHORT_CATEGORY_LABELS[category] for category in categories])
     ax_delta.set_yticks(np.arange(len(models)))
     ax_delta.set_yticklabels([qpe.MODEL_LABELS.get(model, model) for model in models])
-    ax_delta.set_title("B. 4-qubit minus 2-qubit error", loc="left", fontsize=11.3, fontweight="bold", pad=7)
+    ax_delta.set_title(
+        f"B. {variant_label} minus {baseline_label} error",
+        loc="left",
+        fontsize=11.3,
+        fontweight="bold",
+        pad=7,
+    )
     for spine in ax_delta.spines.values():
         spine.set_visible(False)
     ax_delta.tick_params(length=0)

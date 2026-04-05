@@ -1,0 +1,12 @@
+PWD /Users/mbhatt/symmetry
+INPUT /Users/mbhatt/Library/TinyTeX/texmf.cnf
+INPUT /Users/mbhatt/Library/TinyTeX/texmf-dist/web2c/texmf.cnf
+INPUT /Users/mbhatt/Library/TinyTeX/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT overleaf_neurips/main.tex
+OUTPUT main.log
+INPUT /Users/mbhatt/Library/TinyTeX/texmf-dist/tex/latex/base/article.cls
+INPUT /Users/mbhatt/Library/TinyTeX/texmf-dist/tex/latex/base/article.cls
+INPUT /Users/mbhatt/Library/TinyTeX/texmf-dist/tex/latex/base/size11.clo
+INPUT /Users/mbhatt/Library/TinyTeX/texmf-dist/tex/latex/base/size11.clo
+INPUT /Users/mbhatt/Library/TinyTeX/texmf-dist/tex/latex/base/size11.clo
+INPUT /Users/mbhatt/Library/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
