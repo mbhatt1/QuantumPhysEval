@@ -213,8 +213,8 @@ The family-level pattern is consistent across providers. For GPT models, mean er
 
 \begin{figure}[tbp]
 \centering
-\includegraphics[width=0.98\linewidth]{../artifacts/figures/qubit_stress_test.png}
-\caption{Matched 2-qubit versus 4-qubit stress test. Left: both GPT and Claude families get worse when the benchmark is rerun at 4 qubits. Right: the largest degradations occur in circuit evolution and measurement prediction, while the unchanged operator-composition control slice remains nearly flat.}
+\includegraphics[width=0.98\linewidth]{../artifacts/figures/combined_all_qubits_scaling.png}
+\caption{Pooled scaling behavior across 2, 4, and 8 qubits. Top: the pooled mean, GPT-family mean, and Claude-family mean all worsen as the state space grows. Bottom: the sharpest increases remain concentrated in circuit evolution and measurement prediction, while operator composition stays comparatively flat as a control slice.}
 \label{fig:qubit-stress}
 \end{figure}
 

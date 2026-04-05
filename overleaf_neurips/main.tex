@@ -169,8 +169,8 @@ The degradation is concentrated in the same places that were already hardest in 
 
 \begin{figure}[tb]
 \centering
-\includegraphics[width=\linewidth]{figures/qubit_stress_test.png}
-\caption{Matched 2-qubit versus 4-qubit stress test. Top: both GPT and Claude families get worse when the benchmark is rerun at 4 qubits. Bottom: the largest degradations occur in circuit evolution and measurement prediction, while the unchanged operator-composition control slice remains nearly flat.}
+\includegraphics[width=\linewidth]{figures/combined_all_qubits_scaling.png}
+\caption{Pooled scaling behavior across 2, 4, and 8 qubits. Top: the pooled mean, GPT-family mean, and Claude-family mean all worsen as the state space grows. Bottom: the sharpest increases remain concentrated in circuit evolution and measurement prediction, while operator composition stays comparatively flat as a control slice.}
 \label{fig:qubit-stress}
 \end{figure}
 
