@@ -38,7 +38,7 @@
 }%
 }
 
-\title{QuantumPhysEval: Measuring Quantum Hallucinations in LLMs}
+\title{QuantumPhysEval: Measuring Exponential Reasoning Collapse in LLMs}
 \author{Anonymous Authors}
 \date{}
 
@@ -52,7 +52,7 @@ This paper presents QuantumPhysEval, a benchmark developed to measure whether la
 \section{Introduction}
 Large Language Models (LLMs) have shown strong performance on many reasoning and coding tasks, but there are still relatively few benchmarks designed to measure whether their outputs remain faithful to exact scientific structure. In quantum information settings, this matters because correct answers must satisfy sharply defined physical constraints such as normalization, unitarity, linear state evolution, and the Born rule. An answer can therefore look polished and plausible while still being physically wrong.
 
-In this work, we identify one major reliability risk for language models in this domain: \emph{quantum hallucination}, which we define as a model output that is syntactically plausible but inconsistent with exact quantum-mechanical ground truth or with basic physical constraints. To measure this risk, we develop QuantumPhysEval, an evaluation suite intended to integrate directly into model testing workflows in the same way that safety and robustness benchmarks are used in other domains.
+In this work, we identify one major reliability risk for language models in this domain: \emph{exponential reasoning collapse}, which we define as a model output that is syntactically plausible but inconsistent with exact quantum-mechanical ground truth or with basic physical constraints. To measure this risk, we develop QuantumPhysEval, an evaluation suite intended to integrate directly into model testing workflows in the same way that safety and robustness benchmarks are used in other domains.
 
 \subsection{QuantumPhysEval Approach}
 QuantumPhysEval's overall approach is straightforward. First, we construct benchmark prompts from analytically generated quantum tasks so that exact targets are known by construction. Second, we score model outputs using bounded physics-grounded error metrics rather than subjective grading. Third, we apply the resulting benchmark to multiple model families and prompted depth settings in order to understand which kinds of quantum tasks remain difficult and whether stronger models reduce those errors. The primary case study uses exact 2-qubit tasks, a matched 4-qubit stress test measures how reliability changes as the state space expands, and a completed Anthropic 8-qubit ladder probes whether the same trend continues once the state vector grows to 256 amplitudes.
@@ -151,7 +151,7 @@ Claude Sonnet 4 & 0.450 \\
 
 The following theses emerged from the pooled benchmark results:
 \begin{enumerate}
-\item All studied models exhibit quantum hallucinations at non-trivial rates.
+\item All studied models exhibit exponential reasoning collapse at non-trivial rates.
 \item More capable models reduce those errors, but do not eliminate them.
 \item Prompted reasoning depth has only a weak effect relative to model capability.
 \item The largest failures are concentrated in exact quantum dynamics tasks.
@@ -317,7 +317,7 @@ We observe the same qualitative pattern on the Claude subset once output extract
 \section{Discussion}
 The case study supports five practical conclusions.
 
-First, quantum hallucination is measurable in a fully automated setting. Many outputs are syntactically clean and machine-readable, yet remain physically wrong under exact evaluation. This makes the benchmark useful as a reliability diagnostic rather than merely as a formatting test.
+First, exponential reasoning collapse is measurable in a fully automated setting. Many outputs are syntactically clean and machine-readable, yet remain physically wrong under exact evaluation. This makes the benchmark useful as a reliability diagnostic rather than merely as a formatting test.
 
 Second, model capability matters more than prompted depth in the present setup. The strongest result is the pooled capability trend; the depth manipulation is small relative to that effect and does not separate from zero under bootstrap uncertainty.
 
@@ -325,13 +325,13 @@ Third, some failures are recoverable under iterative interaction, but the mechan
 
 Fourth, the benchmark identifies a concrete residual weakness: exact quantum state and probability evolution. This is more informative than a generic claim that models are unreliable on quantum tasks, because it isolates the specific computational burden that remains difficult even for stronger models.
 
-Fifth, the new complexity-scaling results show that these failures do not remain confined to the easiest possible small systems. The matched 4-qubit stress test already shows material degradation across both GPT and Claude families, and the completed Anthropic 8-qubit ladder strengthens that story further: error continues to rise with state-space size, exact-correct rate falls, full-error rate rises, and the degradation remains concentrated in the same dynamics-heavy categories.
+Fifth, the new complexity-scaling results show that these failures do not remain confined to the easiest possible small systems. The matched 4-qubit stress test already shows material degradation across both GPT and Claude families, and the completed Anthropic 8-qubit ladder strengthens that story further: error continues to rise with state-space size, exact-correct rate falls, full-error rate rises, and the degradation remains concentrated in the same dynamics-heavy categories. \textbf{There is a structural failure mode in LLMs tied to exponential state spaces.}
 
 \section{Limitations}
 QuantumPhysEval is intentionally narrow. It uses controlled small-system settings to enable exact scoring, but that also limits ecological breadth. Even with the added 4-qubit stress test and the completed Anthropic and GPT 8-qubit ladders, the benchmark remains far from realistic chemistry, control, or error-correction workloads. The model-size variable is a manually assigned proxy rather than a verified parameter count, and the pooled fit mixes families and release generations. The benchmark also uses a single prompt style per task family and a single temperature setting. The larger-qubit stress tests do not upscale operator composition, since returning exact 16$\times$16 or 64$\times$64 matrices would mostly measure formatting burden rather than useful reasoning. The repair ablation is smaller than the pooled study and uses a binary verifier signal that would not always be available in practical deployments. The completed GPT 8-qubit file still contains two residual API failures, but at 5{,}374 usable responses the qualitative pattern is stable and matches the Anthropic ladder. The present evidence therefore supports a strong benchmark-level capability trend, but it should not be overinterpreted as a universal scaling law.
 
 \section{Conclusion}
-In this paper, we introduced QuantumPhysEval, a benchmark for measuring quantum hallucinations as physics-grounded error on elementary quantum tasks. In a pooled 2-qubit case study over OpenAI GPT and Anthropic Claude models, benchmark error decreases strongly with model capability, while prompted reasoning depth shows no robust independent effect. A matched 4-qubit stress test shows that performance worsens materially once the state space expands, especially on circuit evolution and measurement prediction. A completed Anthropic 8-qubit ladder shows that this is a genuine complexity trend rather than a one-step artifact: error continues to rise, exact-correct rate falls, and full-error failures become more common as the Hilbert space grows. Separate repair ablations show that repeated attempts can recover some failures, especially when verifier feedback is available, but those gains saturate quickly and do not erase the main weakness. These results suggest that language models can produce plausible quantum answers, but exact physical reliability remains limited and should be measured explicitly rather than assumed.
+In this paper, we introduced QuantumPhysEval, a benchmark for measuring exponential reasoning collapse as physics-grounded error on elementary quantum tasks. In a pooled 2-qubit case study over OpenAI GPT and Anthropic Claude models, benchmark error decreases strongly with model capability, while prompted reasoning depth shows no robust independent effect. A matched 4-qubit stress test shows that performance worsens materially once the state space expands, especially on circuit evolution and measurement prediction. A completed Anthropic 8-qubit ladder shows that this is a genuine complexity trend rather than a one-step artifact: error continues to rise, exact-correct rate falls, and full-error failures become more common as the Hilbert space grows. Separate repair ablations show that repeated attempts can recover some failures, especially when verifier feedback is available, but those gains saturate quickly and do not erase the main weakness. \textbf{There is a structural failure mode in LLMs tied to exponential state spaces.} These results suggest that language models can produce plausible quantum answers, but exact physical reliability remains limited and should be measured explicitly rather than assumed.
 
 \appendix
 \section*{Appendix: Live Statistical Snapshot}
