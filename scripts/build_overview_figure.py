@@ -93,7 +93,7 @@ def main() -> None:
             facecolor="#f8f5ef",
         )
     )
-    ax.text(0.05, 0.215, "Outputs used in the paper", fontsize=11.6, fontweight="bold", color=palette["ink"], va="center")
+    ax.text(0.05, 0.215, "Outputs", fontsize=11.6, fontweight="bold", color=palette["ink"], va="center")
     chips = [
         ("Pooled 2q benchmark", palette["blue"]),
         ("Matched 4q stress test", palette["coral"]),
