@@ -1,0 +1,44 @@
+{
+  "2q": {
+    "overall": 0.4077673434532744,
+    "provider": {
+      "GPT": 0.4402629102459206,
+      "Claude": 0.294032859679008
+    },
+    "category": {
+      "circuit_evolution": 0.6570594738720713,
+      "measurement_prediction": 0.5202546296296297,
+      "operator_composition": 0.2581534184595365,
+      "entanglement_classification": 0.19560185185185186
+    },
+    "count": 6912
+  },
+  "4q": {
+    "overall": 0.5332632464679533,
+    "provider": {
+      "GPT": 0.5607972210107315,
+      "Claude": 0.4368943355682234
+    },
+    "category": {
+      "circuit_evolution": 0.8420756414139985,
+      "measurement_prediction": 0.708032280059456,
+      "operator_composition": 0.2449821014353809,
+      "entanglement_classification": 0.33796296296296297
+    },
+    "count": 6912
+  },
+  "8q": {
+    "overall": 0.6506646079095473,
+    "provider": {
+      "GPT": 0.6816178442754889,
+      "Claude": 0.5423685843219274
+    },
+    "category": {
+      "circuit_evolution": 0.9778389339513326,
+      "measurement_prediction": 0.9461805555555556,
+      "operator_composition": 0.2571426161197604,
+      "entanglement_classification": 0.421875
+    },
+    "count": 6910
+  }
+}

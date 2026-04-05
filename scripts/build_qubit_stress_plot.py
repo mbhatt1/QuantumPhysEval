@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-"""Build a summary figure for 2-qubit vs 4-qubit stress-test comparisons."""
+"""Build a summary figure for 2-qubit versus larger-qubit stress-test comparisons."""
 
 import argparse
 import json
@@ -25,8 +25,8 @@ SHORT_CATEGORY_LABELS = {
 
 
 def apply_plot_style(ax) -> None:
-    ax.set_facecolor("white")
-    ax.grid(True, axis="x", color="#e5e7eb", linewidth=0.8)
+    ax.set_facecolor("#fbfaf7")
+    ax.grid(True, axis="x", color="#ddd6cc", linewidth=0.9)
     ax.grid(False, axis="y")
     ax.set_axisbelow(True)
     for spine in ax.spines.values():
@@ -35,11 +35,13 @@ def apply_plot_style(ax) -> None:
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Build pooled 2q vs 4q comparison artifacts.")
+    parser = argparse.ArgumentParser(description="Build pooled qubit stress-test comparison artifacts.")
     parser.add_argument("--gpt-comparison", required=True)
     parser.add_argument("--anthropic-comparison", required=True)
     parser.add_argument("--output-json", required=True)
     parser.add_argument("--output-plot", required=True)
+    parser.add_argument("--baseline-label", default="2 qubits")
+    parser.add_argument("--variant-label", default="4 qubits")
     return parser.parse_args()
 
 
@@ -114,7 +116,7 @@ def main() -> None:
     with out_json.open("w", encoding="utf-8") as handle:
         json.dump(combined, handle, indent=2)
 
-    fig = plt.figure(figsize=(8.0, 7.6), facecolor="white")
+    fig = plt.figure(figsize=(8.3, 7.9), facecolor="#fcfcfb")
     grid = fig.add_gridspec(2, 1, height_ratios=[1.0, 1.15], hspace=0.42)
     ax_family = fig.add_subplot(grid[0, 0])
     ax_category = fig.add_subplot(grid[1, 0])
@@ -149,7 +151,7 @@ def main() -> None:
         color="#4f8fba",
         edgecolor="white",
         linewidth=1.0,
-        label="2 qubits",
+        label=args.baseline_label,
         zorder=2,
     )
     ax_family.scatter(
@@ -159,7 +161,7 @@ def main() -> None:
         color="#c75c5c",
         edgecolor="white",
         linewidth=1.0,
-        label="4 qubits",
+        label=args.variant_label,
         zorder=3,
     )
     ax_family.set_yticks(y)
@@ -167,24 +169,22 @@ def main() -> None:
     ax_family.invert_yaxis()
     ax_family.set_xlim(0.0, max(variant) + 0.10)
     ax_family.set_xlabel("Mean normalized physics error")
-    ax_family.set_title("A. 4-qubit stress test raises error across families", loc="left", fontsize=11.5, fontweight="bold", pad=8)
+    ax_family.set_title(
+        f"A. {args.variant_label} stress test raises error across families",
+        loc="left",
+        fontsize=12.5,
+        fontweight="bold",
+        pad=8,
+    )
     for idx in range(len(families)):
         delta = variant[idx] - baseline[idx]
-        ax_family.text(
-            max(baseline[idx], variant[idx]) + 0.018,
-            idx,
-            f"+{delta:.3f}",
-            va="center",
-            ha="left",
-            fontsize=9.0,
-            color="#374151",
-        )
+        ax_family.text(max(baseline[idx], variant[idx]) + 0.018, idx, f"+{delta:.3f}", va="center", ha="left", fontsize=9.1, color="#374151")
     ax_family.legend(frameon=False, fontsize=9.2, loc="lower right")
 
     categories = list(CATEGORY_ORDER)
     deltas = [combined["category_deltas"][category] for category in categories]
     colors = [
-        "#b56576" if category in {"circuit_evolution", "measurement_prediction"} else "#9fb3c2"
+        "#c96f4a" if category in {"circuit_evolution", "measurement_prediction"} else "#8295a8"
         for category in categories
     ]
     labels = [SHORT_CATEGORY_LABELS[category] for category in categories]
@@ -194,8 +194,14 @@ def main() -> None:
     ax_category.set_yticks(ypos)
     ax_category.set_yticklabels(labels)
     ax_category.invert_yaxis()
-    ax_category.set_xlabel("Mean error delta (4q - 2q)")
-    ax_category.set_title("B. The degradation is concentrated in dynamics-heavy tasks", loc="left", fontsize=11.5, fontweight="bold", pad=8)
+    ax_category.set_xlabel(f"Mean error delta ({args.variant_label} - {args.baseline_label})")
+    ax_category.set_title(
+        "B. The degradation is concentrated in dynamics-heavy tasks",
+        loc="left",
+        fontsize=12.5,
+        fontweight="bold",
+        pad=8,
+    )
     ax_category.set_xlim(min(-0.05, min(deltas) - 0.03), max(deltas) + 0.06)
     for ypos_value, value in zip(ypos, deltas):
         ax_category.text(
@@ -204,7 +210,7 @@ def main() -> None:
             f"{value:+.3f}",
             va="center",
             ha="left" if value >= 0 else "right",
-            fontsize=9.0,
+            fontsize=9.1,
             color="#374151",
         )
 

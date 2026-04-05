@@ -166,7 +166,7 @@ Entanglement & 0.625 & 1.000 & 1.000 \\
 \maketitle
 
 \begin{abstract}
-This paper presents QuantumPhysEval, a benchmark developed to measure whether large language models produce physically inconsistent yet superficially plausible answers on elementary quantum-mechanical tasks. QuantumPhysEval evaluates model behavior in four task families central to introductory quantum reasoning: circuit evolution, operator composition, measurement prediction, and entanglement classification. Because the benchmark is built from analytically generated small-system quantum problems, it supports exact self-generated ground truth and fully automated scoring with bounded normalized physics-error metrics. Through a case study involving seven OpenAI GPT-family models and two Anthropic Claude-family models across three prompted reasoning-depth settings, QuantumPhysEval identifies clear reliability gaps and offers practical insight into where those models fail. In the pooled 2-qubit analysis of 6{,}912 evaluations, benchmark error decreases strongly with a model-size proxy, with fitted exponent $\alpha=3.262$ and bootstrap 95\% interval $[2.959, 3.558]$, while prompted reasoning depth shows only a weak effect with $\beta=0.092$ and interval $[-0.279, 0.460]$. In a matched 4-qubit stress test over the same model sets, mean error rises from 0.408 to 0.533, with the largest degradations in circuit evolution ($+0.185$) and measurement prediction ($+0.188$). A separate 64-task OpenAI repair ablation shows that one-shot solving reaches 0.422 solved fraction, blind self-retry reaches 0.609, and verifier-guided retry reaches 0.688, with nearly all gains saturating within the first 30 seconds. After adding robust final-literal extraction for mixed prose and code-block outputs, a matched 32-task Claude repair ablation yields 0.594 one-shot solve rate, 0.813 self-retry, and 0.938 verifier-feedback solve rate. The largest residual risks in the pooled benchmark remain concentrated in circuit evolution and measurement prediction, indicating that exact quantum dynamics remain difficult even for stronger recent models.
+This paper presents QuantumPhysEval, a benchmark developed to measure whether large language models produce physically inconsistent yet superficially plausible answers on elementary quantum-mechanical tasks. QuantumPhysEval evaluates model behavior in four task families central to introductory quantum reasoning: circuit evolution, operator composition, measurement prediction, and entanglement classification. Because the benchmark is built from analytically generated small-system quantum problems, it supports exact self-generated ground truth and fully automated scoring with bounded normalized physics-error metrics. Through a case study involving seven OpenAI GPT-family models and two Anthropic Claude-family models across three prompted reasoning-depth settings, QuantumPhysEval identifies clear reliability gaps and offers practical insight into where those models fail. In the pooled 2-qubit analysis of 6{,}912 evaluations, benchmark error decreases strongly with a model-size proxy, with fitted exponent $\alpha=3.262$ and bootstrap 95\% interval $[2.959, 3.558]$, while prompted reasoning depth shows only a weak effect with $\beta=0.092$ and interval $[-0.279, 0.460]$. In a matched 4-qubit stress test over the same model sets, mean error rises from 0.408 to 0.533, with the largest degradations in circuit evolution ($+0.185$) and measurement prediction ($+0.188$). In a completed Anthropic 2q$\rightarrow$4q$\rightarrow$8q complexity ladder, mean error rises monotonically from 0.294 to 0.437 to 0.542, while circuit evolution and measurement prediction degrade by $+0.388$ and $+0.510$ from 2 to 8 qubits and operator composition remains flat as a control. A completed GPT 2q$\rightarrow$4q$\rightarrow$8q ladder over 5{,}374 usable 8-qubit responses shows the same pattern, with family mean error rising from 0.440 to 0.561 to 0.682, circuit evolution and measurement prediction saturating at 1.000 and 0.999 mean error, and operator composition remaining much lower at 0.277. A separate 64-task OpenAI repair ablation shows that one-shot solving reaches 0.422 solved fraction, blind self-retry reaches 0.609, and verifier-guided retry reaches 0.688, with nearly all gains saturating within the first 30 seconds. After adding robust final-literal extraction for mixed prose and code-block outputs, a matched 32-task Claude repair ablation yields 0.594 one-shot solve rate, 0.813 self-retry, and 0.938 verifier-feedback solve rate. The largest residual risks in the pooled benchmark remain concentrated in circuit evolution and measurement prediction, indicating that exact quantum dynamics remain difficult even for stronger recent models.
 \end{abstract}
 
 \section{Introduction}
@@ -175,7 +175,7 @@ Large Language Models (LLMs) have shown strong performance on many reasoning and
 In this work, we identify one major reliability risk for language models in this domain: \emph{quantum hallucination}, which we define as a model output that is syntactically plausible but inconsistent with exact quantum-mechanical ground truth or with basic physical constraints. To measure this risk, we develop QuantumPhysEval, an evaluation suite intended to integrate directly into model testing workflows in the same way that safety and robustness benchmarks are used in other domains.
 
 \subsection{QuantumPhysEval Approach}
-QuantumPhysEval's overall approach is straightforward. First, we construct benchmark prompts from analytically generated quantum tasks so that exact targets are known by construction. Second, we score model outputs using bounded physics-grounded error metrics rather than subjective grading. Third, we apply the resulting benchmark to multiple model families and prompted depth settings in order to understand which kinds of quantum tasks remain difficult and whether stronger models reduce those errors. The primary case study uses exact 2-qubit tasks, and a matched 4-qubit stress test measures how reliability changes as the state space expands.
+QuantumPhysEval's overall approach is straightforward. First, we construct benchmark prompts from analytically generated quantum tasks so that exact targets are known by construction. Second, we score model outputs using bounded physics-grounded error metrics rather than subjective grading. Third, we apply the resulting benchmark to multiple model families and prompted depth settings in order to understand which kinds of quantum tasks remain difficult and whether stronger models reduce those errors. The primary case study uses exact 2-qubit tasks, a matched 4-qubit stress test measures how reliability changes as the state space expands, and a completed Anthropic 8-qubit ladder probes whether the same trend continues once the state vector grows to 256 amplitudes.
 
 This benchmark is designed to be useful in practice. Because test generation, target generation, and evaluation are automated, the suite can be rerun easily as models improve. Because it uses exact small-system simulation, every failure corresponds to a real physical inconsistency rather than a matter of interpretation.
 
@@ -186,16 +186,17 @@ Overall, QuantumPhysEval makes the following contributions:
 \item \textbf{Breadth}: the benchmark covers four distinct quantum reasoning families: circuit evolution, operator composition, measurement prediction, and entanglement classification.
 \item \textbf{Automation}: test generation, model querying, parsing, scoring, and scaling-law fitting are fully automated.
 \item \textbf{Actionability}: in a pooled OpenAI GPT and Anthropic Claude case study, the benchmark identifies concrete reliability gaps and isolates the task families that drive them.
+\item \textbf{Complexity scaling}: matched 4-qubit and 8-qubit reruns show that error grows with Hilbert-space size and that the growth is concentrated in dynamics-heavy tasks rather than in the fixed control slice.
 \end{itemize}
 
 \subsection{The structure of this paper}
-The rest of the paper is organized as follows. First, we describe QuantumPhysEval's benchmark construction and scoring methodology. Next, we describe the case study protocol used to evaluate pooled OpenAI GPT and Anthropic Claude models. We then present top-level results, category-level findings, and ablations. Finally, we discuss limitations and conclude.
+The rest of the paper is organized as follows. First, we describe QuantumPhysEval's benchmark construction and scoring methodology. Next, we describe the case study protocol used to evaluate pooled OpenAI GPT and Anthropic Claude models. We then present top-level results, category-level findings, matched complexity-scaling stress tests, and repair ablations. Finally, we discuss limitations and conclude.
 
 \section{Benchmark Construction}
 \begin{figure}[tbp]
 \centering
 \includegraphics[width=0.98\linewidth]{../artifacts/figures/quantumphys_eval_overview.png}
-\caption{QuantumPhysEval benchmark overview. The pipeline is fully automated: exact small-system tasks are generated analytically, exact targets are computed by construction, model outputs are scored with a bounded physics-grounded error metric, and pooled trends are analyzed across model families and depth settings. The main case study uses 2-qubit tasks, and a matched 4-qubit stress test measures difficulty growth.}
+\caption{QuantumPhysEval benchmark overview. The pipeline is fully automated: exact small-system tasks are generated analytically, exact targets are computed by construction, model outputs are scored with a bounded physics-grounded error metric, and pooled trends are analyzed across model families and depth settings. The main case study uses 2-qubit tasks, a matched 4-qubit stress test measures immediate difficulty growth, and a completed Anthropic 8-qubit ladder extends the same logic to a larger state-space regime.}
 \label{fig:overview}
 \end{figure}
 
@@ -233,6 +234,8 @@ Across all three runs, the pooled 2-qubit evaluation contains 6{,}912 scored res
 using a model-size proxy $S$ and log-linear least squares, with 2{,}000 bootstrap resamples for uncertainty estimation.
 
 We then run a matched 4-qubit stress test on the same GPT and Claude model sets. This stress test adds another 6{,}912 scored responses and keeps the category schema fixed so that differences can be compared directly. Circuit evolution, measurement prediction, and entanglement classification are upgraded to 4 qubits, while operator composition remains a 1-qubit control slice to separate genuine state-space effects from generic output-format effects.
+
+To push the same question further, we also complete matched 8-qubit reruns. On the Anthropic side, Claude Sonnet 4 and Claude Opus 4.1 add 1{,}536 scored responses and create a clean 2q$\rightarrow$4q$\rightarrow$8q ladder for one provider family. On the GPT side, a full 8-qubit retry run yields 5{,}374 usable responses with only two residual API failures, which is sufficient to construct a parallel GPT 2q$\rightarrow$4q$\rightarrow$8q ladder rather than treating GPT 8q as merely provisional corroboration.
 
 \subsection{Time-budget repair ablation}
 We also run a separate repair ablation designed to test whether the hardest failures are recoverable with additional interaction time. This ablation uses a strong-model subset consisting of \texttt{gpt-4.1}, \texttt{gpt-5.2}, \texttt{gpt-5.4-mini}, and \texttt{gpt-5.4}; depth 4 only; temperature 0.2; and four prompts per benchmark family, for 64 tasks total. Each prompt receives a five-minute wall-clock budget and is evaluated under three modes: \emph{one-shot} (no retry), \emph{self-retry} (the model takes another pass without being told whether the prior answer was wrong), and \emph{verifier feedback} (the model is told only that the prior answer was incorrect against exact ground truth).
@@ -294,6 +297,13 @@ The prompted reasoning-depth effect is much weaker:
 \]
 Average error at depth 4 is 0.405, compared with 0.403 at depth 1 and 0.415 at depth 2. We therefore do not find robust evidence that increasing the prompted depth condition alone materially improves benchmark performance.
 
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.98\linewidth]{../artifacts/figures/combined_quantum_scaling.png}
+\caption{Pooled scaling behavior in the 2-qubit case study. Left: benchmark error falls as the model-capability proxy increases, with the fitted size effect shown directly on the pooled data. Right: prompted depth conditions remain tightly clustered, consistent with the weak fitted depth effect.}
+\label{fig:pooled-scaling}
+\end{figure}
+
 \subsection{Benchmark-family findings}
 Benchmark-family differences are pronounced. In the pooled run, category means are:
 \begin{itemize}
@@ -328,6 +338,61 @@ The family-level pattern is consistent across providers. For GPT models, mean er
 \label{fig:qubit-stress}
 \end{figure}
 
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.96\linewidth]{../artifacts/figures/combined_4qubit_breakdown.png}
+\caption{Benchmark-family breakdown in the pooled 4-qubit stress test. Top: category difficulty after moving to 4 qubits. Bottom: model-by-category heatmap showing that the stress increase is again concentrated in circuit evolution and measurement prediction.}
+\label{fig:breakdown-4q}
+\end{figure}
+
+\subsection{Complexity scaling to 8 qubits}
+The completed Anthropic 2q$\rightarrow$4q$\rightarrow$8q ladder shows that the state-space trend continues beyond the pooled 4-qubit stress test. Mean normalized error rises monotonically from 0.294 at 2 qubits to 0.437 at 4 qubits and 0.542 at 8 qubits, for a total 2q$\rightarrow$8q increase of $+0.248$. The distribution also becomes harsher as qubit count grows: the exact-correct rate falls from 59.0\% at 2 qubits to 44.9\% at 4 qubits and 35.2\% at 8 qubits, while the full-error rate rises from 20.7\% to 34.6\% to 48.3\%.
+
+The strongest complexity signal remains concentrated in exact quantum dynamics. Across the Anthropic ladder, circuit evolution rises from 0.512 to 0.573 to 0.900, and measurement prediction rises from 0.250 to 0.514 to 0.760. By contrast, operator composition stays almost perfectly flat at 0.187, 0.182, and 0.188. This is the key control result: the 8-qubit degradation is not just a generic penalty for longer prompts or longer outputs. It is primarily a failure of exact amplitude and probability tracking as the Hilbert space grows.
+
+The same pattern holds within individual Anthropic models. Claude Opus 4.1 rises from 0.138 at 2 qubits to 0.298 at 4 qubits and 0.445 at 8 qubits. Claude Sonnet 4 rises from 0.450 to 0.576 to 0.640. Stronger capability therefore improves the baseline, but it does not remove the complexity trend. The one notable exception is entanglement classification, which is noisier as a complexity probe: it rises from 0.227 to 0.479 and then drops to 0.320 at 8 qubits. We therefore treat the cleanest complexity evidence as coming from circuit evolution, measurement prediction, and the flat operator-composition control.
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.98\linewidth]{../artifacts/figures/anthropic_complexity_scaling.png}
+\caption{Completed Anthropic 2q$\rightarrow$4q$\rightarrow$8q complexity ladder. Top: both Claude models and the Anthropic family mean degrade monotonically as qubit count rises. Bottom: the sharpest growth is in circuit evolution and measurement prediction, while the fixed operator-composition control slice remains nearly unchanged.}
+\label{fig:complexity-scaling}
+\end{figure}
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.98\linewidth]{../artifacts/figures/anthropic_2q_vs_8q.png}
+\caption{Anthropic 2-qubit versus 8-qubit stress comparison in the same visual format as the smaller stress-test figures. Left: both Claude models worsen substantially by 8 qubits. Right: the largest 2q$\rightarrow$8q increases remain circuit evolution and measurement prediction, while operator composition stays flat as a control.}
+\label{fig:qubit-stress-8q}
+\end{figure}
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.96\linewidth]{../artifacts/figures/combined_8qubit_breakdown.png}
+\caption{Benchmark-family breakdown in the completed 8-qubit Anthropic rerun. Top: category difficulty at 8 qubits. Bottom: model-by-category heatmap showing that both Claude models remain most vulnerable on circuit evolution and measurement prediction.}
+\label{fig:breakdown-8q}
+\end{figure}
+
+The completed GPT 2q$\rightarrow$4q$\rightarrow$8q ladder now shows the same state-space trend at larger scale. Across 5{,}374 usable GPT 8-qubit responses, family mean error rises from 0.440 at 2 qubits to 0.561 at 4 qubits and 0.682 at 8 qubits. The distribution becomes harsher in the same way as the Anthropic ladder: exact-correct rate is only 18.2\% at 8 qubits, while the full-error rate rises to 61.3\%.
+
+The GPT category pattern closely matches the completed Anthropic result. Circuit evolution reaches 1.000 mean error at 8 qubits, measurement prediction reaches 0.999, entanglement classification reaches 0.451, and operator composition remains much lower at 0.277. This again supports the same interpretation: the dominant complexity effect is not a generic formatting penalty, but a collapse in exact quantum-dynamics tracking as the Hilbert space grows.
+
+The model-level GPT ranking also stabilizes in the completed 8-qubit file. \texttt{gpt-5.1} is the strongest GPT slice at 0.649 mean error, closely followed by \texttt{gpt-4.1} at 0.654. \texttt{gpt-5.4} reaches 0.686 over 766 usable rows, \texttt{gpt-5.2} reaches 0.691, \texttt{gpt-4o-mini} reaches 0.702, and \texttt{gpt-5.4-mini} reaches 0.706. Even the strongest GPT slices therefore remain far worse at 8 qubits than on the smaller-qubit benchmarks, and they remain qualitatively aligned with the Anthropic story.
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.96\linewidth]{../artifacts/figures/gpt_8qubit_breakdown.png}
+\caption{Completed GPT 8-qubit run. Left: category difficulty on the 5{,}374 usable-response file. Right: model-by-category heatmap. The same pattern visible in the Anthropic ladder persists here: circuit evolution and measurement prediction saturate, while operator composition remains substantially lower.}
+\label{fig:gpt-8q-checkpoint}
+\end{figure}
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.98\linewidth]{../artifacts/figures/gpt_complexity_scaling.png}
+\caption{Completed GPT 2q$\rightarrow$4q$\rightarrow$8q complexity ladder. Top: the GPT family mean and representative stronger GPT slices all worsen as qubit count rises. Bottom: the sharpest increase remains in circuit evolution and measurement prediction, while operator composition stays comparatively flat.}
+\label{fig:gpt-complexity-scaling}
+\end{figure}
+
 \subsection{Ablations}
 Additional ablations sharpen the main picture. First, the depth manipulation is weak not only in aggregate but also within individual models: most model-specific depth curves are nearly flat, and where differences do exist they are small relative to cross-model gaps. Second, the stronger GPT-5 and Claude 4 models improve over the weaker GPT-4-family slice in every benchmark category, with the largest gains appearing outside circuit evolution. Third, stronger models are not simply converting catastrophic failures into milder failures; they also increase exact-correct rates while reducing full-error failures.
 
@@ -353,6 +418,13 @@ The gain is not uniform across task families. Under the same 64-task subset, cir
 
 \begin{figure}[tbp]
 \centering
+\includegraphics[width=0.98\linewidth]{../artifacts/figures/feedback_ablation_summary.png}
+\caption{Direct comparison of repair modes. In both the OpenAI and Anthropic subsets, solved fraction rises monotonically from one-shot to self-retry to verifier feedback. This makes the core ablation result visible at a glance rather than only through the table.}
+\label{fig:feedback-summary}
+\end{figure}
+
+\begin{figure}[tbp]
+\centering
 \includegraphics[width=0.96\linewidth]{../artifacts/figures/timebudget_strong_models_progress.png}
 \caption{Verifier-feedback time-budget run on the strong-model subset. Left: solved fraction by wall-clock budget for each model. Right: solved fraction by category under the full 300-second budget. In practice the curves plateau early: pass@30s, pass@60s, pass@120s, and pass@300s are identical at 0.688 overall.}
 \label{fig:timebudget}
@@ -373,13 +445,13 @@ Third, some failures are recoverable under iterative interaction, but the mechan
 
 Fourth, the benchmark identifies a concrete residual weakness: exact quantum state and probability evolution. This is more informative than a generic claim that models are unreliable on quantum tasks, because it isolates the specific computational burden that remains difficult even for stronger models.
 
-Fifth, the new 4-qubit stress test shows that these failures do not remain confined to the easiest possible small systems. When we enlarge the state space while keeping the evaluation procedure matched, both GPT and Claude families degrade materially, and the degradation is concentrated in the same dynamics-heavy categories.
+Fifth, the new complexity-scaling results show that these failures do not remain confined to the easiest possible small systems. The matched 4-qubit stress test already shows material degradation across both GPT and Claude families, and the completed Anthropic 8-qubit ladder strengthens that story further: error continues to rise with state-space size, exact-correct rate falls, full-error rate rises, and the degradation remains concentrated in the same dynamics-heavy categories.
 
 \section{Limitations}
-QuantumPhysEval is intentionally narrow. It uses controlled small-system settings to enable exact scoring, but that also limits ecological breadth. Even with the added 4-qubit stress test, the benchmark remains far from realistic chemistry, control, or error-correction workloads. The model-size variable is a manually assigned proxy rather than a verified parameter count, and the pooled fit mixes families and release generations. The benchmark also uses a single prompt style per task family and a single temperature setting. The 4-qubit stress test does not upscale operator composition, since returning exact 16$\times$16 matrices would mostly measure formatting burden rather than useful reasoning. The repair ablation is smaller than the pooled study and uses a binary verifier signal that would not always be available in practical deployments. The present evidence therefore supports a strong benchmark-level capability trend, but it should not be overinterpreted as a universal scaling law.
+QuantumPhysEval is intentionally narrow. It uses controlled small-system settings to enable exact scoring, but that also limits ecological breadth. Even with the added 4-qubit stress test and the completed Anthropic and GPT 8-qubit ladders, the benchmark remains far from realistic chemistry, control, or error-correction workloads. The model-size variable is a manually assigned proxy rather than a verified parameter count, and the pooled fit mixes families and release generations. The benchmark also uses a single prompt style per task family and a single temperature setting. The larger-qubit stress tests do not upscale operator composition, since returning exact 16$\times$16 or 64$\times$64 matrices would mostly measure formatting burden rather than useful reasoning. The repair ablation is smaller than the pooled study and uses a binary verifier signal that would not always be available in practical deployments. The completed GPT 8-qubit file still contains two residual API failures, but at 5{,}374 usable responses the qualitative pattern is stable and matches the Anthropic ladder. The present evidence therefore supports a strong benchmark-level capability trend, but it should not be overinterpreted as a universal scaling law.
 
 \section{Conclusion}
-In this paper, we introduced QuantumPhysEval, a benchmark for measuring quantum hallucinations as physics-grounded error on elementary quantum tasks. In a pooled 2-qubit case study over OpenAI GPT and Anthropic Claude models, benchmark error decreases strongly with model capability, while prompted reasoning depth shows no robust independent effect. A matched 4-qubit stress test shows that performance worsens materially once the state space expands, especially on circuit evolution and measurement prediction. Separate repair ablations show that repeated attempts can recover some failures, especially when verifier feedback is available, but those gains saturate quickly and do not erase the main weakness. These results suggest that language models can produce plausible quantum answers, but exact physical reliability remains limited and should be measured explicitly rather than assumed.
+In this paper, we introduced QuantumPhysEval, a benchmark for measuring quantum hallucinations as physics-grounded error on elementary quantum tasks. In a pooled 2-qubit case study over OpenAI GPT and Anthropic Claude models, benchmark error decreases strongly with model capability, while prompted reasoning depth shows no robust independent effect. A matched 4-qubit stress test shows that performance worsens materially once the state space expands, especially on circuit evolution and measurement prediction. A completed Anthropic 8-qubit ladder shows that this is a genuine complexity trend rather than a one-step artifact: error continues to rise, exact-correct rate falls, and full-error failures become more common as the Hilbert space grows. Separate repair ablations show that repeated attempts can recover some failures, especially when verifier feedback is available, but those gains saturate quickly and do not erase the main weakness. These results suggest that language models can produce plausible quantum answers, but exact physical reliability remains limited and should be measured explicitly rather than assumed.
 
 \appendix
 \section*{Appendix: Live Statistical Snapshot}
