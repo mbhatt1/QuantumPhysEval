@@ -451,7 +451,8 @@ def entangled_state_from_template(template: str, num_qubits: int) -> Tuple[np.nd
         ghz4[0] = inv_sqrt2
         ghz4[-1] = inv_sqrt2
         cluster_4 = np.array(
-            [0.5, 0, 0, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0, 0, 0.5, 0, 0, -0.5],
+            [0.25, 0.25, 0.25, -0.25, 0.25, 0.25, -0.25, 0.25,
+             0.25, 0.25, 0.25, -0.25, -0.25, -0.25, 0.25, -0.25],
             dtype=complex,
         )
         states = {
